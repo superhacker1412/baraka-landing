@@ -2,7 +2,7 @@ import { LOGO_PATH } from "@/lib/brand";
 import { htmlLang, translate, type Locale } from "@/lib/i18n";
 
 export const SITE_URL =
-  (import.meta.env.VITE_SITE_URL as string | undefined)?.trim() || "https://barakali.uz";
+  (import.meta.env.VITE_SITE_URL as string | undefined)?.trim() || "https://barakalisavdo.uz";
 
 // Social preview asset (1914×939; ideal OG size is 1200×630)
 export const OG_IMAGE_PATH = "/images/dashboard.png";

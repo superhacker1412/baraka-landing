@@ -8,7 +8,7 @@
  * 2. Under "Domains", add EVERY host where the app runs:
  *    - localhost          (npm run dev)
  *    - 127.0.0.1          (npm run dev with --host 127.0.0.1)
- *    - your-production-domain.com  (e.g. barakali.uz, www.barakali.uz)
+ *    - your-production-domain.com  (e.g. barakalisavdo.uz, www.barakalisavdo.uz)
  *    Google does NOT auto-whitelist localhost — you must add both entries above.
  * 3. Set env vars (see .env.example).
  *
@@ -29,7 +29,7 @@ export type RecaptchaVersion = "v2" | "v3";
 export const RECAPTCHA_CONSOLE_DOMAINS = [
   "localhost",
   "127.0.0.1",
-  // Add production domain(s) here when deploying, e.g. "barakali.uz"
+  // Add production domain(s) here when deploying, e.g. "barakalisavdo.uz"
 ] as const;
 
 const rawVersion = (import.meta.env.VITE_RECAPTCHA_VERSION ?? "v3").toLowerCase();
