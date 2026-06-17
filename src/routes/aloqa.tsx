@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Mail, MessageCircle, Phone, Send } from "lucide-react";
+import { ArrowRight, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 
 import { PageMeta } from "@/components/PageMeta";
 import { PublicShell, Section, SectionTitle } from "@/components/PublicShell";
@@ -38,6 +38,13 @@ function ContactPage() {
       href: CONTACT.telegram,
       external: true,
     },
+    {
+      icon: MapPin,
+      label: t("contact.addressLabel"),
+      value: CONTACT.address,
+      href: CONTACT.addressMapUrl,
+      external: true,
+    },
   ] as const;
 
   return (
@@ -52,7 +59,7 @@ function ContactPage() {
             center
           />
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {channels.map(({ icon: Icon, label, value, href, external }) => (
               <a
                 key={label}
