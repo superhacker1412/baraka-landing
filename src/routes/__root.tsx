@@ -1,26 +1,10 @@
-import {
-  HeadContent,
-  Link,
-  Outlet,
-  Scripts,
-  createRootRoute,
-  useRouter,
-} from "@tanstack/react-router";
-import { type ReactNode } from "react";
+import { Link, Outlet, createRootRoute, useRouter } from "@tanstack/react-router";
 import { Toaster } from "sonner";
 
 import { I18nProvider } from "../components/I18nProvider";
 import { MotionProvider } from "../components/MotionProvider";
 import { RubberBand } from "../components/RubberBand";
 import { useTranslation } from "../lib/i18n";
-import { SITE_ICON_LINKS } from "../lib/brand";
-import {
-  buildSeoMeta,
-  organizationJsonLd,
-  softwareApplicationJsonLd,
-  websiteJsonLd,
-} from "../lib/seo";
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   const { t } = useTranslation();
@@ -63,56 +47,11 @@ function ErrorComponent({ reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const defaultSeo = buildSeoMeta({ locale: "uz", page: "home" });
-
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      ...defaultSeo.meta,
-    ],
-    links: [
-      ...SITE_ICON_LINKS.map((link) => ({ ...link })),
-      ...defaultSeo.links,
-      { rel: "stylesheet", href: appCss },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify([
-          organizationJsonLd("uz"),
-          websiteJsonLd("uz"),
-          softwareApplicationJsonLd("uz"),
-        ]),
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="uz-Latn-UZ">
-      <head>
-        <HeadContent />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
-        />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (

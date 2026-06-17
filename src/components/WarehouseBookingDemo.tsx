@@ -129,8 +129,7 @@ export function WarehouseBookingDemo() {
             occupied: stats.occupied,
             available: stats.available,
           })}
-          {stats.booked > 0 &&
-            ` · ${t("landing.warehouse.areaBooked", { booked: stats.booked })}`}
+          {stats.booked > 0 && ` · ${t("landing.warehouse.areaBooked", { booked: stats.booked })}`}
         </p>
 
         <div

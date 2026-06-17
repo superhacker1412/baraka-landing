@@ -64,11 +64,7 @@ export function PublicHeader() {
     <>
       <header className="glass-nav sticky top-0 z-40 border-b border-border/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3.5">
-          <Link
-            to={ROUTES.home}
-            className="flex items-center gap-3"
-            aria-label={t("nav.homeAria")}
-          >
+          <Link to={ROUTES.home} className="flex items-center gap-3" aria-label={t("nav.homeAria")}>
             <BrandLogo className="h-11 w-11 shadow-sm" />
             <div className="text-[16px] font-semibold tracking-tight">{t("brand.name")}</div>
           </Link>

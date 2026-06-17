@@ -1,5 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, FileText, MessageCircle, Shield, Sparkles, type LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  FileText,
+  MessageCircle,
+  Shield,
+  Sparkles,
+  type LucideIcon,
+} from "lucide-react";
 import { Section, SectionTitle } from "@/components/PublicShell";
 import { useTranslation } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
