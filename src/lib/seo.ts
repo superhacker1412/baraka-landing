@@ -4,8 +4,8 @@ import { htmlLang, translate, type Locale } from "@/lib/i18n";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.trim() || "https://barakalisavdo.uz";
 
-// Social preview asset (1914×939; ideal OG size is 1200×630)
-export const OG_IMAGE_PATH = "/images/dashboard.png";
+// Social preview asset for crawlers such as Telegram, Facebook, and X.
+export const OG_IMAGE_PATH = "/og-image.png";
 export const OG_IMAGE = `${SITE_URL}${OG_IMAGE_PATH}`;
 
 export const PUBLIC_PATHS = ["/", "/oldindan-royxat", "/taklif", "/aloqa", "/tariff"] as const;
@@ -60,6 +60,11 @@ export function buildSeoMeta({ locale = "uz", page = "home", path }: MetaInput =
       { property: "og:title", content: ogTitle },
       { property: "og:description", content: ogDescription },
       { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:secure_url", content: OG_IMAGE },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Barakali Savdo platformasi" },
       { property: "og:url", content: url },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: htmlLang(locale) },
@@ -67,6 +72,7 @@ export function buildSeoMeta({ locale = "uz", page = "home", path }: MetaInput =
       { name: "twitter:title", content: ogTitle },
       { name: "twitter:description", content: ogDescription },
       { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image:alt", content: "Barakali Savdo platformasi" },
     ],
     links: [
       { rel: "canonical", href: url },
