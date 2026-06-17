@@ -1,0 +1,28 @@
+- generic [ref=e1]:
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: B
+      - heading "Admin panel" [level=1] [ref=e10]
+      - paragraph [ref=e11]: Arizalar va xabarlarni ko'rish uchun kiring
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: Email
+        - textbox "Email" [ref=e15]:
+          - /placeholder: email@example.com
+          - text: admin@barakali.uz
+      - generic [ref=e16]:
+        - generic [ref=e17]: Parol
+        - textbox "Parol" [ref=e18]: test
+      - paragraph [ref=e20]: Google reCAPTCHA bilan himoyalangan
+      - paragraph [ref=e26]: Email yoki parol noto'g'ri
+      - button "Kirish" [active] [ref=e21]
+    - button "Bosh sahifaga qaytish" [ref=e22]
+  - region "Notifications alt+T"
+  - iframe [ref=e25]:
+    - generic [ref=f1e2]:
+      - generic [ref=f1e6]:
+        - text: Домен localhost не входит в
+        - link "список поддерживаемых" [ref=f1e7] [cursor=pointer]:
+          - /url: https://cloud.google.com/recaptcha/docs/troubleshoot-recaptcha-issues#localhost-error
+        - text: для этого ключа.
+      - generic [ref=f1e11]: reCAPTCHA

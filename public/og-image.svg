@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Barakali Savdo">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#6610f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="72" y="72" width="88" height="88" rx="20" fill="#ffffff" fill-opacity="0.15"/>
+  <text x="116" y="132" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="700">B</text>
+  <text x="190" y="118" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Barakali Savdo</text>
+  <text x="190" y="168" fill="#dbeafe" font-family="Arial, sans-serif" font-size="28">Savdo · Ombor · Yetkazish</text>
+  <text x="72" y="280" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="600">Savdo, ombor va yetkazib berishni bitta tizimda boshqaring</text>
+  <text x="72" y="340" fill="#e0e7ff" font-family="Arial, sans-serif" font-size="24">O'zbekiston · Oldindan ro'yxat ochiq</text>
+</svg>
