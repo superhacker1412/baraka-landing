@@ -1,0 +1,43 @@
+[Unit]
+Description=Barakali Savdo backend (memory.js — forms + admin API)
+After=network.target
+
+[Service]
+Type=simple
+
+# --- EDIT IF YOUR PATHS DIFFER ---------------------------------------------
+# Where the repo is cloned on the server (contains memory.js and dist/).
+WorkingDirectory=/var/www/barakalisavdo
+# Full path to node. Check with: which node
+ExecStart=/usr/bin/node memory.js
+# ---------------------------------------------------------------------------
+
+Restart=always
+RestartSec=3
+
+# Server settings (override as needed)
+Environment=PORT=8080
+Environment=HOST=127.0.0.1
+Environment=DIST_DIR=/var/www/barakalisavdo/dist
+# Keep submissions OUTSIDE the repo so `git pull` / rebuilds never wipe them.
+Environment=DATA_DIR=/var/lib/barakali
+
+# Admin login for /admin/feedback
+Environment=ADMIN_EMAIL=amir@gmail.com
+Environment=ADMIN_PASSWORD=Koma1Qwerty1
+
+# Optional: server-side reCAPTCHA verification (leave empty to disable)
+# Environment=RECAPTCHA_SECRET=your_secret_key
+# Environment=RECAPTCHA_MIN_SCORE=0.5
+
+# Run as the web user (adjust if different)
+User=www-data
+Group=www-data
+
+# Basic hardening
+NoNewPrivileges=true
+PrivateTmp=true
+StateDirectory=barakali
+
+[Install]
+WantedBy=multi-user.target
