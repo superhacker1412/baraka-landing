@@ -8,7 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "@/lib/i18n";
-import { saveFeedback, toFeedbackPayload, type FeedbackTopic } from "@/lib/feedback-storage";
+import { submitFeedback } from "@/lib/api";
+import type { FeedbackTopic } from "@/lib/feedback-storage";
 
 const TOPICS: FeedbackTopic[] = [
   "Hamkorlik",
@@ -56,9 +57,7 @@ export function FeedbackForm({ onSuccess, className = "" }: FeedbackFormProps) {
 
     setSubmitting(true);
     try {
-      const payload = { name, phone, topic, message };
-      saveFeedback(payload);
-      void toFeedbackPayload(payload);
+      await submitFeedback({ name, phone, topic, message }, token);
 
       toast.success(t("forms.feedback.success"));
       form.reset();

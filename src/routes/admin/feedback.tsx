@@ -8,18 +8,26 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
+  clearAdminToken,
+  getAdminToken,
   isAdminAuthenticated,
-  loginAdmin,
-  logoutAdmin,
-  validateAdminCredentials,
+  setAdminToken,
 } from "@/lib/admin-auth";
+import { adminLogin, ApiError, fetchAdminData } from "@/lib/api";
 import {
-  getAllFeedback,
-  getAllPreRegistrations,
-  getStats,
+  computeStats,
   type FeedbackSubmission,
   type PreRegistration,
+  type StorageStats,
 } from "@/lib/feedback-storage";
+
+const EMPTY_STATS: StorageStats = {
+  preRegistrationCount: 0,
+  feedbackCount: 0,
+  totalCount: 0,
+  byBusinessType: {},
+  byTopic: {},
+};
 
 export const Route = createFileRoute("/admin/feedback")({
   component: AdminFeedbackPage,
@@ -55,7 +63,7 @@ function AdminFeedbackPage() {
   return (
     <Dashboard
       onLogout={() => {
-        logoutAdmin();
+        clearAdminToken();
         setAuthenticated(false);
       }}
       onNavigateHome={() => navigate({ to: "/" })}
@@ -74,6 +82,7 @@ function LoginForm({
   const [password, setPassword] = useState("");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -88,11 +97,21 @@ function LoginForm({
       return;
     }
 
-    if (validateAdminCredentials(email, password)) {
-      loginAdmin();
+    setSubmitting(true);
+    try {
+      const { token: sessionToken } = await adminLogin(email, password, token);
+      setAdminToken(sessionToken);
       onSuccess();
-    } else {
-      setError("Email yoki parol noto'g'ri");
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        setError("Email yoki parol noto'g'ri");
+      } else if (err instanceof ApiError && err.code === "network") {
+        setError("Server bilan bog'lanib bo'lmadi. Backend ishlayotganini tekshiring.");
+      } else {
+        setError("Kirishda xatolik yuz berdi");
+      }
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -132,8 +151,8 @@ function LoginForm({
             </div>
             <CaptchaField onTokenChange={captchaConfig.isV2 ? setCaptchaToken : undefined} />
             {error && <p className="text-[13px] text-destructive">{error}</p>}
-            <Button type="submit" className="w-full">
-              Kirish
+            <Button type="submit" className="w-full" disabled={submitting}>
+              {submitting ? "Kirilmoqda..." : "Kirish"}
             </Button>
           </form>
 
@@ -158,16 +177,37 @@ function Dashboard({
 }) {
   const [preRegs, setPreRegs] = useState<PreRegistration[]>([]);
   const [feedback, setFeedback] = useState<FeedbackSubmission[]>([]);
-  const [stats, setStats] = useState(getStats());
+  const [stats, setStats] = useState<StorageStats>(EMPTY_STATS);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  function refresh() {
-    setPreRegs(getAllPreRegistrations());
-    setFeedback(getAllFeedback());
-    setStats(getStats());
+  async function refresh() {
+    const token = getAdminToken();
+    if (!token) {
+      onLogout();
+      return;
+    }
+    setLoading(true);
+    setError("");
+    try {
+      const data = await fetchAdminData(token);
+      setPreRegs(data.preRegistrations);
+      setFeedback(data.feedback);
+      setStats(data.stats ?? computeStats(data.preRegistrations, data.feedback));
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 401) {
+        onLogout();
+        return;
+      }
+      setError("Ma'lumotlarni yuklab bo'lmadi. Backend ishlayotganini tekshiring.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
-    refresh();
+    void refresh();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -177,12 +217,12 @@ function Dashboard({
           <div>
             <h1 className="text-[18px] font-semibold">Arizalar boshqaruvi</h1>
             <p className="text-[12px] text-muted-foreground">
-              Oldindan ro'yxat va xabarlar (localStorage)
+              Oldindan ro'yxat va xabarlar (serverda saqlangan)
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" onClick={refresh}>
-              <RefreshCw className="h-3.5 w-3.5" />
+            <Button variant="outline" size="sm" onClick={() => void refresh()} disabled={loading}>
+              <RefreshCw className={`h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} />
               Yangilash
             </Button>
             <Button variant="outline" size="sm" onClick={onNavigateHome}>
@@ -197,6 +237,12 @@ function Dashboard({
       </header>
 
       <main className="mx-auto max-w-7xl px-5 py-8">
+        {error && (
+          <div className="mb-6 rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-[13px] text-destructive">
+            {error}
+          </div>
+        )}
+
         {/* Stats */}
         <div className="grid gap-4 sm:grid-cols-3">
           <StatCard icon={Users} label="Jami" value={stats.totalCount} sub="Barcha arizalar" />

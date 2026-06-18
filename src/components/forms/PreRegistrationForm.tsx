@@ -8,11 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "@/lib/i18n";
-import {
-  savePreRegistration,
-  toPreRegistrationPayload,
-  type BusinessType,
-} from "@/lib/feedback-storage";
+import { submitPreRegistration } from "@/lib/api";
+import type { BusinessType } from "@/lib/feedback-storage";
 
 const BUSINESS_TYPES: BusinessType[] = [
   "Sotuvchi",
@@ -63,17 +60,17 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
 
     setSubmitting(true);
     try {
-      const payload = {
-        name,
-        phone,
-        email: email || undefined,
-        businessType,
-        city,
-        note: note || undefined,
-      };
-
-      savePreRegistration(payload);
-      void toPreRegistrationPayload(payload);
+      await submitPreRegistration(
+        {
+          name,
+          phone,
+          email: email || undefined,
+          businessType,
+          city,
+          note: note || undefined,
+        },
+        token,
+      );
 
       toast.success(t("forms.preRegistration.success"));
       form.reset();
