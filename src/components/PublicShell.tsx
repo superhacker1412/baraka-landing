@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowRight, ArrowUp, Mail, Menu, Moon, Phone, Sun, X } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 
 import { BrandLogo } from "@/components/BrandLogo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -59,6 +60,21 @@ export function PublicHeader() {
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
   }, []);
+
+  // Lock background scroll and allow Escape to close while the mobile menu is open.
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   return (
     <>
@@ -127,14 +143,15 @@ export function PublicHeader() {
         </div>
       </header>
 
-      {open && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          <div
-            className="absolute inset-0 bg-foreground/40 backdrop-blur"
-            onClick={() => setOpen(false)}
-            aria-hidden
-          />
-          <div className="animate-slide-in-right absolute inset-x-0 bottom-0 rounded-t-3xl border-t border-border bg-card p-5 pb-8">
+      {open &&
+        createPortal(
+          <div className="fixed inset-0 z-50 lg:hidden">
+            <div
+              className="absolute inset-0 bg-foreground/40 backdrop-blur"
+              onClick={() => setOpen(false)}
+              aria-hidden
+            />
+          <div className="animate-in slide-in-from-bottom duration-300 absolute inset-x-0 bottom-0 rounded-t-3xl border-t border-border bg-card p-5 pb-8">
             <div className="mb-4 flex items-center justify-between">
               <div className="text-[14px] font-semibold">{t("nav.menu")}</div>
               <button
@@ -183,8 +200,9 @@ export function PublicHeader() {
               {t("nav.registerCta")}
             </Link>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body,
+        )}
     </>
   );
 }
