@@ -12,7 +12,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ref={ref}
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-opacity disabled:pointer-events-none disabled:opacity-50",
-        variant === "default" && "bg-foreground text-background hover:opacity-90",
+        variant === "default" &&
+          "bg-primary text-primary-foreground shadow-sm shadow-primary/15 hover:opacity-90",
         variant === "outline" && "border border-border bg-card hover:bg-accent",
         variant === "ghost" && "hover:bg-accent",
         size === "default" && "px-5 py-2.5 text-[13.5px]",

@@ -39,7 +39,7 @@ export function PublicHeader() {
   const nav = useMemo(
     () =>
       [
-        { hash: "about", label: t("nav.system") },
+        { hash: "platform", label: t("nav.system") },
         { hash: "roles", label: t("nav.roles") },
         { hash: "workflow", label: t("nav.workflow") },
         { to: ROUTES.pricing, label: t("nav.pricing") },
@@ -126,7 +126,7 @@ export function PublicHeader() {
             </button>
             <Link
               to={ROUTES.preRegistration}
-              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-foreground px-3 py-1.5 text-[11.5px] font-medium whitespace-nowrap text-background hover:opacity-90 sm:px-3.5 sm:text-[12px]"
+              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-primary px-3 py-1.5 text-[11.5px] font-medium whitespace-nowrap text-primary-foreground shadow-sm shadow-primary/15 hover:opacity-90 sm:px-3.5 sm:text-[12px]"
             >
               <span className="sm:hidden">{t("nav.registerShort")}</span>
               <span className="hidden sm:inline">{t("nav.registerHeaderCta")}</span>
@@ -151,56 +151,56 @@ export function PublicHeader() {
               onClick={() => setOpen(false)}
               aria-hidden
             />
-          <div className="animate-in slide-in-from-bottom duration-300 absolute inset-x-0 bottom-0 rounded-t-3xl border-t border-border bg-card p-5 pb-8">
-            <div className="mb-4 flex items-center justify-between">
-              <div className="text-[14px] font-semibold">{t("nav.menu")}</div>
-              <button
+            <div className="animate-in slide-in-from-bottom duration-300 absolute inset-x-0 bottom-0 rounded-t-3xl border-t border-border bg-card p-5 pb-8">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="text-[14px] font-semibold">{t("nav.menu")}</div>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="grid h-8 w-8 place-items-center rounded-full bg-muted"
+                  aria-label={t("common.closeMenu")}
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <div className="mb-4">
+                <LanguageSwitcher />
+              </div>
+              <div className="grid gap-1">
+                {nav.map((item) =>
+                  "to" in item ? (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className="rounded-xl px-3 py-2.5 text-[14px] font-medium hover:bg-accent"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <Link
+                      key={item.hash}
+                      to={ROUTES.home}
+                      hash={item.hash}
+                      onClick={(e) => {
+                        if (onHome) handleAnchorClick(e, item.hash, () => setOpen(false));
+                        else setOpen(false);
+                      }}
+                      className="rounded-xl px-3 py-2.5 text-[14px] font-medium hover:bg-accent"
+                    >
+                      {item.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+              <Link
+                to={ROUTES.preRegistration}
                 onClick={() => setOpen(false)}
-                className="grid h-8 w-8 place-items-center rounded-full bg-muted"
-                aria-label={t("common.closeMenu")}
+                className="mt-4 block rounded-xl bg-foreground px-4 py-2.5 text-center text-[13px] font-medium text-background"
               >
-                <X className="h-4 w-4" />
-              </button>
+                {t("nav.registerCta")}
+              </Link>
             </div>
-            <div className="mb-4">
-              <LanguageSwitcher />
-            </div>
-            <div className="grid gap-1">
-              {nav.map((item) =>
-                "to" in item ? (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className="rounded-xl px-3 py-2.5 text-[14px] font-medium hover:bg-accent"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <Link
-                    key={item.hash}
-                    to={ROUTES.home}
-                    hash={item.hash}
-                    onClick={(e) => {
-                      if (onHome) handleAnchorClick(e, item.hash, () => setOpen(false));
-                      else setOpen(false);
-                    }}
-                    className="rounded-xl px-3 py-2.5 text-[14px] font-medium hover:bg-accent"
-                  >
-                    {item.label}
-                  </Link>
-                ),
-              )}
-            </div>
-            <Link
-              to={ROUTES.preRegistration}
-              onClick={() => setOpen(false)}
-              className="mt-4 block rounded-xl bg-foreground px-4 py-2.5 text-center text-[13px] font-medium text-background"
-            >
-              {t("nav.registerCta")}
-            </Link>
-          </div>
-        </div>,
+          </div>,
           document.body,
         )}
     </>
@@ -214,7 +214,7 @@ export function PublicFooter() {
     {
       title: t("footer.pageTitle"),
       links: [
-        { label: t("nav.system"), to: ROUTES.home, hash: "about" },
+        { label: t("nav.system"), to: ROUTES.about },
         { label: t("nav.roles"), to: ROUTES.home, hash: "roles" },
         { label: t("nav.workflow"), to: ROUTES.home, hash: "workflow" },
         { label: t("nav.pricing"), to: ROUTES.pricing },
@@ -316,6 +316,37 @@ export function PublicFooter() {
 
 const SCROLL_TOP_THRESHOLD = 350;
 
+function ScrollRevealController() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-reveal]"));
+
+    if (reduceMotion) {
+      for (const element of elements) element.classList.add("is-visible");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.12 },
+    );
+
+    for (const element of elements) observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  return null;
+}
+
 function ScrollToTopButton() {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
@@ -352,6 +383,7 @@ export function PublicShell({ children }: { children: ReactNode }) {
   return (
     <div id="top" className="min-h-screen bg-background">
       <PublicHeader />
+      <ScrollRevealController />
       <main>{children}</main>
       <PublicFooter />
       <ScrollToTopButton />
@@ -369,7 +401,11 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`mx-auto max-w-7xl scroll-mt-24 px-5 ${className}`}>
+    <section
+      id={id}
+      data-scroll-reveal
+      className={`scroll-reveal mx-auto max-w-7xl scroll-mt-24 px-5 ${className}`}
+    >
       {children}
     </section>
   );
@@ -388,18 +424,22 @@ export function SectionTitle({
   title,
   sub,
   center,
+  level = "h2",
 }: {
   eyebrow?: string;
   title: string;
   sub?: string;
   center?: boolean;
+  level?: "h1" | "h2";
 }) {
+  const Heading = level;
+
   return (
     <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-3xl"}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="mt-3 font-display text-[32px] font-semibold leading-[1.1] tracking-tight md:text-[44px]">
+      <Heading className="mt-3 font-display text-[32px] font-semibold leading-[1.1] tracking-tight md:text-[44px]">
         {title}
-      </h2>
+      </Heading>
       {sub && <p className="mt-3 text-[15px] text-muted-foreground">{sub}</p>}
     </div>
   );
@@ -416,7 +456,7 @@ export function CTAButton({
 }) {
   const className = `inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-[13.5px] font-medium ease-spring ${
     primary
-      ? "bg-foreground text-background hover:opacity-90"
+      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15 hover:opacity-90"
       : "border border-border bg-card hover:bg-accent"
   }`;
 

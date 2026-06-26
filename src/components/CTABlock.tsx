@@ -20,11 +20,11 @@ export function PromoBadge({ className = "", size = "md", variant = "light" }: P
         "inline-flex items-center rounded-full font-semibold",
         variant === "light"
           ? "border-success/35 bg-success/10 text-success"
-          : "border-success/50 bg-success/25 text-success",
+          : "border-white/35 bg-white/10 text-white",
         size === "md" &&
           "gap-2 border px-4 py-1.5 text-[13px] md:text-[14px] [&_svg]:h-4 [&_svg]:w-4",
         size === "lg" &&
-          "gap-2.5 border-2 px-5 py-2.5 text-[15px] shadow-[0_8px_24px_-8px_rgba(34,197,94,0.35)] md:gap-3 md:px-7 md:py-3.5 md:text-[18px] [&_svg]:h-5 [&_svg]:w-5 md:[&_svg]:h-6 md:[&_svg]:w-6",
+          "gap-2.5 border-2 px-5 py-2.5 text-[15px] shadow-[0_8px_24px_-8px_rgba(15,143,97,0.35)] md:gap-3 md:px-7 md:py-3.5 md:text-[18px] [&_svg]:h-5 [&_svg]:w-5 md:[&_svg]:h-6 md:[&_svg]:w-6",
         className,
       )}
     >
@@ -48,7 +48,7 @@ export function CTABlock({ id, className = "" }: CTABlockProps) {
       className={`relative overflow-hidden rounded-[2rem] p-8 text-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] md:p-12 ${className}`}
       style={{
         background:
-          "radial-gradient(120% 80% at 0% 0%, #1e3a8a 0%, transparent 55%), radial-gradient(120% 80% at 100% 100%, #6610f2 0%, transparent 55%), linear-gradient(135deg, #050816 0%, #0b1226 55%, #0a0a1a 100%)",
+          "radial-gradient(120% 80% at 0% 0%, color-mix(in oklab, var(--primary) 42%, transparent) 0%, transparent 56%), radial-gradient(120% 80% at 100% 100%, rgba(255,255,255,0.1) 0%, transparent 58%), linear-gradient(135deg, #06130f 0%, #0a1f19 58%, #050b09 100%)",
       }}
     >
       <div className="relative max-w-2xl">

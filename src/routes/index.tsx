@@ -1,33 +1,32 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute, useRouterState } from "@tanstack/react-router";
 import {
-  AlertCircle,
   ArrowRight,
   Building2,
+  Camera,
+  ChevronDown,
   CheckCircle2,
-  ClipboardList,
-  Crown,
-  Lightbulb,
-  Link2,
-  Package,
-  Shield,
-  ShoppingBag,
+  ClipboardCheck,
+  CircleX,
+  LayoutDashboard,
+  MapPin,
+  MapPinned,
+  Navigation,
+  PackageCheck,
+  Route as RouteIcon,
+  ShieldCheck,
   Store,
   Truck,
-  UserCog,
+  UserCheck,
   Warehouse,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { useRouterState } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { CTABlockLight, PromoBadge } from "@/components/CTABlock";
 import { PageMeta, useFaqItems } from "@/components/PageMeta";
-import { PublicShell, Section, SectionTitle, CTAButton, Eyebrow } from "@/components/PublicShell";
-import { SplineHeroPanel } from "@/components/SplineHeroPanel";
+import { PublicShell, Section, SectionTitle, CTAButton } from "@/components/PublicShell";
+import { SellerDashboardHero } from "@/components/SellerDashboardHero";
 import { WarehouseBookingDemo } from "@/components/WarehouseBookingDemo";
-import { ComingSoonSection } from "@/components/ComingSoonSection";
-import { MapPartnerCTAs } from "@/components/MapPartnerCTAs";
 import { WarehouseMapSection } from "@/components/WarehouseMapSection";
 import { useTranslation } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
@@ -35,48 +34,424 @@ import { buildSeoMeta } from "@/lib/seo";
 import { scrollToHash } from "@/lib/scroll";
 import { cn } from "@/lib/utils";
 
-const ROLE_ICONS: LucideIcon[] = [
-  Shield,
-  Crown,
-  UserCog,
+const ROLE_CARD_ORDER = [1, 3, 4, 5, 7, 8, 2, 6, 0] as const;
+
+const ROLE_CARD_ICONS: LucideIcon[] = [
   Store,
-  Truck,
+  Building2,
+  PackageCheck,
   Warehouse,
-  Package,
-  ClipboardList,
-  ShoppingBag,
+  Truck,
+  UserCheck,
+  ClipboardCheck,
+  LayoutDashboard,
+  ShieldCheck,
 ];
 
-const WORKFLOW_ICONS: LucideIcon[] = [ShoppingBag, Crown, Warehouse, Truck, ClipboardList];
+const ROLE_CARD_LINKS = [
+  ROUTES.forSellers,
+  ROUTES.forShops,
+  ROUTES.forSuppliers,
+  ROUTES.forWarehouses,
+  ROUTES.forCouriers,
+  ROUTES.forBuyers,
+  ROUTES.forSellers,
+  ROUTES.forWarehouses,
+  undefined,
+] as const;
+
+const PROCESS_ICONS: LucideIcon[] = [PackageCheck, Store, Warehouse, Truck, UserCheck];
+const PROOF_ICONS: LucideIcon[] = [Camera, ClipboardCheck, RouteIcon, ShieldCheck];
 
 export const Route = createFileRoute("/")({
   head: () => buildSeoMeta({ locale: "uz", page: "home" }),
   component: Landing,
 });
 
+function HeroRouteMap() {
+  return (
+    <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full overflow-hidden lg:w-[54%]" aria-hidden>
+      <svg
+        className="absolute -left-28 top-8 h-[340px] w-[760px] text-primary/35 sm:top-4 lg:top-10"
+        viewBox="0 0 980 360"
+        fill="none"
+      >
+        <path
+          d="M36 262 C168 164 226 278 330 178 C408 102 486 118 548 92 C656 46 712 110 780 76 C846 44 898 58 944 30"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeDasharray="9 18"
+          className="route-map-line"
+        />
+        <path
+          d="M82 60 C190 30 284 56 360 116 C438 178 510 204 612 172 C724 138 810 164 914 234"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
+          opacity="0.18"
+        />
+        {[148, 330, 548, 780, 914].map((x, index) => (
+          <g key={x}>
+            <circle
+              cx={x}
+              cy={[188, 178, 92, 76, 234][index]}
+              r="13"
+              fill="currentColor"
+              opacity="0.08"
+            />
+            <circle
+              cx={x}
+              cy={[188, 178, 92, 76, 234][index]}
+              r="4"
+              fill="currentColor"
+              opacity="0.72"
+            />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+function MetricStrip({ stats }: { stats: { value: string; label: string }[] }) {
+  return (
+    <Section className="-mt-2 pb-14">
+      <div className="rounded-[22px] border border-border bg-card px-5 py-5 shadow-[0_18px_60px_-42px_rgba(0,0,0,0.45)] md:px-8">
+        <div className="grid grid-cols-2 gap-y-5 md:grid-cols-5">
+          {stats.map((item, index) => (
+            <div
+              key={item.label}
+              className={cn(
+                "px-2 text-center md:px-5",
+                index > 0 && "md:border-l md:border-border/70",
+              )}
+            >
+              <div className="font-display text-[25px] font-semibold leading-none text-primary md:text-[31px]">
+                {item.value}
+              </div>
+              <div className="mt-2 text-[12px] leading-snug text-muted-foreground">
+                {item.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function RouteVisual() {
+  const { t } = useTranslation();
+
+  return (
+    <div className="relative min-h-[430px] overflow-hidden rounded-[24px] border border-border bg-[linear-gradient(180deg,#f8fffb_0%,#ffffff_74%)] p-6 shadow-[0_24px_80px_-56px_rgba(0,0,0,0.45)]">
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-45"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 18% 18%, color-mix(in oklab, var(--primary) 16%, transparent) 0 2px, transparent 3px), radial-gradient(circle at 72% 30%, color-mix(in oklab, var(--primary) 12%, transparent) 0 2px, transparent 3px)",
+          backgroundSize: "54px 54px, 70px 70px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-[250px]">
+        <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-[11px] font-semibold text-primary">
+          <Navigation className="h-3.5 w-3.5" aria-hidden />
+          {t("landing.map.visualEyebrow")}
+        </div>
+        <h3 className="mt-4 font-display text-[25px] font-semibold leading-tight">
+          {t("landing.map.visualTitle")}
+        </h3>
+        <p className="mt-2 text-[12.5px] leading-relaxed text-muted-foreground">
+          {t("landing.map.visualText")}
+        </p>
+      </div>
+
+      <svg
+        aria-hidden
+        className="absolute inset-x-4 bottom-6 top-[118px] text-primary"
+        viewBox="0 0 560 300"
+        fill="none"
+      >
+        <path
+          d="M40 162 C82 116 136 132 176 103 C224 68 282 95 326 82 C386 64 438 92 512 58 C494 94 522 132 488 158 C448 190 386 172 344 216 C302 260 246 226 194 246 C140 268 90 224 42 238 C58 208 10 194 40 162Z"
+          fill="currentColor"
+          opacity="0.075"
+        />
+        <path
+          d="M40 162 C82 116 136 132 176 103 C224 68 282 95 326 82 C386 64 438 92 512 58 C494 94 522 132 488 158 C448 190 386 172 344 216 C302 260 246 226 194 246 C140 268 90 224 42 238 C58 208 10 194 40 162Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          opacity="0.28"
+        />
+        <path
+          d="M132 190 C178 154 220 160 258 138 S344 102 408 132 S470 108 500 78"
+          stroke="currentColor"
+          strokeWidth="3"
+          strokeDasharray="9 13"
+          strokeLinecap="round"
+          className="route-map-line"
+        />
+        {[
+          [132, 190, "Toshkent"],
+          [258, 138, "Samarqand"],
+          [408, 132, "Farg'ona"],
+          [500, 78, "Andijon"],
+        ].map(([x, y, label]) => (
+          <g key={label as string}>
+            <circle cx={x as number} cy={y as number} r="15" fill="currentColor" opacity="0.11" />
+            <circle cx={x as number} cy={y as number} r="6" fill="currentColor" />
+          </g>
+        ))}
+      </svg>
+
+      <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur">
+          <div className="flex items-center gap-2 text-[12px] font-semibold">
+            <MapPin className="h-4 w-4 text-primary" aria-hidden />
+            {t("landing.map.visualHub")}
+          </div>
+          <p className="mt-1 text-[11.5px] text-muted-foreground">
+            {t("landing.map.visualHubText")}
+          </p>
+        </div>
+        <div className="rounded-[16px] border border-primary/20 bg-primary/8 p-3 shadow-lg shadow-primary/8 backdrop-blur">
+          <div className="flex items-center gap-2 text-[12px] font-semibold text-primary">
+            <Truck className="h-4 w-4" aria-hidden />
+            {t("landing.map.visualRoute")}
+          </div>
+          <p className="mt-1 text-[11.5px] text-muted-foreground">
+            {t("landing.map.visualRouteText")}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ComparisonSection({
+  comparison,
+}: {
+  comparison: {
+    beforeTitle: string;
+    afterTitle: string;
+    before: string[];
+    after: string[];
+  };
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <Section id="platform" className="py-16">
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <SectionTitle title={t("landing.why.title")} sub={t("landing.why.subtitle")} />
+
+          <div className="mt-8 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+            <div className="rounded-[20px] border border-red-200 bg-red-50/70 p-5 dark:border-red-500/25 dark:bg-red-500/10">
+              <h3 className="text-[17px] font-semibold">{comparison.beforeTitle}</h3>
+              <ul className="mt-5 grid gap-3">
+                {comparison.before.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[13px] leading-relaxed">
+                    <CircleX className="mt-0.5 h-4 w-4 shrink-0 text-red-600 dark:text-red-400" aria-hidden />
+                    <span className="text-muted-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid place-items-center">
+              <div className="grid h-12 w-12 place-items-center rounded-full bg-primary text-[13px] font-semibold text-primary-foreground shadow-lg shadow-primary/20">
+                VS
+              </div>
+            </div>
+
+            <div className="rounded-[20px] border border-primary/30 bg-primary/5 p-5">
+              <h3 className="text-[17px] font-semibold text-primary">{comparison.afterTitle}</h3>
+              <ul className="mt-5 grid gap-3">
+                {comparison.after.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[13px] leading-relaxed">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <RouteVisual />
+      </div>
+    </Section>
+  );
+}
+
+function RolesSection({ roles }: { roles: { title: string; description: string; benefit: string }[] }) {
+  const { t } = useTranslation();
+  const orderedRoles = ROLE_CARD_ORDER.map((sourceIndex, cardIndex) => ({
+    ...roles[sourceIndex],
+    Icon: ROLE_CARD_ICONS[cardIndex] ?? ShieldCheck,
+    route: ROLE_CARD_LINKS[cardIndex],
+  })).filter((role) => role.title);
+
+  return (
+    <Section id="roles" className="py-16">
+      <SectionTitle
+        title={t("landing.roles.title")}
+        sub={t("landing.roles.subtitle")}
+        center
+      />
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {orderedRoles.map(({ title, description, benefit, Icon, route }) => (
+          <article
+            key={title}
+            className="group rounded-[18px] border border-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-[0_20px_60px_-45px_rgba(0,0,0,0.45)]"
+          >
+            <div className="flex items-start gap-3">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-[14px] border border-primary/20 bg-primary/8 text-primary">
+                <Icon className="h-5 w-5" aria-hidden />
+              </div>
+              <div>
+                <h3 className="text-[15px] font-semibold">{title}</h3>
+                <p className="mt-1.5 text-[12.5px] leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 rounded-[14px] bg-muted/45 px-3 py-2 text-[12px] leading-relaxed text-muted-foreground">
+              {benefit}
+            </p>
+            {route && (
+              <Link
+                to={route}
+                className="mt-4 inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-primary hover:opacity-80"
+              >
+                {t("landing.roles.detailCta")}
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            )}
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function ProcessSection({ steps }: { steps: { title: string; text: string }[] }) {
+  const { t } = useTranslation();
+
+  return (
+    <Section id="workflow" className="py-16">
+      <SectionTitle title={t("landing.process.title")} sub={t("landing.process.subtitle")} center />
+
+      <div className="relative mt-12">
+        <div className="absolute left-[8%] right-[8%] top-7 hidden border-t border-dashed border-primary/35 md:block" />
+        <div className="grid gap-6 md:grid-cols-5">
+          {steps.map((step, index) => {
+            const Icon = PROCESS_ICONS[index] ?? ClipboardCheck;
+            return (
+              <div key={step.title} className="relative text-center">
+                <div className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-primary/25 bg-card text-primary shadow-[0_14px_40px_-26px_rgba(0,0,0,0.45)]">
+                  <Icon className="h-6 w-6" aria-hidden />
+                </div>
+                <div className="mt-4 text-[12px] font-semibold text-primary">
+                  {index + 1}. {step.title}
+                </div>
+                <p className="mx-auto mt-2 max-w-[190px] text-[12px] leading-relaxed text-muted-foreground">
+                  {step.text}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function ProofStrip({ items }: { items: { title: string; text: string }[] }) {
+  return (
+    <Section className="py-10">
+      <div className="grid gap-3 rounded-[22px] border border-border bg-card p-4 md:grid-cols-4 md:p-5">
+        {items.map((item, index) => {
+          const Icon = PROOF_ICONS[index] ?? ShieldCheck;
+          return (
+            <div key={item.title} className="flex gap-3 px-2 py-2">
+              <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary/8 text-primary">
+                <Icon className="h-4.5 w-4.5" aria-hidden />
+              </div>
+              <div>
+                <h3 className="text-[13px] font-semibold">{item.title}</h3>
+                <p className="mt-1 text-[11.5px] leading-relaxed text-muted-foreground">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Section>
+  );
+}
+
+function WarehouseAndMapSections() {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Section id="ombor" className="py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+          <div>
+            <SectionTitle title={t("landing.warehouse.title")} sub={t("landing.warehouse.subtitle")} />
+            <div className="mt-6">
+              <CTAButton href={ROUTES.forWarehouses}>
+                {t("landing.roles.detailCta")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </CTAButton>
+            </div>
+          </div>
+          <WarehouseBookingDemo />
+        </div>
+      </Section>
+
+      <Section id="xarita" className="py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+          <div>
+            <SectionTitle title={t("landing.map.title")} sub={t("landing.map.subtitle")} />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <CTAButton href={ROUTES.preRegistration} primary>
+                {t("nav.registerCta")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </CTAButton>
+              <CTAButton href={ROUTES.contact}>{t("nav.contact")}</CTAButton>
+            </div>
+          </div>
+          <div className="rounded-[22px] border border-border bg-card p-3 shadow-[0_20px_70px_-52px_rgba(0,0,0,0.45)]">
+            <WarehouseMapSection />
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
+
 function Landing() {
   const { t, tRaw } = useTranslation();
   const faqItems = useFaqItems();
   const heroRef = useRef<HTMLDivElement>(null);
   const hash = useRouterState({ select: (state) => state.location.hash });
-  const workflowItems =
-    tRaw<
-      { id: string; title: string; summary: string; steps: { title: string; text: string }[] }[]
-    >("landing.workflow.items");
-  const [activeWorkflowId, setActiveWorkflowId] = useState(workflowItems[0]?.id ?? "xaridor");
-  const activeWorkflow =
-    workflowItems.find((role) => role.id === activeWorkflowId) ?? workflowItems[0];
 
   const stats = tRaw<{ value: string; label: string }[]>("landing.stats");
-  const aboutCards = tRaw<{ title: string; text: string }[]>("landing.about.cards");
   const roles =
     tRaw<{ title: string; description: string; benefit: string }[]>("landing.roles.items");
-  const painPoints = tRaw<string[]>("landing.why.painPoints");
-  const solutions = tRaw<{ pain: string; solution: string }[]>("landing.why.solutions");
-  const connectionRoles = tRaw<string[]>("landing.connections.roles");
-  const connections = tRaw<{ from: string; to: string; label: string }[]>(
-    "landing.connections.items",
-  );
+  const comparison = tRaw<{
+    beforeTitle: string;
+    afterTitle: string;
+    before: string[];
+    after: string[];
+  }>("landing.comparison");
+  const proofItems = tRaw<{ title: string; text: string }[]>("landing.proof.items");
+  const processSteps = tRaw<{ title: string; text: string }[]>("landing.process.steps");
 
   useEffect(() => {
     if (hash) scrollToHash(`#${hash}`);
@@ -91,14 +466,6 @@ function Landing() {
         { y: 22, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.72, stagger: 0.08, ease: "power3.out" },
       );
-
-      gsap.to("[data-landing-float]", {
-        y: -8,
-        duration: 2.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
     }, heroRef);
 
     return () => context.revert();
@@ -108,39 +475,27 @@ function Landing() {
     <PublicShell>
       <PageMeta page="home" faqItems={faqItems} />
 
-      <div ref={heroRef} className="relative isolate overflow-hidden">
+      <div ref={heroRef} className="relative isolate overflow-hidden border-b border-border/60">
+        <HeroRouteMap />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(80% 60% at 15% 20%, color-mix(in oklab, var(--info) 18%, transparent) 0%, transparent 60%), radial-gradient(70% 55% at 85% 30%, color-mix(in oklab, var(--purple) 16%, transparent) 0%, transparent 65%), linear-gradient(180deg, var(--background) 0%, color-mix(in oklab, var(--info) 4%, var(--background)) 50%, var(--background) 100%)",
-          }}
+          className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(70%_50%_at_12%_24%,color-mix(in_oklab,var(--primary)_12%,transparent)_0%,transparent_62%),linear-gradient(180deg,#ffffff_0%,var(--background)_100%)]"
         />
 
-        <Section className="relative pt-14 pb-16 md:pt-24 md:pb-20">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <Section className="relative min-h-[calc(100vh-74px)] pt-14 pb-12 md:pt-20 lg:flex lg:items-center">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-[0.76fr_1.24fr]">
             <div>
-              <div data-landing-reveal className="flex flex-wrap items-center gap-2">
-                <Eyebrow>
-                  <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
-                  {t("hero.eyebrow")}
-                </Eyebrow>
-                <PromoBadge />
-              </div>
-
               <h1
                 data-landing-reveal
-                className="mt-5 font-display text-[38px] font-semibold leading-[1.05] tracking-tight md:text-[58px]"
+                className="font-display text-[50px] font-semibold leading-[0.98] tracking-tight text-foreground md:text-[76px] lg:text-[82px]"
               >
-                {t("hero.titleBefore")}{" "}
-                <span className="bg-gradient-to-r from-primary to-info bg-clip-text text-transparent">
-                  {t("hero.titleHighlight")}
-                </span>
-                {t("hero.titleAfter") ? ` ${t("hero.titleAfter")}` : ""}
+                {t("hero.title")}
               </h1>
 
-              <p data-landing-reveal className="mt-5 max-w-xl text-[16px] text-muted-foreground">
+              <p
+                data-landing-reveal
+                className="mt-5 max-w-lg text-[17px] leading-relaxed text-muted-foreground md:text-[18px]"
+              >
                 {t("hero.subtitle")}
               </p>
 
@@ -148,308 +503,93 @@ function Landing() {
                 <CTAButton href={ROUTES.preRegistration} primary>
                   {t("nav.registerCta")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                 </CTAButton>
-                <CTAButton href={ROUTES.feedback}>{t("nav.feedbackCta")}</CTAButton>
+                <CTAButton href="#roles">
+                  {t("hero.rolesCta")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </CTAButton>
+              </div>
+
+              <div data-landing-reveal className="mt-6">
+                <PromoBadge />
               </div>
 
               <div
                 data-landing-reveal
-                className="mt-7 flex flex-wrap items-center gap-4 text-[11.5px] text-muted-foreground"
+                className="mt-8 grid max-w-lg gap-3 text-[12px] text-muted-foreground sm:grid-cols-3"
               >
-                <span className="inline-flex items-center gap-1.5">
-                  <Shield className="h-3.5 w-3.5" aria-hidden />
-                  {t("hero.secure")}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-success" aria-hidden />
-                  {t("hero.rolesCount")}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Zap className="h-3.5 w-3.5" aria-hidden />
-                  {t("hero.warehouse")}
-                </span>
+                {[
+                  { icon: RouteIcon, label: t("hero.secure") },
+                  { icon: CheckCircle2, label: t("hero.rolesCount") },
+                  { icon: ShieldCheck, label: t("hero.warehouse") },
+                ].map(({ icon: Icon, label }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <Icon className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                    <span>{label}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div data-landing-reveal data-landing-float>
-              <SplineHeroPanel />
+            <div data-landing-reveal>
+              <SellerDashboardHero />
             </div>
           </div>
         </Section>
       </div>
 
-      <Section className="pb-12">
-        <div className="surface rounded-3xl p-6 md:p-8">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
-            {stats.map((item) => (
-              <div key={item.label} className="text-center md:text-left">
-                <div className="font-display text-[28px] font-semibold tracking-tight md:text-[36px]">
-                  {item.value}
-                </div>
-                <div className="mt-1 text-[12px] text-muted-foreground">{item.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <MetricStrip stats={stats} />
+      <ComparisonSection comparison={comparison} />
+      <RolesSection roles={roles} />
+      <ProcessSection steps={processSteps} />
+      <WarehouseAndMapSections />
+      <ProofStrip items={proofItems} />
 
-      <Section id="about" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.about.eyebrow")}
-          title={t("landing.about.title")}
-          sub={t("landing.about.subtitle")}
-        />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {aboutCards.map((item) => (
-            <div key={item.title} className="surface rounded-2xl p-5">
-              <div className="text-[15px] font-semibold">{item.title}</div>
-              <p className="mt-2 text-[13.5px] text-muted-foreground">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="py-8">
+      <Section className="py-16">
         <CTABlockLight />
       </Section>
 
-      <Section id="roles" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.roles.eyebrow")}
-          title={t("landing.roles.title")}
-          sub={t("landing.roles.subtitle")}
-          center
-        />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {roles.map((role, index) => {
-            const Icon = ROLE_ICONS[index] ?? Shield;
-            return (
-              <article key={role.title} className="surface rounded-2xl p-5">
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-info/10">
-                  <Icon className="h-5 w-5 text-primary" aria-hidden />
-                </div>
-                <h3 className="mt-3 text-[15px] font-semibold">{role.title}</h3>
-                <p className="mt-2 text-[13px] text-muted-foreground">{role.description}</p>
-                <div className="mt-3 rounded-xl bg-muted/50 px-3 py-2 text-[12px]">
-                  <span className="font-medium text-foreground">{t("common.benefitPrefix")} </span>
-                  {role.benefit}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </Section>
-
-      <Section id="ombor" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.warehouse.eyebrow")}
-          title={t("landing.warehouse.title")}
-          sub={t("landing.warehouse.subtitle")}
-        />
-        <div className="mt-6">
-          <WarehouseBookingDemo />
-        </div>
-      </Section>
-
-      <Section id="xarita" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.map.eyebrow")}
-          title={t("landing.map.title")}
-          sub={t("landing.map.subtitle")}
-          center
-        />
-        <div className="mt-10 surface rounded-3xl p-4 md:p-6">
-          <WarehouseMapSection />
-          <MapPartnerCTAs />
-        </div>
-      </Section>
-
-      <Section id="workflow" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.workflow.eyebrow")}
-          title={t("landing.workflow.title")}
-          sub={t("landing.workflow.subtitle")}
-          center
-        />
-        <div className="mt-10 surface rounded-3xl p-4 md:p-6">
-          <div
-            className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            role="tablist"
-            aria-label={t("landing.workflow.tabsAria")}
-          >
-            {workflowItems.map((role, index) => {
-              const Icon = WORKFLOW_ICONS[index] ?? ClipboardList;
-              return (
-                <button
-                  key={role.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={activeWorkflowId === role.id}
-                  onClick={() => setActiveWorkflowId(role.id)}
-                  className={cn(
-                    "inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-[13px] font-medium transition-colors",
-                    activeWorkflowId === role.id
-                      ? "bg-foreground text-background"
-                      : "bg-muted/50 text-muted-foreground hover:bg-muted",
-                  )}
-                >
-                  <Icon className="h-4 w-4" aria-hidden />
-                  {role.title}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mt-6" role="tabpanel">
-            <p className="text-[13.5px] text-muted-foreground">{activeWorkflow.summary}</p>
-            <ol className="mt-6 space-y-0">
-              {activeWorkflow.steps.map((step, index) => (
-                <li key={step.title} className="flex gap-4">
-                  <div className="flex flex-col items-center">
-                    <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-primary/10 text-[13px] font-bold text-primary">
-                      {index + 1}
-                    </div>
-                    {index < activeWorkflow.steps.length - 1 && (
-                      <div className="my-2 w-px flex-1 min-h-6 bg-border" />
-                    )}
-                  </div>
-                  <div className={cn("pb-5", index === activeWorkflow.steps.length - 1 && "pb-0")}>
-                    <h3 className="text-[14px] font-semibold">{step.title}</h3>
-                    <p className="mt-1 text-[13px] text-muted-foreground">{step.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </Section>
-
-      <Section id="why" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.why.eyebrow")}
-          title={t("landing.why.title")}
-          sub={t("landing.why.subtitle")}
-        />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="surface rounded-3xl p-6">
-            <div className="flex items-center gap-2 text-warning">
-              <AlertCircle className="h-5 w-5" aria-hidden />
-              <h3 className="text-[16px] font-semibold">{t("landing.why.problemsTitle")}</h3>
+      <Section id="faq" className="py-16">
+        <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-start">
+          <div className="rounded-[24px] border border-primary/20 bg-primary/8 p-6">
+            <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <CheckCircle2 className="h-5 w-5" aria-hidden />
             </div>
-            <ul className="mt-4 space-y-2">
-              {painPoints.map((pain) => (
-                <li key={pain} className="flex items-start gap-2 text-[13px]">
-                  <span
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-warning"
-                    aria-hidden
-                  />
-                  {pain}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="surface rounded-3xl p-6">
-            <div className="flex items-center gap-2 text-success">
-              <Lightbulb className="h-5 w-5" aria-hidden />
-              <h3 className="text-[16px] font-semibold">{t("landing.why.solutionsTitle")}</h3>
+            <h2 className="mt-5 font-display text-[32px] font-semibold leading-tight md:text-[42px]">
+              {t("landing.faq.title")}
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
+              {t("landing.faq.subtitle")}
+            </p>
+            <div className="mt-6 rounded-[16px] border border-border bg-card px-4 py-3 text-[12px] text-muted-foreground">
+              {t("landing.faq.visualText")}
             </div>
-            <ul className="mt-4 space-y-3">
-              {solutions.map((item) => (
-                <li key={item.pain} className="rounded-xl bg-muted/40 p-3">
-                  <div className="text-[12px] text-muted-foreground">{item.pain}</div>
-                  <div className="mt-1 text-[13px] font-medium">{item.solution}</div>
-                </li>
-              ))}
-            </ul>
           </div>
-        </div>
-      </Section>
 
-      <Section id="faq" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.faq.eyebrow")}
-          title={t("landing.faq.title")}
-          sub={t("landing.faq.subtitle")}
-          center
-        />
-        <div className="mx-auto mt-10 max-w-3xl space-y-3">
-          {faqItems.map((item) => (
-            <details key={item.question} className="surface group rounded-2xl p-5">
-              <summary className="cursor-pointer list-none text-[15px] font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
-                {item.question}
-              </summary>
-              <p className="mt-3 text-[13.5px] leading-relaxed text-muted-foreground">
-                {item.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </Section>
-
-      <Section id="connections" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.connections.eyebrow")}
-          title={t("landing.connections.title")}
-          sub={t("landing.connections.subtitle")}
-          center
-        />
-        <div className="mt-10 surface rounded-3xl p-6 md:p-8">
-          <div className="flex flex-col items-center gap-4 md:flex-row md:flex-wrap md:justify-center">
-            {connectionRoles.map((role, i, arr) => (
-              <div key={role} className="flex items-center gap-3">
-                <div
-                  className={cn(
-                    "rounded-2xl border border-border bg-card px-4 py-3 text-center text-[13px] font-semibold shadow-sm",
-                    i === 1 && "border-primary/40 bg-primary/5",
-                  )}
-                >
-                  {role}
-                </div>
-                {i < arr.length - 1 && (
-                  <ArrowRight
-                    className="hidden h-4 w-4 text-muted-foreground md:block"
-                    aria-hidden
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-[12px] text-muted-foreground">
-            <Building2 className="h-4 w-4" aria-hidden />
-            <span>{t("landing.connections.summary")}</span>
-          </div>
-          <div className="mt-6 grid gap-2 sm:grid-cols-2">
-            {connections.map((conn) => (
-              <div
-                key={conn.from + conn.to}
-                className="flex items-center gap-2 rounded-xl bg-muted/40 px-3 py-2 text-[12px]"
+          <div className="space-y-3">
+            {faqItems.map((item, index) => (
+              <details
+                key={item.question}
+                className="group rounded-[18px] border border-border bg-card p-0 shadow-[0_14px_50px_-44px_rgba(0,0,0,0.45)]"
               >
-                <Link2 className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
-                <span>
-                  <strong>{conn.from}</strong> → <strong>{conn.to}</strong>: {conn.label}
-                </span>
-              </div>
+                <summary className="flex cursor-pointer list-none items-center gap-4 p-5 marker:content-none [&::-webkit-details-marker]:hidden">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-primary/8 text-[12px] font-semibold text-primary">
+                    {index + 1}
+                  </span>
+                  <span className="flex-1 text-[15px] font-semibold">{item.question}</span>
+                  <ChevronDown
+                    className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                    aria-hidden
+                  />
+                </summary>
+                <div className="border-t border-border px-5 pb-5 pt-4">
+                  <p className="text-[13.5px] leading-relaxed text-muted-foreground">
+                    {item.answer}
+                  </p>
+                </div>
+              </details>
             ))}
           </div>
         </div>
       </Section>
-
-      <Section id="example" className="py-14">
-        <SectionTitle
-          eyebrow={t("landing.example.eyebrow")}
-          title={t("landing.example.title")}
-          sub={t("landing.example.subtitle")}
-        />
-        <div className="mt-8 surface rounded-3xl p-6 md:p-8">
-          <div className="space-y-4 text-[14px] leading-relaxed text-muted-foreground">
-            <p>{t("landing.example.p1")}</p>
-            <p>{t("landing.example.p2")}</p>
-            <p>{t("landing.example.p3")}</p>
-            <p>{t("landing.example.p4")}</p>
-          </div>
-        </div>
-      </Section>
-
-      <ComingSoonSection />
     </PublicShell>
   );
 }

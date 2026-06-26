@@ -13,7 +13,7 @@ export const Route = createFileRoute("/aloqa")({
   component: ContactPage,
 });
 
-function ContactPage() {
+export function ContactPage() {
   const { t } = useTranslation();
 
   const channels = [
@@ -57,6 +57,7 @@ function ContactPage() {
             title={t("contact.title")}
             sub={t("contact.subtitle")}
             center
+            level="h1"
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

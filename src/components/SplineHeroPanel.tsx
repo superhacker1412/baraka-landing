@@ -1,5 +1,13 @@
 import { useEffect, useRef } from "react";
-import { Boxes, CheckCircle2, Route, ShieldCheck, Truck } from "lucide-react";
+import {
+  Boxes,
+  CheckCircle2,
+  MapPin,
+  PackageCheck,
+  PenLine,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
 import { gsap } from "gsap";
 import { useTranslation } from "@/lib/i18n";
 
@@ -7,22 +15,10 @@ export function SplineHeroPanel() {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
 
-  const operationCards = [
-    { title: t("hero.panelOrder"), value: "SL-24108", Icon: CheckCircle2, tone: "text-success" },
-    { title: t("hero.panelWarehouse"), value: "Sergeli Hub", Icon: Boxes, tone: "text-info" },
-    {
-      title: t("hero.panelCourier"),
-      value: t("hero.panelOnRoad"),
-      Icon: Truck,
-      tone: "text-purple",
-    },
-    { title: t("hero.panelRoute"), value: "12.8 km", Icon: Route, tone: "text-gold" },
-  ];
-
-  const stats = [
-    [t("hero.panelSales"), "18.4M"],
-    [t("hero.panelBooking"), "42 m2"],
-    [t("hero.panelDelivery"), "12"],
+  const warehouses = [
+    [t("hero.panelWarehouseTashkent"), "32%"],
+    [t("hero.panelWarehouseAndijan"), "48%"],
+    [t("hero.panelWarehouseFergana"), "21%"],
   ] as const;
 
   useEffect(() => {
@@ -30,17 +26,16 @@ export function SplineHeroPanel() {
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        "[data-hero-chip]",
-        { y: 18, opacity: 0, scale: 0.96 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.75, stagger: 0.08, ease: "power3.out" },
+        "[data-hero-card]",
+        { y: 18, opacity: 0, scale: 0.97 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.72, stagger: 0.08, ease: "power3.out" },
       );
 
-      gsap.to("[data-hero-track]", {
-        xPercent: -18,
-        duration: 18,
+      gsap.to("[data-hero-route]", {
+        strokeDashoffset: -42,
+        duration: 4.5,
         repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+        ease: "none",
       });
     }, ref);
 
@@ -50,7 +45,7 @@ export function SplineHeroPanel() {
   return (
     <div
       ref={ref}
-      className="relative min-h-[420px] overflow-hidden rounded-[24px] border border-border bg-card shadow-2xl"
+      className="relative min-h-[460px] overflow-hidden rounded-[24px] border border-border bg-card shadow-2xl shadow-foreground/8"
       aria-label={t("hero.panelLiveMap")}
     >
       <div
@@ -63,62 +58,119 @@ export function SplineHeroPanel() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.25]"
+        className="absolute inset-0 opacity-[0.4]"
         style={{
           backgroundImage:
-            "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
-          backgroundSize: "42px 42px",
+            "linear-gradient(36deg, transparent 47%, color-mix(in oklab, var(--border) 70%, transparent) 48%, transparent 49%), linear-gradient(118deg, transparent 47%, color-mix(in oklab, var(--border) 70%, transparent) 48%, transparent 49%)",
+          backgroundSize: "82px 82px",
           maskImage:
             "linear-gradient(180deg, transparent 0%, black 24%, black 78%, transparent 100%)",
         }}
       />
 
-      <div className="relative z-10 grid min-h-[420px] grid-rows-[auto_1fr_auto] gap-4 p-5">
-        <div className="flex items-center justify-between gap-3">
-          <div
-            data-hero-chip
-            className="rounded-full border border-border bg-card/90 px-3 py-1.5 text-[11px] font-semibold shadow-sm backdrop-blur"
-          >
-            {t("hero.panelLiveMap")}
+      <svg
+        aria-hidden
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 620 460"
+        preserveAspectRatio="none"
+      >
+        <path
+          data-hero-route
+          d="M420 84 C500 92 525 144 486 189 L410 276 C372 319 425 374 532 386"
+          fill="none"
+          stroke="var(--primary)"
+          strokeWidth="8"
+          strokeLinecap="round"
+          strokeDasharray="18 24"
+        />
+      </svg>
+
+      <div className="relative z-10 min-h-[460px] p-5">
+        <div
+          data-hero-card
+          className="absolute left-5 top-6 w-[215px] rounded-2xl border border-border bg-card/94 p-4 shadow-xl shadow-foreground/10 backdrop-blur"
+        >
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div className="font-semibold">{t("hero.panelOrder")} #12548</div>
+            <div className="rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-semibold text-success">
+              {t("hero.panelNew")}
+            </div>
           </div>
-          <div
-            data-hero-chip
-            className="rounded-full bg-success/10 px-3 py-1.5 text-[11px] font-semibold text-success shadow-sm backdrop-blur"
-          >
-            {t("hero.panelHistory")}
-          </div>
+          {[
+            [t("hero.panelProducts"), "12"],
+            [t("hero.panelQuantity"), "34"],
+            [t("hero.panelDeliveryDate"), "25.05.2025"],
+            [t("hero.panelAddress"), "Toshkent"],
+          ].map(([label, value]) => (
+            <div key={label} className="flex justify-between gap-4 py-1 text-[12px]">
+              <span className="text-muted-foreground">{label}</span>
+              <span className="font-medium">{value}</span>
+            </div>
+          ))}
         </div>
 
-        <div className="relative overflow-hidden rounded-[20px] border border-border bg-background/70 p-4 shadow-sm backdrop-blur">
-          <div data-hero-track className="absolute left-0 top-8 flex w-[140%] gap-3" aria-hidden>
-            {operationCards.map(({ title, value, Icon, tone }) => (
-              <div
-                key={title}
-                className="w-44 shrink-0 rounded-2xl border border-border bg-card/90 p-4 shadow-sm backdrop-blur"
-              >
-                <Icon className={`h-5 w-5 ${tone}`} />
-                <div className="mt-4 text-[11px] uppercase text-muted-foreground">{title}</div>
-                <div className="mt-1 truncate text-[16px] font-semibold">{value}</div>
-              </div>
-            ))}
+        <div
+          data-hero-card
+          className="absolute bottom-8 left-8 w-[285px] rounded-2xl border border-border bg-card/94 p-4 shadow-xl shadow-foreground/10 backdrop-blur"
+        >
+          <div className="mb-3 flex items-center gap-2 text-[13px] font-semibold">
+            <Boxes className="h-4 w-4 text-primary" aria-hidden />
+            {t("hero.panelWarehouses")}
           </div>
-
-          <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-3">
-            {stats.map(([label, value]) => (
-              <div
-                key={label}
-                className="rounded-xl border border-border bg-card/90 p-3 shadow-sm backdrop-blur"
-              >
-                <div className="text-[10.5px] text-muted-foreground">{label}</div>
-                <div className="mt-1 text-[17px] font-semibold">{value}</div>
+          <div className="grid gap-3">
+            {warehouses.map(([name, value]) => (
+              <div key={name}>
+                <div className="mb-1 flex items-center justify-between gap-3 text-[12px]">
+                  <span className="font-medium">{name}</span>
+                  <span className="text-muted-foreground">{value}</span>
+                </div>
+                <div className="h-1.5 overflow-hidden rounded-full bg-muted">
+                  <div className="h-full rounded-full bg-primary" style={{ width: value }} />
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <div
-          data-hero-chip
-          className="flex items-center gap-2 rounded-2xl border border-border bg-card/90 p-3 shadow-sm backdrop-blur"
+          data-hero-card
+          className="absolute right-5 top-16 hidden w-[118px] rounded-2xl border border-border bg-card/90 p-3 text-center shadow-lg backdrop-blur sm:block"
+        >
+          <MapPin className="mx-auto h-7 w-7 text-primary" fill="currentColor" aria-hidden />
+          <div className="mt-2 text-[11px] font-semibold">{t("hero.panelWarehouse")}</div>
+        </div>
+
+        <div
+          data-hero-card
+          className="absolute right-6 bottom-7 w-[190px] rounded-2xl border border-border bg-card/94 p-4 shadow-xl shadow-foreground/10 backdrop-blur"
+        >
+          <div className="mb-3 flex items-center gap-2 text-success">
+            <CheckCircle2 className="h-4 w-4" aria-hidden />
+            <span className="text-[13px] font-semibold">{t("hero.panelDelivered")}</span>
+          </div>
+          <div className="rounded-xl border border-border bg-background p-3">
+            <div className="mb-3 flex items-center gap-2">
+              <Truck className="h-4 w-4 text-primary" aria-hidden />
+              <span className="text-[12px] font-medium">{t("hero.panelCourier")}</span>
+            </div>
+            <div className="h-10 rounded-lg bg-muted" aria-hidden />
+            <div className="mt-2 flex items-center gap-2 text-[11px] text-muted-foreground">
+              <PenLine className="h-3.5 w-3.5" aria-hidden />
+              {t("hero.panelSignature")}
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-hero-card
+          className="absolute right-[168px] top-[190px] grid h-12 w-12 place-items-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+        >
+          <PackageCheck className="h-6 w-6" aria-hidden />
+        </div>
+
+        <div
+          data-hero-card
+          className="absolute left-5 right-5 top-auto bottom-0 flex items-center gap-2 rounded-2xl border border-border bg-card/92 p-3 shadow-sm backdrop-blur sm:left-auto sm:right-[232px] sm:w-[245px]"
         >
           <ShieldCheck className="h-4 w-4 shrink-0 text-success" aria-hidden />
           <div className="min-w-0">

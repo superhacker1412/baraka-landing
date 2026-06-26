@@ -68,10 +68,7 @@ function MapPlaceholder() {
 
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 to-transparent p-4 pt-10 text-center">
         <p className="text-[13px] font-medium">{t("landing.map.demoTitle")}</p>
-        <p className="mt-1 text-[11.5px] text-muted-foreground">
-          {t("landing.map.demoHint")}{" "}
-          <code className="rounded bg-muted px-1 py-0.5 text-[10.5px]">VITE_MAPTILER_API_KEY</code>
-        </p>
+        <p className="mt-1 text-[11.5px] text-muted-foreground">{t("landing.map.demoHint")}</p>
       </div>
     </div>
   );
@@ -94,6 +91,8 @@ function LiveMap() {
       const map = new Map({
         container: mapContainerRef.current,
         style: getMapStyle(),
+        projection: "mercator",
+        logSDKVersion: false,
         center: TASHKENT_CENTER_LNG_LAT,
         zoom: 10.5,
       });
@@ -131,11 +130,11 @@ function LiveMap() {
       el.className = "group flex flex-col items-center border-0 bg-transparent p-0 cursor-pointer";
       el.setAttribute("aria-label", wh.name);
       el.innerHTML = `
-        <div class="rounded-full bg-primary p-1.5 shadow-md ring-2 ring-background transition-transform group-hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span class="mt-1 max-w-[96px] truncate rounded-md bg-card px-2 py-0.5 text-[10px] font-medium shadow-sm">${wh.name}</span>
-      `;
+ <div class="rounded-full bg-primary p-1.5 shadow-md ring-2 ring-background transition-transform group-hover:scale-110">
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+ </div>
+ <span class="mt-1 max-w-[96px] truncate rounded-md bg-card px-2 py-0.5 text-[10px] font-medium shadow-sm">${wh.name}</span>
+ `;
       el.addEventListener("click", (e) => {
         e.stopPropagation();
         setActiveId(wh.id);

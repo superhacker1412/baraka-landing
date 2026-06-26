@@ -11,7 +11,7 @@ export const Route = createFileRoute("/oldindan-royxat")({
   component: PreRegistrationPage,
 });
 
-function PreRegistrationPage() {
+export function PreRegistrationPage() {
   const { t } = useTranslation();
 
   return (
@@ -24,6 +24,7 @@ function PreRegistrationPage() {
             title={t("forms.preRegistration.title")}
             sub={t("forms.preRegistration.subtitle")}
             center
+            level="h1"
           />
           <div className="mt-6 flex items-center justify-center gap-2 text-[12px] text-muted-foreground">
             <Sparkles className="h-4 w-4 text-primary" aria-hidden />

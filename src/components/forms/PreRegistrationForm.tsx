@@ -21,6 +21,8 @@ const BUSINESS_TYPES: BusinessType[] = [
   "Boshqa",
 ];
 
+const CONTACT_LANGUAGES = ["uz", "ru", "en"] as const;
+
 type PreRegistrationFormProps = {
   onSuccess?: () => void;
   className?: string;
@@ -29,6 +31,7 @@ type PreRegistrationFormProps = {
 export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrationFormProps) {
   const { t, tRaw } = useTranslation();
   const businessLabels = tRaw<string[]>("forms.preRegistration.businessTypes");
+  const contactLanguageLabels = tRaw<string[]>("forms.preRegistration.contactLanguages");
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -50,7 +53,9 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
     const phone = String(data.get("phone") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const businessType = String(data.get("businessType") ?? "") as BusinessType;
+    const businessName = String(data.get("businessName") ?? "").trim();
     const city = String(data.get("city") ?? "").trim();
+    const contactLanguage = String(data.get("contactLanguage") ?? "").trim();
     const note = String(data.get("note") ?? "").trim();
 
     if (!name || !phone || !businessType || !city) {
@@ -60,6 +65,19 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
 
     setSubmitting(true);
     try {
+      const languageIndex = CONTACT_LANGUAGES.findIndex((lang) => lang === contactLanguage);
+      const contactLanguageLabel =
+        languageIndex >= 0 ? (contactLanguageLabels[languageIndex] ?? contactLanguage) : "";
+      const fullNote = [
+        businessName ? `${t("forms.preRegistration.businessName")}: ${businessName}` : "",
+        contactLanguageLabel
+          ? `${t("forms.preRegistration.contactLanguage")}: ${contactLanguageLabel}`
+          : "",
+        note,
+      ]
+        .filter(Boolean)
+        .join("\n");
+
       await submitPreRegistration(
         {
           name,
@@ -67,7 +85,7 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
           email: email || undefined,
           businessType,
           city,
-          note: note || undefined,
+          note: fullNote || undefined,
         },
         token,
       );
@@ -117,6 +135,17 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
           />
         </div>
         <div className="grid gap-1.5">
+          <Label htmlFor="pre-business-name">{t("forms.preRegistration.businessName")}</Label>
+          <Input
+            id="pre-business-name"
+            name="businessName"
+            placeholder={t("forms.preRegistration.businessNamePlaceholder")}
+          />
+        </div>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-1.5">
           <Label htmlFor="pre-business">{t("forms.preRegistration.businessType")} *</Label>
           <Select id="pre-business" name="businessType" required defaultValue="">
             <option value="" disabled>
@@ -129,16 +158,26 @@ export function PreRegistrationForm({ onSuccess, className = "" }: PreRegistrati
             ))}
           </Select>
         </div>
+        <div className="grid gap-1.5">
+          <Label htmlFor="pre-city">{t("forms.preRegistration.city")} *</Label>
+          <Input
+            id="pre-city"
+            name="city"
+            required
+            placeholder={t("forms.preRegistration.cityPlaceholder")}
+          />
+        </div>
       </div>
 
       <div className="grid gap-1.5">
-        <Label htmlFor="pre-city">{t("forms.preRegistration.city")} *</Label>
-        <Input
-          id="pre-city"
-          name="city"
-          required
-          placeholder={t("forms.preRegistration.cityPlaceholder")}
-        />
+        <Label htmlFor="pre-contact-language">{t("forms.preRegistration.contactLanguage")}</Label>
+        <Select id="pre-contact-language" name="contactLanguage" defaultValue="uz">
+          {CONTACT_LANGUAGES.map((lang, index) => (
+            <option key={lang} value={lang}>
+              {contactLanguageLabels[index] ?? lang}
+            </option>
+          ))}
+        </Select>
       </div>
 
       <div className="grid gap-1.5">

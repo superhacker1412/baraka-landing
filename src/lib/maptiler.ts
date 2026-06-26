@@ -1,6 +1,6 @@
-import { config, MapStyle } from "@maptiler/sdk";
+import { config } from "@maptiler/sdk";
 
-/** MapTiler API key — set VITE_MAPTILER_API_KEY in .env */
+/** MapTiler API key - set VITE_MAPTILER_API_KEY in .env */
 export const MAPTILER_API_KEY = import.meta.env.VITE_MAPTILER_API_KEY?.trim() ?? "";
 
 export function hasMaptilerApiKey() {
@@ -23,5 +23,5 @@ export function configureMaptiler() {
 
 export function getMapStyle() {
   configureMaptiler();
-  return MapStyle.STREETS;
+  return `https://api.maptiler.com/maps/basic-v2-light/style.json?key=${MAPTILER_API_KEY}`;
 }

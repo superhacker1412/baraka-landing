@@ -11,8 +11,18 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TariffRouteImport } from './routes/tariff'
 import { Route as TaklifRouteImport } from './routes/taklif'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PreRegistrationRouteImport } from './routes/pre-registration'
 import { Route as OldindanRoyxatRouteImport } from './routes/oldindan-royxat'
+import { Route as ForWarehousesRouteImport } from './routes/for-warehouses'
+import { Route as ForSuppliersRouteImport } from './routes/for-suppliers'
+import { Route as ForShopsRouteImport } from './routes/for-shops'
+import { Route as ForSellersRouteImport } from './routes/for-sellers'
+import { Route as ForCouriersRouteImport } from './routes/for-couriers'
+import { Route as ForBuyersRouteImport } from './routes/for-buyers'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AloqaRouteImport } from './routes/aloqa'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminFeedbackRouteImport } from './routes/admin/feedback'
 
@@ -26,14 +36,64 @@ const TaklifRoute = TaklifRouteImport.update({
   path: '/taklif',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreRegistrationRoute = PreRegistrationRouteImport.update({
+  id: '/pre-registration',
+  path: '/pre-registration',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OldindanRoyxatRoute = OldindanRoyxatRouteImport.update({
   id: '/oldindan-royxat',
   path: '/oldindan-royxat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ForWarehousesRoute = ForWarehousesRouteImport.update({
+  id: '/for-warehouses',
+  path: '/for-warehouses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForSuppliersRoute = ForSuppliersRouteImport.update({
+  id: '/for-suppliers',
+  path: '/for-suppliers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForShopsRoute = ForShopsRouteImport.update({
+  id: '/for-shops',
+  path: '/for-shops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForSellersRoute = ForSellersRouteImport.update({
+  id: '/for-sellers',
+  path: '/for-sellers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForCouriersRoute = ForCouriersRouteImport.update({
+  id: '/for-couriers',
+  path: '/for-couriers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForBuyersRoute = ForBuyersRouteImport.update({
+  id: '/for-buyers',
+  path: '/for-buyers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AloqaRoute = AloqaRouteImport.update({
   id: '/aloqa',
   path: '/aloqa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,16 +109,36 @@ const AdminFeedbackRoute = AdminFeedbackRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aloqa': typeof AloqaRoute
+  '/contact': typeof ContactRoute
+  '/for-buyers': typeof ForBuyersRoute
+  '/for-couriers': typeof ForCouriersRoute
+  '/for-sellers': typeof ForSellersRoute
+  '/for-shops': typeof ForShopsRoute
+  '/for-suppliers': typeof ForSuppliersRoute
+  '/for-warehouses': typeof ForWarehousesRoute
   '/oldindan-royxat': typeof OldindanRoyxatRoute
+  '/pre-registration': typeof PreRegistrationRoute
+  '/pricing': typeof PricingRoute
   '/taklif': typeof TaklifRoute
   '/tariff': typeof TariffRoute
   '/admin/feedback': typeof AdminFeedbackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aloqa': typeof AloqaRoute
+  '/contact': typeof ContactRoute
+  '/for-buyers': typeof ForBuyersRoute
+  '/for-couriers': typeof ForCouriersRoute
+  '/for-sellers': typeof ForSellersRoute
+  '/for-shops': typeof ForShopsRoute
+  '/for-suppliers': typeof ForSuppliersRoute
+  '/for-warehouses': typeof ForWarehousesRoute
   '/oldindan-royxat': typeof OldindanRoyxatRoute
+  '/pre-registration': typeof PreRegistrationRoute
+  '/pricing': typeof PricingRoute
   '/taklif': typeof TaklifRoute
   '/tariff': typeof TariffRoute
   '/admin/feedback': typeof AdminFeedbackRoute
@@ -66,8 +146,18 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aloqa': typeof AloqaRoute
+  '/contact': typeof ContactRoute
+  '/for-buyers': typeof ForBuyersRoute
+  '/for-couriers': typeof ForCouriersRoute
+  '/for-sellers': typeof ForSellersRoute
+  '/for-shops': typeof ForShopsRoute
+  '/for-suppliers': typeof ForSuppliersRoute
+  '/for-warehouses': typeof ForWarehousesRoute
   '/oldindan-royxat': typeof OldindanRoyxatRoute
+  '/pre-registration': typeof PreRegistrationRoute
+  '/pricing': typeof PricingRoute
   '/taklif': typeof TaklifRoute
   '/tariff': typeof TariffRoute
   '/admin/feedback': typeof AdminFeedbackRoute
@@ -76,24 +166,54 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/aloqa'
+    | '/contact'
+    | '/for-buyers'
+    | '/for-couriers'
+    | '/for-sellers'
+    | '/for-shops'
+    | '/for-suppliers'
+    | '/for-warehouses'
     | '/oldindan-royxat'
+    | '/pre-registration'
+    | '/pricing'
     | '/taklif'
     | '/tariff'
     | '/admin/feedback'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/aloqa'
+    | '/contact'
+    | '/for-buyers'
+    | '/for-couriers'
+    | '/for-sellers'
+    | '/for-shops'
+    | '/for-suppliers'
+    | '/for-warehouses'
     | '/oldindan-royxat'
+    | '/pre-registration'
+    | '/pricing'
     | '/taklif'
     | '/tariff'
     | '/admin/feedback'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/aloqa'
+    | '/contact'
+    | '/for-buyers'
+    | '/for-couriers'
+    | '/for-sellers'
+    | '/for-shops'
+    | '/for-suppliers'
+    | '/for-warehouses'
     | '/oldindan-royxat'
+    | '/pre-registration'
+    | '/pricing'
     | '/taklif'
     | '/tariff'
     | '/admin/feedback'
@@ -101,8 +221,18 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AloqaRoute: typeof AloqaRoute
+  ContactRoute: typeof ContactRoute
+  ForBuyersRoute: typeof ForBuyersRoute
+  ForCouriersRoute: typeof ForCouriersRoute
+  ForSellersRoute: typeof ForSellersRoute
+  ForShopsRoute: typeof ForShopsRoute
+  ForSuppliersRoute: typeof ForSuppliersRoute
+  ForWarehousesRoute: typeof ForWarehousesRoute
   OldindanRoyxatRoute: typeof OldindanRoyxatRoute
+  PreRegistrationRoute: typeof PreRegistrationRoute
+  PricingRoute: typeof PricingRoute
   TaklifRoute: typeof TaklifRoute
   TariffRoute: typeof TariffRoute
   AdminFeedbackRoute: typeof AdminFeedbackRoute
@@ -110,6 +240,76 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pre-registration': {
+      id: '/pre-registration'
+      path: '/pre-registration'
+      fullPath: '/pre-registration'
+      preLoaderRoute: typeof PreRegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-warehouses': {
+      id: '/for-warehouses'
+      path: '/for-warehouses'
+      fullPath: '/for-warehouses'
+      preLoaderRoute: typeof ForWarehousesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-suppliers': {
+      id: '/for-suppliers'
+      path: '/for-suppliers'
+      fullPath: '/for-suppliers'
+      preLoaderRoute: typeof ForSuppliersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-shops': {
+      id: '/for-shops'
+      path: '/for-shops'
+      fullPath: '/for-shops'
+      preLoaderRoute: typeof ForShopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-sellers': {
+      id: '/for-sellers'
+      path: '/for-sellers'
+      fullPath: '/for-sellers'
+      preLoaderRoute: typeof ForSellersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-couriers': {
+      id: '/for-couriers'
+      path: '/for-couriers'
+      fullPath: '/for-couriers'
+      preLoaderRoute: typeof ForCouriersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-buyers': {
+      id: '/for-buyers'
+      path: '/for-buyers'
+      fullPath: '/for-buyers'
+      preLoaderRoute: typeof ForBuyersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tariff': {
       id: '/tariff'
       path: '/tariff'
@@ -157,8 +357,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AloqaRoute: AloqaRoute,
+  ContactRoute: ContactRoute,
+  ForBuyersRoute: ForBuyersRoute,
+  ForCouriersRoute: ForCouriersRoute,
+  ForSellersRoute: ForSellersRoute,
+  ForShopsRoute: ForShopsRoute,
+  ForSuppliersRoute: ForSuppliersRoute,
+  ForWarehousesRoute: ForWarehousesRoute,
   OldindanRoyxatRoute: OldindanRoyxatRoute,
+  PreRegistrationRoute: PreRegistrationRoute,
+  PricingRoute: PricingRoute,
   TaklifRoute: TaklifRoute,
   TariffRoute: TariffRoute,
   AdminFeedbackRoute: AdminFeedbackRoute,

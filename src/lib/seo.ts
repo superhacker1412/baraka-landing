@@ -8,16 +8,48 @@ export const SITE_URL =
 export const OG_IMAGE_PATH = "/og-image.png";
 export const OG_IMAGE = `${SITE_URL}${OG_IMAGE_PATH}`;
 
-export const PUBLIC_PATHS = ["/", "/oldindan-royxat", "/taklif", "/aloqa", "/tariff"] as const;
+export const PUBLIC_PATHS = [
+  "/",
+  "/about",
+  "/for-sellers",
+  "/for-shops",
+  "/for-suppliers",
+  "/for-warehouses",
+  "/for-couriers",
+  "/for-buyers",
+  "/pre-registration",
+  "/taklif",
+  "/contact",
+  "/pricing",
+] as const;
 
-export type SeoPageKey = "home" | "preRegistration" | "feedback" | "contact" | "pricing";
+export type SeoPageKey =
+  | "home"
+  | "about"
+  | "forSellers"
+  | "forShops"
+  | "forSuppliers"
+  | "forWarehouses"
+  | "forCouriers"
+  | "forBuyers"
+  | "preRegistration"
+  | "feedback"
+  | "contact"
+  | "pricing";
 
 const PAGE_PATH: Record<SeoPageKey, string> = {
   home: "/",
-  preRegistration: "/oldindan-royxat",
+  about: "/about",
+  forSellers: "/for-sellers",
+  forShops: "/for-shops",
+  forSuppliers: "/for-suppliers",
+  forWarehouses: "/for-warehouses",
+  forCouriers: "/for-couriers",
+  forBuyers: "/for-buyers",
+  preRegistration: "/pre-registration",
   feedback: "/taklif",
-  contact: "/aloqa",
-  pricing: "/tariff",
+  contact: "/contact",
+  pricing: "/pricing",
 };
 
 export function pagePath(page: SeoPageKey): string {

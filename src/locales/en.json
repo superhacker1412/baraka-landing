@@ -4,11 +4,11 @@
     "tagline": "Trade · Warehouse · Delivery"
   },
   "nav": {
-    "system": "System",
+    "system": "Platform",
     "warehouse": "Warehouse",
     "map": "Map",
-    "roles": "Who it's for",
-    "workflow": "Process",
+    "roles": "Roles",
+    "workflow": "Features",
     "why": "Why it matters",
     "example": "Example",
     "faq": "FAQ",
@@ -16,7 +16,7 @@
     "registerShort": "Sign up",
     "registerHeaderCta": "Pre-register",
     "registerCta": "Pre-register",
-    "contact": "Contact us",
+    "contact": "Contact",
     "pricing": "Pricing",
     "feedbackCta": "Send feedback",
     "menu": "Menu",
@@ -52,15 +52,15 @@
     "retry": "Try again"
   },
   "hero": {
-    "eyebrow": "Launching soon — Uzbekistan",
+    "eyebrow": "Launching soon - Uzbekistan",
     "promo": "1 year free for early pre-registrations",
     "titleBefore": "Manage trade, warehousing, and delivery",
     "titleHighlight": "in one system",
     "titleAfter": "",
-    "subtitle": "Barakali Savdo connects sellers, shops, suppliers, warehouses, couriers, and buyers in one workflow.",
-    "secure": "Secure access",
-    "rolesCount": "9 roles",
-    "warehouse": "Warehouse & booking",
+    "subtitle": "Accept orders faster, reserve warehouse space ahead of time, and control delivery until the customer confirms receipt.",
+    "secure": "Faster orders",
+    "rolesCount": "Clear warehouse",
+    "warehouse": "Controlled delivery",
     "panelLiveMap": "Live order map",
     "panelHistory": "Activity history",
     "panelOrder": "Order",
@@ -71,16 +71,52 @@
     "panelSales": "Sales",
     "panelBooking": "Booking",
     "panelDelivery": "Delivery",
-    "panelProofTitle": "Photo + signature proof",
-    "panelProofText": "Status changes only after proof is saved"
+    "panelProofTitle": "Photo, signature, and confirmation",
+    "panelProofText": "Important handover actions are saved when goods move",
+    "title": "Barakali Savdo",
+    "rolesCta": "View roles",
+    "panelNew": "New",
+    "panelProducts": "Products",
+    "panelQuantity": "Quantity",
+    "panelDeliveryDate": "Delivery",
+    "panelAddress": "Address",
+    "panelWarehouses": "Warehouses",
+    "panelWarehouseTashkent": "Tashkent warehouse",
+    "panelWarehouseAndijan": "Andijan warehouse",
+    "panelWarehouseFergana": "Fergana warehouse",
+    "panelDelivered": "Delivered",
+    "panelSignature": "Confirmed with signature",
+    "panelSellerCabinet": "Control panel",
+    "panelSellerCabinetSub": "Orders, warehouse, revenue, and stock on one screen.",
+    "panelAdminSaved": "Request reaches the team",
+    "panelOrders": "orders",
+    "panelRevenue": "revenue",
+    "panelInventory": "stock",
+    "panelLiveData": "Live control",
+    "panelNoExcel": "Control without Excel or calls"
   },
   "landing": {
     "stats": [
-      { "value": "5", "label": "Core role workflows" },
-      { "value": "9", "label": "Platform roles" },
-      { "value": "m²", "label": "Warehouse booking" },
-      { "value": "2D", "label": "Warehouse layout" },
-      { "value": "Book", "label": "Goods & space" }
+      {
+      "value": "1 year",
+      "label": "Free offer for early participants"
+      },
+      {
+      "value": "5",
+      "label": "Core stages from order to receipt"
+      },
+      {
+        "value": "m²",
+      "label": "Warehouse space booking"
+      },
+      {
+      "value": "9 roles",
+      "label": "Participants in one working system"
+      },
+      {
+      "value": "QR",
+      "label": "Order status for the buyer"
+      }
     ],
     "about": {
       "eyebrow": "About",
@@ -97,14 +133,14 @@
         },
         {
           "title": "Clear and organized",
-          "text": "Each role knows its task — you can see where every order stands."
+          "text": "Each role knows its task - you can see where every order stands."
         }
       ]
     },
     "roles": {
       "eyebrow": "Roles",
-      "title": "Who is it for?",
-      "subtitle": "Each role has its own job — seller, warehouse, supplier, courier, and buyer.",
+      "title": "One platform for every role",
+      "subtitle": "Seller, shop, supplier, warehouse, courier, and buyer work in one chain - each person sees their task and status.",
       "items": [
         {
           "title": "Platform administrator",
@@ -114,32 +150,32 @@
         {
           "title": "Seller owner",
           "description": "Registers, sources or adds products, creates a warehouse or books space, and creates orders.",
-          "benefit": "All trade in one place — no manual spreadsheets."
+          "benefit": "All trade in one place - no manual spreadsheets."
         },
         {
           "title": "Seller manager",
           "description": "Tracks daily orders, customers, and warehouse occupancy.",
-          "benefit": "The team works from the same data — less confusion."
+          "benefit": "The team works from the same data - less confusion."
         },
         {
           "title": "Shop owner",
           "description": "Manages stock, sales, and expiry dates.",
-          "benefit": "Stock and profit are visible — fewer losses."
+          "benefit": "Stock and profit are visible - fewer losses."
         },
         {
           "title": "Supplier",
           "description": "Creates product batches. Sellers book them; goods are sent to the chosen warehouse when they arrive.",
-          "benefit": "Orders are planned ahead — fewer unnecessary shipments."
+          "benefit": "Orders are planned ahead - fewer unnecessary shipments."
         },
         {
           "title": "Warehouse owner",
           "description": "Registers a warehouse, sets price per m², and accepts booking requests via a 2D layout.",
-          "benefit": "Empty space gets booked — revenue grows."
+          "benefit": "Empty space gets booked - revenue grows."
         },
         {
           "title": "Warehouse staff",
           "description": "Receives, stores goods, and processes outbound shipments.",
-          "benefit": "You know what's where — less searching and mix-ups."
+          "benefit": "You know what's where - less searching and mix-ups."
         },
         {
           "title": "Courier",
@@ -151,15 +187,16 @@
           "description": "The seller creates an order, goods are prepared, and the customer receives them.",
           "benefit": "The customer knows order status and can report issues quickly."
         }
-      ]
+      ],
+      "detailCta": "View details"
     },
     "warehouse": {
       "eyebrow": "Warehouse",
       "title": "Book space on a 2D layout",
-      "subtitle": "The seller picks the m² they need — the warehouse owner sees free, occupied, and booked zones on one 2D map.",
-      "schemaTitle": "Sergeli warehouse — 24 m² (6×4)",
-      "clickHint": "Click available cells — multi-select",
-      "gridAria": "Warehouse cells — 1 m² each",
+      "subtitle": "The seller picks the m² they need - the warehouse owner sees free, occupied, and booked zones on one 2D map.",
+      "schemaTitle": "Sergeli warehouse - 24 m² (6x4)",
+      "clickHint": "Click available cells - multi-select",
+      "gridAria": "Warehouse cells - 1 m² each",
       "areaSummary": "{{occupied}} m² occupied, {{available}} m² free",
       "areaBooked": "{{booked}} m² booked",
       "cellSqm": "{{sqm}} m²",
@@ -169,7 +206,7 @@
       "statusSelected": "Selected",
       "sellerTitle": "Seller",
       "sellerText": "Chooses the required m² and sends a booking request.",
-      "selectedReady": "Selected: {{sqm}} m² ({{count}} cells) — ready to submit",
+      "selectedReady": "Selected: {{sqm}} m² ({{count}} cells) - ready to submit",
       "selectCell": "Select one or more available cells",
       "ownerTitle": "Warehouse owner",
       "ownerText": "Sees free, occupied, and booked zones on the 2D layout and confirms requests."
@@ -177,45 +214,52 @@
     "map": {
       "eyebrow": "Map",
       "title": "Tashkent warehouses",
-      "subtitle": "Find a nearby warehouse on the map — space, area, and address in one place.",
-      "demoTitle": "Tashkent — demo warehouses",
-      "demoHint": "Set VITE_MAPTILER_API_KEY in your .env file for the live map",
-      "loadError": "Map failed to load. Check your API key.",
+      "subtitle": "Find a nearby warehouse on the map - space, area, and address in one place.",
+      "visualEyebrow": "Across Uzbekistan",
+      "visualTitle": "Warehouse and delivery route on one map",
+      "visualText": "See where goods are, choose warehouse space, and plan delivery from Tashkent to the regions ahead of time.",
+      "visualHub": "Tashkent hub",
+      "visualHubText": "Orders, warehouses, and couriers stay visible in one workflow.",
+      "visualRoute": "Regional routes",
+      "visualRouteText": "Samarkand, Fergana, and Andijan connect into one clear process.",
+      "demoTitle": "Tashkent warehouse network",
+      "demoHint": "Warehouses, available space, and routes stay visible on one map.",
+      "loadError": "The map opened in a simplified view.",
       "partners": {
         "eyebrow": "Partnership",
         "title": "Become a partner",
-        "subtitle": "Join the platform — get clients and orders for your role.",
+        "subtitle": "Join the platform - get clients and orders for your role.",
         "applyCta": "Submit application",
         "items": [
           {
             "id": "ombor",
             "title": "Warehouse owner",
-            "pitch": "Be our partner — list your warehouse on the map and attract clients."
+            "pitch": "Be our partner - list your warehouse on the map and attract clients."
           },
           {
             "id": "sotuvchi",
             "title": "Seller",
-            "pitch": "Join as a partner — manage orders, warehousing, and delivery in one system."
+            "pitch": "Join as a partner - manage orders, warehousing, and delivery in one system."
           },
           {
             "id": "yetkazib",
             "title": "Supplier",
-            "pitch": "Publish your product batches — sellers book from you and place orders."
+            "pitch": "Publish your product batches - sellers book from you and place orders."
           },
           {
             "id": "kuryer",
             "title": "Courier",
-            "pitch": "Take delivery jobs — sellers assign you or you apply yourself."
+            "pitch": "Take delivery jobs - sellers assign you or you apply yourself."
           },
           {
             "id": "dokon",
             "title": "Shop owner",
-            "pitch": "Connect your shop — manage stock, sales, and delivery on one platform."
+            "pitch": "Connect your shop - manage stock, sales, and delivery on one platform."
           },
           {
             "id": "xaridor",
             "title": "Buyer",
-            "pitch": "Share what convenient ordering and delivery should look like — we'll improve the service for you."
+            "pitch": "Share what convenient ordering and delivery should look like - we'll improve the service for you."
           }
         ]
       }
@@ -223,17 +267,26 @@
     "workflow": {
       "eyebrow": "Process",
       "title": "How does each role work?",
-      "subtitle": "Buyer, seller, warehouse, supplier, and courier — each has its own workflow.",
+      "subtitle": "Buyer, seller, warehouse, supplier, and courier - each has its own workflow.",
       "tabsAria": "Role workflows",
       "items": [
         {
           "id": "xaridor",
           "title": "Buyer",
-          "summary": "For the buyer it's simple — the seller creates an order, goods are prepared, the customer receives them.",
+          "summary": "For the buyer it's simple - the seller creates an order, goods are prepared, the customer receives them.",
           "steps": [
-            { "title": "Seller creates the order", "text": "The seller creates an order for the customer — product and quantity are chosen." },
-            { "title": "Supplier picks from warehouse", "text": "Required goods are taken from the warehouse or prepared by the supplier." },
-            { "title": "Customer receives", "text": "The order is delivered and accepted by the customer." }
+            {
+              "title": "Seller creates the order",
+              "text": "The seller creates an order for the customer - product and quantity are chosen."
+            },
+            {
+              "title": "Supplier picks from warehouse",
+              "text": "Required goods are taken from the warehouse or prepared by the supplier."
+            },
+            {
+              "title": "Customer receives",
+              "text": "The order is delivered and accepted by the customer."
+            }
           ]
         },
         {
@@ -241,10 +294,22 @@
           "title": "Seller",
           "summary": "The seller registers, sets up products and warehouse, then creates orders.",
           "steps": [
-            { "title": "Registers", "text": "Registers on the platform as a seller." },
-            { "title": "Chooses product source", "text": "Can buy from suppliers or add their own products." },
-            { "title": "Sets up warehouse", "text": "Creates their own warehouse or books space in an existing one." },
-            { "title": "Creates orders", "text": "Creates orders for customers and tracks progress." }
+            {
+              "title": "Registers",
+              "text": "Registers on the platform as a seller."
+            },
+            {
+              "title": "Chooses product source",
+              "text": "Can buy from suppliers or add their own products."
+            },
+            {
+              "title": "Sets up warehouse",
+              "text": "Creates their own warehouse or books space in an existing one."
+            },
+            {
+              "title": "Creates orders",
+              "text": "Creates orders for customers and tracks progress."
+            }
           ]
         },
         {
@@ -252,10 +317,22 @@
           "title": "Warehouse owner",
           "summary": "The warehouse owner lists space and accepts booking requests from sellers.",
           "steps": [
-            { "title": "Registers warehouse", "text": "Registers and lists the warehouse on the platform." },
-            { "title": "Shows price and area", "text": "Area size and price per m² are displayed." },
-            { "title": "Requests via 2D layout", "text": "Accepts booking requests via the 2D layout — by m²." },
-            { "title": "Accepts request", "text": "If it fits — accepts the request and gets seller contact details." }
+            {
+              "title": "Registers warehouse",
+              "text": "Registers and lists the warehouse on the platform."
+            },
+            {
+              "title": "Shows price and area",
+              "text": "Area size and price per m² are displayed."
+            },
+            {
+              "title": "Requests via 2D layout",
+              "text": "Accepts booking requests via the 2D layout - by m²."
+            },
+            {
+              "title": "Accepts request",
+              "text": "If it fits - accepts the request and gets seller contact details."
+            }
           ]
         },
         {
@@ -263,76 +340,133 @@
           "title": "Supplier",
           "summary": "The supplier lists product batches; sellers book them.",
           "steps": [
-            { "title": "Creates batches", "text": "Registers and creates product batches." },
-            { "title": "Shows price and timing", "text": "Delivery time, unit price, and wholesale price are shown." },
-            { "title": "Sellers book", "text": "Sellers leave a «I'll buy» request and book." },
-            { "title": "Sends to warehouse", "text": "When goods arrive — they're sent to the seller's chosen warehouse." }
+            {
+              "title": "Creates batches",
+              "text": "Registers and creates product batches."
+            },
+            {
+              "title": "Shows price and timing",
+              "text": "Delivery time, unit price, and wholesale price are shown."
+            },
+            {
+              "title": "Sellers book",
+              "text": "Sellers leave a «I'll buy» request and book."
+            },
+            {
+              "title": "Sends to warehouse",
+              "text": "When goods arrive - they're sent to the seller's chosen warehouse."
+            }
           ]
         },
         {
           "id": "kuryer",
           "title": "Courier",
-          "summary": "The courier sees orders — gets assigned or applies themselves.",
+          "summary": "The courier sees orders - gets assigned or applies themselves.",
           "steps": [
-            { "title": "Sees orders", "text": "Views the list of available orders." },
-            { "title": "Assigned by seller", "text": "If the seller assigns a courier — the task appears in the courier dashboard." },
-            { "title": "Applies themselves", "text": "Or applies to a suitable order — «I'll deliver»." },
-            { "title": "Delivery details", "text": "After acceptance — gets seller and buyer details." }
+            {
+              "title": "Sees orders",
+              "text": "Views the list of available orders."
+            },
+            {
+              "title": "Assigned by seller",
+              "text": "If the seller assigns a courier - the task appears in the courier dashboard."
+            },
+            {
+              "title": "Applies themselves",
+              "text": "Or applies to a suitable order - «I'll deliver»."
+            },
+            {
+              "title": "Delivery details",
+              "text": "After acceptance - gets seller and buyer details."
+            }
           ]
         }
       ]
     },
     "why": {
-      "eyebrow": "Why it matters",
-      "title": "Problems and solutions",
-      "subtitle": "Everyday trade pain points and how Barakali Savdo helps.",
-      "problemsTitle": "Current problems",
-      "solutionsTitle": "Barakali solution",
-      "painPoints": [
-        "Orders get lost in Telegram",
-        "Stock is counted by hand",
-        "Sellers learn warehouse occupancy too late",
-        "Supplier delivers before demand is gathered",
-        "Courier says delivered, customer didn't receive",
-        "Returns aren't tracked",
-        "Profit is estimated roughly",
-        "Unclear who did what"
-      ],
-      "solutions": [
-        { "pain": "Orders are chaotic", "solution": "Each role does its job — orders move in order" },
-        { "pain": "No warehouse control", "solution": "Spaces and m² price are visible; booking is known in advance" },
-        { "pain": "Unreliable delivery", "solution": "Courier and customer details are clear — delivery follows plan" },
-        { "pain": "Roles overlap", "solution": "Each role has its task — no mixed responsibilities" }
+      "eyebrow": "Platform",
+      "title": "Why Barakali Savdo?",
+      "subtitle": "Telegram, calls, and Excel keep data scattered. Barakali Savdo brings orders, warehousing, and delivery into one clear flow."
+    },
+    "process": {
+      "title": "How it works",
+      "subtitle": "The platform carries an order through one chain, from goods to buyer confirmation.",
+      "steps": [
+        {
+          "title": "Goods arrive",
+          "text": "A supplier publishes a batch or the seller adds their own products."
+        },
+        {
+          "title": "Seller sets up",
+          "text": "Products, stock, prices, and orders are managed in one dashboard."
+        },
+        {
+          "title": "Warehouse is booked",
+          "text": "Free space is visible ahead of time, and the needed m² can be reserved."
+        },
+        {
+          "title": "Courier delivers",
+          "text": "Task, address, and delivery status are clear without extra calls."
+        },
+        {
+          "title": "Buyer confirms",
+          "text": "Status is available by QR or link, and receipt is confirmed."
+        }
       ]
     },
     "connections": {
       "eyebrow": "Connections",
       "title": "How roles connect",
-      "subtitle": "The seller is at the center — connected to supplier, warehouse, courier, and buyer.",
+      "subtitle": "The seller is at the center - connected to supplier, warehouse, courier, and buyer.",
       "summary": "The seller creates orders; supplier and warehouse prepare goods; the courier delivers",
       "roles": ["Supplier", "Seller", "Warehouse", "Courier", "Buyer"],
       "items": [
-        { "from": "Seller", "to": "Buyer", "label": "Creates order" },
-        { "from": "Supplier", "to": "Seller", "label": "Product batch & booking" },
-        { "from": "Seller", "to": "Warehouse", "label": "Books space" },
-        { "from": "Supplier", "to": "Warehouse", "label": "Delivers goods" },
-        { "from": "Seller", "to": "Courier", "label": "Assigns for delivery" },
-        { "from": "Courier", "to": "Buyer", "label": "Delivers order" }
+        {
+          "from": "Seller",
+          "to": "Buyer",
+          "label": "Creates order"
+        },
+        {
+          "from": "Supplier",
+          "to": "Seller",
+          "label": "Product batch & booking"
+        },
+        {
+          "from": "Seller",
+          "to": "Warehouse",
+          "label": "Books space"
+        },
+        {
+          "from": "Supplier",
+          "to": "Warehouse",
+          "label": "Delivers goods"
+        },
+        {
+          "from": "Seller",
+          "to": "Courier",
+          "label": "Assigns for delivery"
+        },
+        {
+          "from": "Courier",
+          "to": "Buyer",
+          "label": "Delivers order"
+        }
       ]
     },
     "example": {
       "eyebrow": "Example",
       "title": "Example: phone accessories seller",
-      "subtitle": "How daily trade can work — a simple story.",
+      "subtitle": "How daily trade can work - a simple story.",
       "p1": "Aziz sells phone accessories. He pre-registers, books a case batch from supplier Karim, and space at the Sergeli warehouse.",
-      "p2": "A customer orders 3 cases — Aziz creates the order in the system. Karim sends goods to the warehouse on time. Warehouse staff receives them.",
+      "p2": "A customer orders 3 cases - Aziz creates the order in the system. Karim sends goods to the warehouse on time. Warehouse staff receives them.",
       "p3": "Courier Jasur applies with «I'll deliver» or Aziz assigns him. After acceptance he gets the customer's address and contacts.",
-      "p4": "The customer receives the order. If there's an issue — they contact the seller."
+      "p4": "The customer receives the order. If there's an issue - they contact the seller."
     },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Frequently asked questions",
       "subtitle": "Short answers about the platform.",
+      "visualText": "Tap a question to expand the answer in place. You can also send a request through the form.",
       "items": [
         {
           "question": "What is Barakali Savdo?",
@@ -344,11 +478,11 @@
         },
         {
           "question": "When will it launch?",
-          "answer": "The project is in development. Pre-register — we'll contact you at launch."
+          "answer": "The project is in development. Pre-register - we'll contact you at launch."
         },
         {
           "question": "Who can use it?",
-          "answer": "Seller, shop, supplier, warehouse owner, courier, and buyer — each enters with their role."
+          "answer": "Seller, shop, supplier, warehouse owner, courier, and buyer - each enters with their role."
         },
         {
           "question": "How to contact you?",
@@ -358,12 +492,12 @@
     },
     "comingSoon": {
       "eyebrow": "Coming soon",
-      "title": "Next up — more capabilities",
+      "title": "Next up - more capabilities",
       "subtitle": "The platform keeps evolving. Here's what's planned for the near future.",
       "badge": "Coming soon",
       "ctaEyebrow": "Join us",
       "ctaTitle": "Get involved today",
-      "ctaText": "Submit an application and pre-register — your early interest motivates our team and helps us launch faster.",
+      "ctaText": "Submit an application and pre-register - your early interest motivates our team and helps us launch faster.",
       "registerCta": "Pre-register",
       "applyCta": "Submit application",
       "items": [
@@ -373,7 +507,7 @@
         },
         {
           "title": "Secure deals",
-          "text": "A reliable process for working with large companies is planned — transparent and structured."
+          "text": "A reliable process for working with large companies is planned - transparent and structured."
         },
         {
           "title": "Chat system",
@@ -381,33 +515,72 @@
         },
         {
           "title": "Many more updates",
-          "text": "We're building plenty of new features to make daily trade even easier — stay tuned."
+          "text": "We're building plenty of new features to make daily trade even easier - stay tuned."
+        }
+      ]
+    },
+    "comparison": {
+      "beforeTitle": "Today",
+      "afterTitle": "With Barakali Savdo",
+      "before": [
+        "Orders get scattered across Telegram, calls, and Excel",
+        "Warehouse space and stock are often known too late",
+        "It is unclear who has the goods and when they arrive",
+        "Disputes take time because proof is scattered"
+      ],
+      "after": [
+        "Order, goods, warehouse, and delivery move in one place",
+        "The seller sees free warehouse space and books ahead",
+        "Warehouse, courier, and buyer stages are clear",
+        "Photo, signature, and action history build trust"
+      ]
+    },
+    "proof": {
+      "eyebrow": "Trust",
+      "title": "Every handover is clearly confirmed",
+      "subtitle": "When goods enter a warehouse, go to a courier, and reach a buyer, key actions are saved.",
+      "items": [
+        {
+          "title": "Photo",
+          "text": "Goods condition is shown at the moment of handover."
+        },
+        {
+          "title": "Signature",
+          "text": "The responsible person confirms receiving or handing over."
+        },
+        {
+          "title": "Action history",
+          "text": "You can see who did what and when."
+        },
+        {
+          "title": "Fewer disputes",
+          "text": "Seller, warehouse, courier, and buyer work from the same facts."
         }
       ]
     }
   },
   "cta": {
     "title": "Be among the first when the platform launches",
-    "subtitle": "Pre-register or send your feedback — we'll contact you at launch.",
-    "subtitleLight": "Pre-register now — we'll notify you when the project is ready."
+    "subtitle": "Pre-register or send your feedback - we'll contact you at launch.",
+    "subtitleLight": "Pre-register now - we'll notify you when the project is ready."
   },
   "forms": {
     "preRegistration": {
       "eyebrow": "Pre-registration",
-      "title": "Be among the first when the platform launches",
-      "subtitle": "The project is in development. Leave your details — we'll contact you at launch.",
-      "note": "Free pre-registration — no payment required",
+      "title": "Pre-register and be among the first",
+      "subtitle": "The first registered businesses will get 1 year of free Barakali Savdo use after launch.",
+      "note": "Pre-registration is open - first participants get 1 year free",
       "name": "Name",
       "namePlaceholder": "Your name",
       "phone": "Phone",
       "phonePlaceholder": "+998 90 123 45 67",
       "email": "Email",
       "emailPlaceholder": "email@example.com",
-      "businessType": "Business type",
+      "businessType": "Role",
       "city": "City/region",
       "cityPlaceholder": "Tashkent",
       "noteField": "Note",
-      "notePlaceholder": "Additional info (optional)",
+      "notePlaceholder": "What do you sell, how many orders, or what warehouse do you need? (optional)",
       "success": "Your application was received",
       "required": "Please fill in required fields",
       "businessTypes": [
@@ -418,12 +591,16 @@
         "Courier",
         "Buyer",
         "Other"
-      ]
+      ],
+      "businessName": "Business name",
+      "businessNamePlaceholder": "Your business name",
+      "contactLanguage": "Contact language",
+      "contactLanguages": ["Uzbek Latin", "Русский", "English"]
     },
     "feedback": {
       "eyebrow": "Contact",
       "title": "Send feedback or a request",
-      "subtitle": "Write about partnership, adding a warehouse, suggestions, or issues — we'll respond.",
+      "subtitle": "Write about partnership, adding a warehouse, suggestions, or issues - we'll respond.",
       "name": "Name",
       "namePlaceholder": "Your name",
       "phone": "Phone",
@@ -469,8 +646,8 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Plans for every role",
-    "subtitle": "Whether you're a seller, shop, supplier, warehouse, courier, or buyer — pick the model that fits.",
-    "banner": "Register now — get 1 year free",
+    "subtitle": "Whether you're a seller, shop, supplier, warehouse, courier, or buyer - pick the model that fits.",
+    "banner": "Register now - get 1 year free",
     "bannerSub": "Pre-register and use the platform free for one year after launch.",
     "roleTabsTitle": "Prices by role",
     "roleTabsSub": "Separate plans per role. Choose subscription or partnership.",
@@ -495,23 +672,23 @@
         "description": "List your business on the platform for free. A small share of each sale or service goes to the platform.",
         "points": [
           "Registration and listing are free",
-          "Revenue share (e.g. 3–10%)",
+          "Revenue share (e.g. 3-10%)",
           "More customers and orders",
-          "No monthly fee — pay only when you earn"
+          "No monthly fee - pay only when you earn"
         ],
-        "goodFor": "Best for: warehouse owners, suppliers — those who want visibility and orders on the platform."
+        "goodFor": "Best for: warehouse owners, suppliers - those who want visibility and orders on the platform."
       },
       "subscription": {
         "badge": "Model B",
         "title": "Standard subscription",
-        "description": "Pay a fixed monthly amount for your chosen plan. Costs are predictable — no surprise percentages.",
+        "description": "Pay a fixed monthly amount for your chosen plan. Costs are predictable - no surprise percentages.",
         "points": [
           "Fixed monthly price",
           "Features of the selected tier",
           "Easy to budget ahead",
           "Great for active sellers"
         ],
-        "goodFor": "Best for: sellers, shop owners — those who want stable, predictable costs."
+        "goodFor": "Best for: sellers, shop owners - those who want stable, predictable costs."
       }
     },
     "tiers": {
@@ -529,12 +706,22 @@
       "premium": {
         "name": "Biznes Premium",
         "description": "For active sales and multiple branches.",
-        "features": ["Unlimited orders", "10 users", "Priority support", "API access"]
+        "features": [
+          "Unlimited orders",
+          "10 users",
+          "Priority support",
+          "Partner system connections"
+        ]
       },
       "organization": {
         "name": "Biznes Organization",
         "description": "For large companies and networks.",
-        "features": ["Dedicated manager", "Custom integration", "SLA agreement", "Multi-branch management"]
+        "features": [
+          "Dedicated manager",
+          "Custom integration",
+          "Agreed service level",
+          "Multi-branch management"
+        ]
       }
     },
     "roles": {
@@ -543,10 +730,23 @@
         "description": "Run your business on the platform, create orders, and onboard your team.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 199000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 449000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 799000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "5%" }
+          "start": {
+            "subscriptionPrice": 199000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 449000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 799000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "5%"
+          }
         }
       },
       "seller": {
@@ -554,10 +754,23 @@
         "description": "For daily orders and customer management.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 129000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 349000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 599000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "5%" }
+          "start": {
+            "subscriptionPrice": 129000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 349000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 599000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "5%"
+          }
         }
       },
       "shopOwner": {
@@ -565,10 +778,23 @@
         "description": "Manage shop sales and inventory in one place.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 149000, "partnershipPercent": "9%" },
-          "standard": { "subscriptionPrice": 399000, "partnershipPercent": "7%" },
-          "premium": { "subscriptionPrice": 699000, "partnershipPercent": "5%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "4%" }
+          "start": {
+            "subscriptionPrice": 149000,
+            "partnershipPercent": "9%"
+          },
+          "standard": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "7%"
+          },
+          "premium": {
+            "subscriptionPrice": 699000,
+            "partnershipPercent": "5%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "4%"
+          }
         }
       },
       "supplier": {
@@ -576,10 +802,23 @@
         "description": "Show your products on the platform and receive orders.",
         "recommendedModel": "partnership",
         "plans": {
-          "start": { "subscriptionPrice": 99000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 299000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 549000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 299000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 549000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "warehouseOwner": {
@@ -587,10 +826,23 @@
         "description": "Rent warehouse space and accept suppliers.",
         "recommendedModel": "partnership",
         "plans": {
-          "start": { "subscriptionPrice": 149000, "partnershipPercent": "8%" },
-          "standard": { "subscriptionPrice": 399000, "partnershipPercent": "6%" },
-          "premium": { "subscriptionPrice": 699000, "partnershipPercent": "5%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 149000,
+            "partnershipPercent": "8%"
+          },
+          "standard": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "6%"
+          },
+          "premium": {
+            "subscriptionPrice": 699000,
+            "partnershipPercent": "5%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "courier": {
@@ -598,26 +850,52 @@
         "description": "Accept delivery orders and earn.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 99000, "partnershipPercent": "7%" },
-          "standard": { "subscriptionPrice": 249000, "partnershipPercent": "5%" },
-          "premium": { "subscriptionPrice": 399000, "partnershipPercent": "4%" },
-          "organization": { "subscriptionPrice": 999000, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": "7%"
+          },
+          "standard": {
+            "subscriptionPrice": 249000,
+            "partnershipPercent": "5%"
+          },
+          "premium": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "4%"
+          },
+          "organization": {
+            "subscriptionPrice": 999000,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "buyer": {
         "name": "Buyer",
-        "description": "Place orders and receive delivery — free or minimal cost.",
+        "description": "Place orders and receive delivery - free or minimal cost.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 0, "free": true, "partnershipPercent": "—" },
-          "standard": { "subscriptionPrice": 29000, "partnershipPercent": "—" },
-          "premium": { "subscriptionPrice": 99000, "partnershipPercent": "—" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "—" }
+          "start": {
+            "subscriptionPrice": 0,
+            "free": true,
+            "partnershipPercent": " - "
+          },
+          "standard": {
+            "subscriptionPrice": 29000,
+            "partnershipPercent": " - "
+          },
+          "premium": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": " - "
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": " - "
+          }
         }
       }
     },
     "bottomCta": {
-      "title": "Register now — 1 year free",
+      "title": "Register now - 1 year free",
       "subtitle": "Be among the first after launch and use the platform free for a full year."
     }
   },
@@ -626,7 +904,7 @@
       "description": "Trade, warehouse, and delivery platform in Uzbekistan."
     },
     "website": {
-      "description": "Barakali Savdo — manage trade, warehousing, and delivery in one system."
+      "description": "Barakali Savdo - manage trade, warehousing, and delivery in one system."
     },
     "software": {
       "description": "Web platform for trade, warehouse booking, and delivery management.",
@@ -634,40 +912,416 @@
     },
     "pages": {
       "home": {
-        "title": "Barakali Savdo — trade, warehouse & delivery platform",
+        "title": "Barakali Savdo - trade, warehouse & delivery platform",
         "description": "One workflow for seller, shop, supplier, warehouse, courier, and buyer. Pre-register now.",
-        "keywords": "Barakali Savdo, trade platform, warehouse, delivery, Uzbekistan, pre-registration",
-        "ogTitle": "Barakali Savdo — trade & delivery platform",
+        "keywords": "Barakali Savdo, B2B logistics platform, supply chain software, warehouse booking, order management, supplier marketplace, courier delivery workflow, Uzbekistan business logistics",
+        "ogTitle": "Barakali Savdo - trade & delivery platform",
         "ogDescription": "Manage trade, warehousing, and delivery in one system."
       },
       "preRegistration": {
-        "title": "Pre-registration — Barakali Savdo",
+        "title": "Pre-registration - Barakali Savdo",
         "description": "Be among the first when Barakali Savdo launches. Pre-register now.",
         "keywords": "pre-registration, Barakali Savdo, trade platform, Uzbekistan",
-        "ogTitle": "Pre-registration — Barakali Savdo",
+        "ogTitle": "Pre-registration - Barakali Savdo",
         "ogDescription": "Be among the first when the platform launches."
       },
       "feedback": {
-        "title": "Feedback or request — Barakali Savdo",
-        "description": "Write about partnership, warehouses, suggestions, or issues — the Barakali Savdo team will respond.",
+        "title": "Feedback or request - Barakali Savdo",
+        "description": "Write about partnership, warehouses, suggestions, or issues - the Barakali Savdo team will respond.",
         "keywords": "feedback, request, partnership, Barakali Savdo, contact",
-        "ogTitle": "Feedback or request — Barakali Savdo",
-        "ogDescription": "Leave your feedback or request — we'll respond."
+        "ogTitle": "Feedback or request - Barakali Savdo",
+        "ogDescription": "Leave your feedback or request - we'll respond."
       },
       "contact": {
-        "title": "Contact us — Barakali Savdo",
+        "title": "Contact us - Barakali Savdo",
         "description": "Reach the Barakali Savdo team by email, phone, or Telegram.",
         "keywords": "contact, Barakali Savdo, email, phone, Telegram, Uzbekistan",
-        "ogTitle": "Contact us — Barakali Savdo",
+        "ogTitle": "Contact us - Barakali Savdo",
         "ogDescription": "Questions about our trade and delivery platform? Get in touch."
       },
       "pricing": {
-        "title": "Pricing — Barakali Savdo",
+        "title": "Pricing - Barakali Savdo",
         "description": "Plans for seller, shop, supplier, warehouse, courier, and buyer. Subscription or partnership. 1 year free.",
         "keywords": "pricing, plans, subscription, partnership, Barakali Savdo, Uzbekistan",
-        "ogTitle": "Pricing — Barakali Savdo",
-        "ogDescription": "Plans for every role. Pre-register — 1 year free."
+        "ogTitle": "Pricing - Barakali Savdo",
+        "ogDescription": "Plans for every role. Pre-register - 1 year free."
+      },
+      "about": {
+        "title": "About - Barakali Savdo",
+        "description": "Barakali Savdo helps Uzbekistan businesses move from manual chaos to clear digital logistics.",
+        "keywords": "Barakali Savdo, B2B logistics platform, supply chain software",
+        "ogTitle": "About",
+        "ogDescription": "Barakali Savdo helps Uzbekistan businesses move from manual chaos to clear digital logistics."
+      },
+      "forSellers": {
+        "title": "For sellers - Barakali Savdo",
+        "description": "Order management, warehouse booking, courier workflow, and buyer QR status for sellers.",
+        "keywords": "seller, order management, warehouse booking",
+        "ogTitle": "For sellers",
+        "ogDescription": "Order management, warehouse booking, courier workflow, and buyer QR status for sellers."
+      },
+      "forShops": {
+        "title": "For shops - Barakali Savdo",
+        "description": "POS sales, stock control, write-offs, product tracking, and reports for shops.",
+        "keywords": "shop, order management, supply chain software",
+        "ogTitle": "For shops",
+        "ogDescription": "POS sales, stock control, write-offs, product tracking, and reports for shops."
+      },
+      "forSuppliers": {
+        "title": "For suppliers - Barakali Savdo",
+        "description": "Publish batches, receive seller requests, and plan delivery to warehouses.",
+        "keywords": "supplier marketplace, B2B logistics platform",
+        "ogTitle": "For suppliers",
+        "ogDescription": "Publish batches, receive seller requests, and plan delivery to warehouses."
+      },
+      "forWarehouses": {
+        "title": "For warehouses - Barakali Savdo",
+        "description": "Warehouse booking, map, storage conditions, cell layout, and booking control.",
+        "keywords": "warehouse booking, B2B logistics platform",
+        "ogTitle": "For warehouses",
+        "ogDescription": "Warehouse booking, map, storage conditions, cell layout, and booking control."
+      },
+      "forCouriers": {
+        "title": "For couriers - Barakali Savdo",
+        "description": "Available deliveries, price offers, routes, contacts, and handover confirmation.",
+        "keywords": "courier delivery workflow, order management",
+        "ogTitle": "For couriers",
+        "ogDescription": "Available deliveries, price offers, routes, contacts, and handover confirmation."
+      },
+      "forBuyers": {
+        "title": "For buyers - Barakali Savdo",
+        "description": "Order status by QR or link, receipt confirmation, feedback, and return request.",
+        "keywords": "buyer, order status, QR",
+        "ogTitle": "For buyers",
+        "ogDescription": "Order status by QR or link, receipt confirmation, feedback, and return request."
       }
     }
+  },
+  "rolePages": {
+    "common": {
+      "sectionLabel": "Role page"
+    },
+    "sellers": {
+      "title": "For sellers",
+      "subtitle": "Products, stock, orders, warehouse booking, couriers, and customer QR status in one clear workflow.",
+      "audienceTitle": "Who it is for",
+      "audience": [
+        "Online sellers",
+        "Wholesalers",
+        "Instagram and Telegram shops",
+        "Small and medium businesses"
+      ],
+      "featureTitle": "Capability",
+      "features": [
+        "Create products and see stock clearly",
+        "Create customer orders fast",
+        "Choose and book warehouse space",
+        "Give buyers a QR or link with status"
+      ],
+      "workflowTitle": "For sellers workflow",
+      "workflow": [
+        {
+          "title": "Adds products",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Creates order",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Chooses warehouse and courier",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Tracks status",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "Aziz sells accessories: he books a batch, reserves warehouse space, hands off to a courier, and the buyer follows status by link.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Seller panel",
+      "visualItems": [
+        "Products and stock in one place",
+        "Warehouse booking",
+        "Courier task",
+        "QR status for buyer"
+      ]
+    },
+    "shops": {
+      "title": "For shops",
+      "subtitle": "POS sales, stock, write-offs, discounts, and simple reports in one workspace.",
+      "audienceTitle": "Who it is for",
+      "audience": [
+        "Offline shops",
+        "POS points",
+        "Small retail chains",
+        "Businesses that track product stock"
+      ],
+      "featureTitle": "Capability",
+      "features": [
+        "Record sales quickly",
+        "Track stock and write-offs",
+        "Work with discounts",
+        "See simple daily reports"
+      ],
+      "workflowTitle": "For shops workflow",
+      "workflow": [
+        {
+          "title": "Goods arrive",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Sale happens",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Stock updates",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Report is ready",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "A shop owner sees what sells quickly, replenishes stock on time, and reduces unnecessary losses.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Shop panel",
+      "visualItems": ["POS sales", "Stock control", "Discounts and returns", "Simple reports"]
+    },
+    "suppliers": {
+      "title": "For suppliers",
+      "subtitle": "Publish product batches, show price and arrival date, and receive seller requests.",
+      "audienceTitle": "Who it is for",
+      "audience": ["Farmers", "Importers", "Wholesale suppliers", "Manufacturers"],
+      "featureTitle": "Capability",
+      "features": [
+        "Publish product batches",
+        "Show price, quantity, and arrival date",
+        "Receive seller requests",
+        "Send goods to the seller warehouse"
+      ],
+      "workflowTitle": "For suppliers workflow",
+      "workflow": [
+        {
+          "title": "Creates batch",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Seller requests",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Confirms",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Sends to warehouse",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "A farmer publishes a new batch, sellers book ahead, and when goods arrive everyone knows which warehouse receives them.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Batch panel",
+      "visualItems": ["Batch card", "Seller requests", "Arrival date", "Warehouse direction"]
+    },
+    "warehouses": {
+      "title": "For warehouses",
+      "subtitle": "Show your warehouse on the map, describe conditions, and accept bookings through a cell layout.",
+      "audienceTitle": "Who it is for",
+      "audience": [
+        "Private warehouses",
+        "Free storage spaces",
+        "Logistics points",
+        "Warehouse operators"
+      ],
+      "featureTitle": "Capability",
+      "features": [
+        "Show warehouse address and photo",
+        "Describe storage conditions",
+        "Manage spaces by cell layout",
+        "Earn from free space"
+      ],
+      "workflowTitle": "For warehouses workflow",
+      "workflow": [
+        {
+          "title": "Warehouse is added",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Spaces are marked",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Goods are received",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Outbound is confirmed",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "A warehouse owner shows free spaces, a seller books the needed area, and staff confirms goods in and out.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Warehouse map",
+      "visualItems": [
+        "Address and map",
+        "Storage conditions",
+        "Cell layout",
+        "Bookings and revenue"
+      ]
+    },
+    "couriers": {
+      "title": "For couriers",
+      "subtitle": "See available deliveries, offer a price, get route and contacts, and confirm handovers.",
+      "audienceTitle": "Who it is for",
+      "audience": ["Private couriers", "Logisticians", "Delivery services", "Regional carriers"],
+      "featureTitle": "Capability",
+      "features": [
+        "See available deliveries",
+        "Offer a price",
+        "Get route and contacts",
+        "Use photo and signature"
+      ],
+      "workflowTitle": "For couriers workflow",
+      "workflow": [
+        {
+          "title": "Sees task",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Offers price",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Picks up goods",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Delivers",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "A courier chooses a nearby order, offers a price, confirms pickup with a photo, and delivers to the buyer.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Delivery panel",
+      "visualItems": ["Task list", "Price offer", "Route and contacts", "Confirmed delivery"]
+    },
+    "buyers": {
+      "title": "For buyers",
+      "subtitle": "Use QR or link to see order status, confirm receipt, leave feedback, or request a return.",
+      "audienceTitle": "Who it is for",
+      "audience": [
+        "Seller customers",
+        "Online buyers",
+        "Shop buyers",
+        "People who want order status"
+      ],
+      "featureTitle": "Capability",
+      "features": [
+        "Status by QR or link",
+        "Short product information",
+        "Receipt confirmation",
+        "Feedback or return request"
+      ],
+      "workflowTitle": "For buyers workflow",
+      "workflow": [
+        {
+          "title": "Gets link",
+          "text": "Data is organized."
+        },
+        {
+          "title": "Sees status",
+          "text": "A request or order is created."
+        },
+        {
+          "title": "Confirms receipt",
+          "text": "The right partner is selected."
+        },
+        {
+          "title": "Leaves feedback",
+          "text": "Result and status stay visible."
+        }
+      ],
+      "scenarioTitle": "Simple scenario",
+      "scenarioText": "The buyer checks the order by link, confirms receipt after delivery, and contacts the seller if needed.",
+      "proofTitle": "Clear confirmation",
+      "proofText": "Photo, signature, and action history save important steps.",
+      "ctaTitle": "Pre-register",
+      "ctaText": "First participants can get 1 year of free platform use.",
+      "visualTitle": "Buyer page",
+      "visualItems": [
+        "QR/link status",
+        "Product information",
+        "Receipt confirmation",
+        "Feedback and return"
+      ]
+    }
+  },
+  "aboutPage": {
+    "heroTitle": "Clear logistics for Uzbekistan business",
+    "heroSubtitle": "Barakali Savdo helps small and medium businesses move from calls, Telegram, and Excel chaos into one clear order, warehouse, and delivery workflow.",
+    "missionLabel": "Mission",
+    "missionText": "Build a simple system where every participant in the chain - seller, supplier, warehouse, courier, and buyer - sees their own task.",
+    "visual": {
+      "business": "Local business",
+      "regions": "Regions and districts",
+      "trust": "Trusted handover"
+    },
+    "principlesTitle": "What we focus on",
+    "principlesSub": "The platform should speak business language: less chaos, more control.",
+    "principles": [
+      {
+        "title": "Simple process",
+        "text": "Each role does its job and the next stage is clear."
+      },
+      {
+        "title": "Local fit",
+        "text": "Regions, districts, warehouse spaces, and local business logic."
+      },
+      {
+        "title": "Trust",
+        "text": "Photo, signature, and action history help businesses trust one another."
+      }
+    ],
+    "stepsTitle": "What changes",
+    "stepsSub": "Manual agreements turn into an organized digital flow.",
+    "steps": [
+      {
+        "title": "Order is clear",
+        "text": "Who sends what and where is visible in one place."
+      },
+      {
+        "title": "Warehouse is visible",
+        "text": "Free space, booking, and cells are known ahead."
+      },
+      {
+        "title": "Delivery is tracked",
+        "text": "Courier stages are visible until buyer confirmation."
+      },
+      {
+        "title": "Fewer disputes",
+        "text": "Handover is confirmed by photo, signature, and history."
+      }
+    ]
   }
 }

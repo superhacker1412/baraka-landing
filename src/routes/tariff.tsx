@@ -88,7 +88,7 @@ function formatUzs(amount: number, locale: string): string {
   }).format(amount);
 }
 
-function TariffPage() {
+export function TariffPage() {
   const { t, tRaw, lang } = useTranslation();
   const [activeRole, setActiveRole] = useState<RoleId>("sellerOwner");
 
@@ -127,6 +127,7 @@ function TariffPage() {
           title={t("pricing.title")}
           sub={t("pricing.subtitle")}
           center
+          level="h1"
         />
 
         {/* Business models */}
@@ -285,7 +286,7 @@ function TariffPage() {
                           </span>
                         </>
                       ) : (
-                        "—"
+                        " - "
                       )}
                     </div>
 

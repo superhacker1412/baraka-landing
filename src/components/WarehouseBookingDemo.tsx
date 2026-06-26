@@ -16,7 +16,7 @@ const GRID_COLS = 6;
 const GRID_ROWS = 4;
 const SQM_PER_CELL = 1;
 
-/** 6×4 = 24 m²; left column (indices 0,6,12,18) = 4 m² occupied */
+/** 6x4 = 24 m²; left column (indices 0,6,12,18) = 4 m² occupied */
 function buildInitialCells(): Cell[] {
   const bookedIndices = new Set([8, 14, 21]);
   const cells: Cell[] = [];
@@ -41,20 +41,20 @@ function buildInitialCells(): Cell[] {
 
 const STATUS_CLASS: Record<DisplayStatus, string> = {
   available:
-    "border-emerald-300/80 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-400 cursor-pointer dark:border-emerald-600/50 dark:bg-emerald-950/30 dark:text-emerald-200 dark:hover:bg-emerald-900/50",
+    "border-primary/35 bg-primary/5 text-primary hover:bg-primary/10 cursor-pointer dark:border-primary/45 dark:bg-primary/10 dark:text-primary dark:hover:bg-primary/15",
   occupied:
-    "border-emerald-600 bg-emerald-500 text-white cursor-not-allowed dark:border-emerald-500 dark:bg-emerald-600",
+    "border-foreground bg-foreground text-background cursor-not-allowed dark:border-white dark:bg-white dark:text-black",
   booked:
-    "border-amber-400/80 bg-amber-100 text-amber-900 cursor-not-allowed dark:border-amber-500/60 dark:bg-amber-950/60 dark:text-amber-200",
+    "border-foreground/45 bg-muted text-foreground cursor-not-allowed dark:border-white/40 dark:bg-muted dark:text-foreground",
   selected:
-    "border-blue-500 bg-blue-500 text-white shadow-sm ring-2 ring-blue-300/60 cursor-pointer dark:border-blue-400 dark:bg-blue-600 dark:ring-blue-400/40",
+    "border-primary bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/25 cursor-pointer dark:border-primary dark:bg-primary dark:text-primary-foreground dark:ring-primary/30",
 };
 
 const LEGEND_CLASS: Record<DisplayStatus, string> = {
-  available: "border-emerald-300/80 bg-white dark:border-emerald-600/50 dark:bg-emerald-950/30",
-  occupied: "border-emerald-600 bg-emerald-500 dark:border-emerald-500 dark:bg-emerald-600",
-  booked: "border-amber-400/80 bg-amber-200 dark:bg-amber-900/70",
-  selected: "border-blue-500 bg-blue-500 dark:border-blue-400 dark:bg-blue-600",
+  available: "border-primary/35 bg-primary/5 dark:border-primary/45 dark:bg-primary/10",
+  occupied: "border-foreground bg-foreground dark:border-white dark:bg-white",
+  booked: "border-foreground/45 bg-muted dark:border-white/40 dark:bg-muted",
+  selected: "border-primary bg-primary dark:border-primary dark:bg-primary",
 };
 
 export function WarehouseBookingDemo() {
@@ -106,7 +106,7 @@ export function WarehouseBookingDemo() {
 
   function cellTitle(cell: Cell, status: DisplayStatus): string {
     const sqmLabel = t("landing.warehouse.cellSqm", { sqm: SQM_PER_CELL });
-    const name = cell.name ? `${cell.name} — ` : "";
+    const name = cell.name ? `${cell.name} - ` : "";
     return `${name}${sqmLabel} (${statusLabel[status]})`;
   }
 
@@ -158,7 +158,7 @@ export function WarehouseBookingDemo() {
               >
                 {status === "selected" && (
                   <CheckCircle2
-                    className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-white text-blue-600 dark:bg-blue-950 dark:text-blue-300"
+                    className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-white text-primary dark:bg-black dark:text-primary"
                     aria-hidden
                   />
                 )}
@@ -189,7 +189,7 @@ export function WarehouseBookingDemo() {
             {t("landing.warehouse.sellerText")}
           </p>
           {selectedIds.size > 0 ? (
-            <div className="mt-2.5 rounded-lg bg-blue-500/10 px-2.5 py-2 text-xs text-blue-900 dark:text-blue-200">
+            <div className="mt-2.5 rounded-lg border border-primary/20 bg-primary/10 px-2.5 py-2 text-xs text-primary dark:border-primary/30 dark:bg-primary/15 dark:text-primary">
               {t("landing.warehouse.selectedReady", {
                 count: selectedIds.size,
                 sqm: selectedSqm,

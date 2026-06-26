@@ -4,11 +4,11 @@
     "tagline": "Savdo · Ombor · Yetkazish"
   },
   "nav": {
-    "system": "Tizim",
+    "system": "Platforma",
     "warehouse": "Ombor",
     "map": "Xarita",
-    "roles": "Kimlar uchun",
-    "workflow": "Jarayon",
+    "roles": "Rollar",
+    "workflow": "Imkoniyatlar",
     "why": "Nega kerak?",
     "example": "Misol",
     "faq": "Savollar",
@@ -16,8 +16,8 @@
     "registerShort": "Ro'yxat",
     "registerHeaderCta": "Oldindan ro'yxat",
     "registerCta": "Oldindan ro'yxatdan o'tish",
-    "contact": "Biz bilan aloqa",
-    "pricing": "Tariflar",
+    "contact": "Aloqa",
+    "pricing": "Narxlar",
     "feedbackCta": "Taklif yoki ariza qoldirish",
     "menu": "Menyu",
     "homeAria": "Barakali Savdo bosh sahifasi"
@@ -52,15 +52,15 @@
     "retry": "Qayta urinish"
   },
   "hero": {
-    "eyebrow": "Tez orada ishga tushadi — O'zbekiston",
+    "eyebrow": "Tez orada ishga tushadi - O'zbekiston",
     "promo": "Oldindan ro'yxatdan o'tganlar uchun 1 yil bepul",
     "titleBefore": "Savdo, ombor va yetkazib berishni",
     "titleHighlight": "bitta tizimda",
     "titleAfter": "boshqaring",
-    "subtitle": "Barakali Savdo sotuvchi, do'kon, yetkazib beruvchi, ombor, kuryer va xaridorni bitta ish jarayoniga ulaydi.",
-    "secure": "Xavfsiz kirish",
-    "rolesCount": "9 rol",
-    "warehouse": "Ombor va bron",
+    "subtitle": "Buyurtmani tez qabul qiling, ombor joyini oldindan band qiling va yetkazishni oxirigacha nazorat qiling.",
+    "secure": "Tezroq buyurtma",
+    "rolesCount": "Aniq ombor",
+    "warehouse": "Nazoratli yetkazish",
     "panelLiveMap": "Jonli buyurtmalar xaritasi",
     "panelHistory": "Harakatlar tarixi",
     "panelOrder": "Buyurtma",
@@ -71,16 +71,52 @@
     "panelSales": "Savdo",
     "panelBooking": "Bron",
     "panelDelivery": "Yetkazish",
-    "panelProofTitle": "Foto + imzo tasdiqlash",
-    "panelProofText": "Status faqat dalil saqlangandan keyin o'zgaradi"
+    "panelProofTitle": "Foto, imzo va tasdiqlash",
+    "panelProofText": "Tovar topshirilganda barcha muhim harakatlar saqlanadi",
+    "title": "Barakali Savdo",
+    "rolesCta": "Rollarni ko'rish",
+    "panelNew": "Yangi",
+    "panelProducts": "Mahsulotlar",
+    "panelQuantity": "Miqdor",
+    "panelDeliveryDate": "Yetkazish",
+    "panelAddress": "Manzil",
+    "panelWarehouses": "Omborlar",
+    "panelWarehouseTashkent": "Toshkent ombori",
+    "panelWarehouseAndijan": "Andijon ombori",
+    "panelWarehouseFergana": "Farg'ona ombori",
+    "panelDelivered": "Yetkazildi",
+    "panelSignature": "Imzo bilan tasdiqlandi",
+    "panelSellerCabinet": "Boshqaruv paneli",
+    "panelSellerCabinetSub": "Buyurtmalar, ombor, tushum va qoldiq bir ekranda.",
+    "panelAdminSaved": "Ariza jamoaga yetib boradi",
+    "panelOrders": "buyurtma",
+    "panelRevenue": "tushum",
+    "panelInventory": "qoldiq",
+    "panelLiveData": "Jonli boshqaruv",
+    "panelNoExcel": "Excel va qo'ng'iroqsiz nazorat"
   },
   "landing": {
     "stats": [
-      { "value": "5", "label": "Asosiy rol jarayoni" },
-      { "value": "9", "label": "Platforma roli" },
-      { "value": "m²", "label": "Ombor band qilish" },
-      { "value": "2D", "label": "Ombor sxemasi" },
-      { "value": "Bron", "label": "Tovar va joy" }
+      {
+      "value": "1 yil",
+      "label": "Erta qo'shilganlar uchun bepul taklif"
+      },
+      {
+      "value": "5",
+      "label": "Buyurtmadan qabulgacha asosiy bosqich"
+      },
+      {
+        "value": "m²",
+      "label": "Ombor joyini bron qilish"
+      },
+      {
+      "value": "9 rol",
+      "label": "Bitta tizimda ishlaydigan ishtirokchilar"
+      },
+      {
+      "value": "QR",
+      "label": "Xaridor uchun buyurtma holati"
+      }
     ],
     "about": {
       "eyebrow": "Loyiha haqida",
@@ -97,14 +133,14 @@
         },
         {
           "title": "Aniq va tartibli",
-          "text": "Har bir rol o'z vazifasini biladi — buyurtma qayerda ekanligi aniq ko'rinadi."
+          "text": "Har bir rol o'z vazifasini biladi - buyurtma qayerda ekanligi aniq ko'rinadi."
         }
       ]
     },
     "roles": {
       "eyebrow": "Rollar",
-      "title": "Kimlar uchun?",
-      "subtitle": "Har bir rol o'z vazifasini bajaradi — sotuvchi, ombor, yetkazib beruvchi, kuryer va xaridor.",
+      "title": "Barcha rollar uchun bitta platforma",
+      "subtitle": "Sotuvchi, do'kon, ta'minotchi, ombor, kuryer va xaridor bir zanjirda ishlaydi - har kim o'z vazifasini aniq ko'radi.",
       "items": [
         {
           "title": "Platforma administratori",
@@ -114,7 +150,7 @@
         {
           "title": "Sotuvchi egasi",
           "description": "Ro'yxatdan o'tadi, tovar oladi yoki qo'shadi, ombor yaratadi yoki joy band qiladi, buyurtma yaratadi.",
-          "benefit": "Barcha savdo bitta joyda — qo'lda yozishsiz."
+          "benefit": "Barcha savdo bitta joyda - qo'lda yozishsiz."
         },
         {
           "title": "Sotuvchi menejeri",
@@ -129,7 +165,7 @@
         {
           "title": "Yetkazib beruvchi",
           "description": "Tovar partiyalarini yaratadi. Sotuvchilar bron qiladi, tovar kelgach ko'rsatilgan omborga yuboriladi.",
-          "benefit": "Oldindan buyurtma bo'ladi — ortiqcha yuk tashish kamayadi."
+          "benefit": "Oldindan buyurtma bo'ladi - ortiqcha yuk tashish kamayadi."
         },
         {
           "title": "Ombor egasi",
@@ -139,7 +175,7 @@
         {
           "title": "Ombor xodimi",
           "description": "Tovarni qabul qiladi, joylashtiradi va chiqimni rasmiylashtiradi.",
-          "benefit": "Nima qayerda ekanligi aniq — qidirish va chalkashlik kamayadi."
+          "benefit": "Nima qayerda ekanligi aniq - qidirish va chalkashlik kamayadi."
         },
         {
           "title": "Kuryer",
@@ -151,15 +187,16 @@
           "description": "Sotuvchi buyurtma yaratadi, tovar tayyorlanadi va mijoz qabul qilib oladi.",
           "benefit": "Buyurtma qayerda ekanini biladi, muammo bo'lsa darhol xabar beradi."
         }
-      ]
+      ],
+      "detailCta": "Batafsil ko'rish"
     },
     "warehouse": {
       "eyebrow": "Ombor",
       "title": "2D sxemada joy band qilish",
-      "subtitle": "Sotuvchi kerakli m² maydonni tanlaydi — ombor egasi 2D sxemada bo'sh, band va bron qilingan zonlarni bir ko'rishda ko'radi.",
-      "schemaTitle": "Sergeli ombor — 24 m² (6×4)",
-      "clickHint": "Bo'sh kataklarni bosing — bir nechtasini tanlash mumkin",
-      "gridAria": "Ombor kataklari — har biri 1 m²",
+      "subtitle": "Sotuvchi kerakli m² maydonni tanlaydi - ombor egasi 2D sxemada bo'sh, band va bron qilingan zonlarni bir ko'rishda ko'radi.",
+      "schemaTitle": "Sergeli ombor - 24 m² (6x4)",
+      "clickHint": "Bo'sh kataklarni bosing - bir nechtasini tanlash mumkin",
+      "gridAria": "Ombor kataklari - har biri 1 m²",
       "areaSummary": "{{occupied}} m² band, {{available}} m² bo'sh",
       "areaBooked": "{{booked}} m² bron qilingan",
       "cellSqm": "{{sqm}} m²",
@@ -169,7 +206,7 @@
       "statusSelected": "Tanlangan",
       "sellerTitle": "Sotuvchi",
       "sellerText": "Kerakli m² maydonni tanlaydi va bron arizasi yuboradi.",
-      "selectedReady": "Tanlangan: {{sqm}} m² ({{count}} ta katak) — ariza yuborishga tayyor",
+      "selectedReady": "Tanlangan: {{sqm}} m² ({{count}} ta katak) - ariza yuborishga tayyor",
       "selectCell": "Bo'sh kataklardan bir yoki bir nechtasini tanlang",
       "ownerTitle": "Ombor egasi",
       "ownerText": "2D sxemada qaysi joy bo'sh, qaysi band yoki bron qilingan ekanini bir ko'rishda ko'radi va arizani tasdiqlaydi."
@@ -177,45 +214,52 @@
     "map": {
       "eyebrow": "Xarita",
       "title": "Toshkent omborlari",
-      "subtitle": "Yaqin omborni xaritada toping — joy, maydon va manzil bir joyda.",
-      "demoTitle": "Toshkent — demo omborlar",
-      "demoHint": "Jonli xarta uchun .env faylida VITE_MAPTILER_API_KEY ni sozlang",
-      "loadError": "Xarita yuklanmadi. API kalitini tekshiring.",
+      "subtitle": "Yaqin omborni xaritada toping - joy, maydon va manzil bir joyda.",
+      "visualEyebrow": "O'zbekiston bo'ylab",
+      "visualTitle": "Ombor va yetkazish yo'li bir xaritada",
+      "visualText": "Toshkentdan viloyatlarga ketayotgan tovar qayerda ekanini ko'rish, ombor tanlash va yetkazishni rejalash osonlashadi.",
+      "visualHub": "Toshkent markazi",
+      "visualHubText": "Buyurtmalar, omborlar va kuryerlar asosiy oqimda ko'rinadi.",
+      "visualRoute": "Viloyatlar yo'nalishi",
+      "visualRouteText": "Samarqand, Farg'ona va Andijon yo'nalishlari bitta jarayonga ulanadi.",
+      "demoTitle": "Toshkent ombor tarmog'i",
+      "demoHint": "Omborlar, bo'sh joylar va yo'nalishlar bir xaritada ko'rinadi.",
+      "loadError": "Xarita hozir soddalashtirilgan ko'rinishda ochildi.",
       "partners": {
         "eyebrow": "Hamkorlik",
         "title": "Hamkor bo'ling",
-        "subtitle": "Platformaga qo'shiling — o'z rolingiz bo'yicha mijozlar va buyurtmalar oling.",
+        "subtitle": "Platformaga qo'shiling - o'z rolingiz bo'yicha mijozlar va buyurtmalar oling.",
         "applyCta": "Ariza topshirish",
         "items": [
           {
             "id": "ombor",
             "title": "Ombor egasi",
-            "pitch": "Bo'ling bizning hamkorimiz — omboringizni joylashtiring va mijozlarni o'zingizga oling."
+            "pitch": "Bo'ling bizning hamkorimiz - omboringizni joylashtiring va mijozlarni o'zingizga oling."
           },
           {
             "id": "sotuvchi",
             "title": "Sotuvchi",
-            "pitch": "Hamkor sifatida qo'shiling — buyurtmalaringizni ombor va yetkazish bilan bir tizimda boshqaring."
+            "pitch": "Hamkor sifatida qo'shiling - buyurtmalaringizni ombor va yetkazish bilan bir tizimda boshqaring."
           },
           {
             "id": "yetkazib",
             "title": "Yetkazib beruvchi",
-            "pitch": "Partiyalaringizni e'lon qiling — sotuvchilar sizdan bron qiladi va buyurtma oladi."
+            "pitch": "Partiyalaringizni e'lon qiling - sotuvchilar sizdan bron qiladi va buyurtma oladi."
           },
           {
             "id": "kuryer",
             "title": "Kuryer",
-            "pitch": "Yetkazish buyurtmalarini oling — sotuvchilar sizni tayinlaydi yoki o'zingiz ariza yuboring."
+            "pitch": "Yetkazish buyurtmalarini oling - sotuvchilar sizni tayinlaydi yoki o'zingiz ariza yuboring."
           },
           {
             "id": "dokon",
             "title": "Do'kon egasi",
-            "pitch": "Do'koningizni ulang — qoldiq, sotuv va yetkazishni bitta platformada boshqaring."
+            "pitch": "Do'koningizni ulang - qoldiq, sotuv va yetkazishni bitta platformada boshqaring."
           },
           {
             "id": "xaridor",
             "title": "Xaridor",
-            "pitch": "Qulay buyurtma va yetkazish haqida fikringizni qoldiring — xizmatni siz uchun yaxshilaymiz."
+            "pitch": "Qulay buyurtma va yetkazish haqida fikringizni qoldiring - xizmatni siz uchun yaxshilaymiz."
           }
         ]
       }
@@ -223,17 +267,26 @@
     "workflow": {
       "eyebrow": "Jarayon",
       "title": "Har bir rol qanday ishlaydi?",
-      "subtitle": "Xaridor, sotuvchi, ombor, yetkazib beruvchi va kuryer — har biri o'z ish jarayoniga ega.",
+      "subtitle": "Xaridor, sotuvchi, ombor, yetkazib beruvchi va kuryer - har biri o'z ish jarayoniga ega.",
       "tabsAria": "Rol jarayonlari",
       "items": [
         {
           "id": "xaridor",
           "title": "Xaridor",
-          "summary": "Xaridor uchun jarayon oddiy — sotuvchi buyurtma yaratadi, tovar tayyorlanadi, mijoz oladi.",
+          "summary": "Xaridor uchun jarayon oddiy - sotuvchi buyurtma yaratadi, tovar tayyorlanadi, mijoz oladi.",
           "steps": [
-            { "title": "Sotuvchi buyurtma tuzadi", "text": "Sotuvchi mijoz uchun buyurtma yaratadi — tovar va miqdor tanlanadi." },
-            { "title": "Yetkazib beruvchi ombordan oladi", "text": "Kerakli tovar ombordan olinadi yoki yetkazib beruvchi tayyorlaydi." },
-            { "title": "Mijoz qabul qilib oladi", "text": "Buyurtma mijozga yetkaziladi va qabul qilinadi." }
+            {
+              "title": "Sotuvchi buyurtma tuzadi",
+              "text": "Sotuvchi mijoz uchun buyurtma yaratadi - tovar va miqdor tanlanadi."
+            },
+            {
+              "title": "Yetkazib beruvchi ombordan oladi",
+              "text": "Kerakli tovar ombordan olinadi yoki yetkazib beruvchi tayyorlaydi."
+            },
+            {
+              "title": "Mijoz qabul qilib oladi",
+              "text": "Buyurtma mijozga yetkaziladi va qabul qilinadi."
+            }
           ]
         },
         {
@@ -241,10 +294,22 @@
           "title": "Sotuvchi",
           "summary": "Sotuvchi ro'yxatdan o'tadi, tovar va omborni sozlaydi, keyin buyurtmalar yaratadi.",
           "steps": [
-            { "title": "Ro'yxatdan o'tadi", "text": "Platformada sotuvchi sifatida ro'yxatdan o'tadi." },
-            { "title": "Tovar manbasini tanlaydi", "text": "Xohlasа yetkazib beruvchilardan tovar oladi, yoki o'z tovarini qo'shadi." },
-            { "title": "Omborni sozlaydi", "text": "O'z omborini yaratadi yoki tayyor ombordan joy band qiladi." },
-            { "title": "Buyurtmalar yaratadi", "text": "Mijozlar uchun buyurtmalar yaratadi va jarayonni kuzatadi." }
+            {
+              "title": "Ro'yxatdan o'tadi",
+              "text": "Platformada sotuvchi sifatida ro'yxatdan o'tadi."
+            },
+            {
+              "title": "Tovar manbasini tanlaydi",
+              "text": "Xohlasа yetkazib beruvchilardan tovar oladi, yoki o'z tovarini qo'shadi."
+            },
+            {
+              "title": "Omborni sozlaydi",
+              "text": "O'z omborini yaratadi yoki tayyor ombordan joy band qiladi."
+            },
+            {
+              "title": "Buyurtmalar yaratadi",
+              "text": "Mijozlar uchun buyurtmalar yaratadi va jarayonni kuzatadi."
+            }
           ]
         },
         {
@@ -252,10 +317,22 @@
           "title": "Ombor egasi",
           "summary": "Ombor egasi joyini e'lon qiladi va sotuvchilardan bron arizalarini qabul qiladi.",
           "steps": [
-            { "title": "Omborni ro'yxatdan o'tkazadi", "text": "Ro'yxatdan o'tadi va omborini platformada ro'yxatdan o'tkazadi." },
-            { "title": "Narx va maydonni ko'rsatadi", "text": "Maydon o'lchami va m² narxi ko'rsatiladi." },
-            { "title": "2D sxema orqali arizalar", "text": "2D sxema orqali bron arizalarini qabul qiladi — m² bo'yicha." },
-            { "title": "Arizani qabul qiladi", "text": "Agar yoqsa — arizani qabul qiladi va sotuvchi bilan bog'lanish ma'lumotlarini oladi." }
+            {
+              "title": "Omborni ro'yxatdan o'tkazadi",
+              "text": "Ro'yxatdan o'tadi va omborini platformada ro'yxatdan o'tkazadi."
+            },
+            {
+              "title": "Narx va maydonni ko'rsatadi",
+              "text": "Maydon o'lchami va m² narxi ko'rsatiladi."
+            },
+            {
+              "title": "2D sxema orqali arizalar",
+              "text": "2D sxema orqali bron arizalarini qabul qiladi - m² bo'yicha."
+            },
+            {
+              "title": "Arizani qabul qiladi",
+              "text": "Agar yoqsa - arizani qabul qiladi va sotuvchi bilan bog'lanish ma'lumotlarini oladi."
+            }
           ]
         },
         {
@@ -263,76 +340,133 @@
           "title": "Yetkazib beruvchi",
           "summary": "Yetkazib beruvchi tovar partiyalarini e'lon qiladi, sotuvchilar bron qiladi.",
           "steps": [
-            { "title": "Partiyalar yaratadi", "text": "Ro'yxatdan o'tadi va tovar partiyalarini yaratadi." },
-            { "title": "Narx va vaqtni ko'rsatadi", "text": "Kelish vaqti, dona narxi va optom narxi ko'rsatiladi." },
-            { "title": "Sotuvchilar bron qiladi", "text": "Sotuvchilar «sotib olaman» deb ariza qoldiradi va bron qiladi." },
-            { "title": "Tovarni omborga yuboradi", "text": "Tovar kelgach — sotuvchi ko'rsatgan omborga yuboriladi." }
+            {
+              "title": "Partiyalar yaratadi",
+              "text": "Ro'yxatdan o'tadi va tovar partiyalarini yaratadi."
+            },
+            {
+              "title": "Narx va vaqtni ko'rsatadi",
+              "text": "Kelish vaqti, dona narxi va optom narxi ko'rsatiladi."
+            },
+            {
+              "title": "Sotuvchilar bron qiladi",
+              "text": "Sotuvchilar «sotib olaman» deb ariza qoldiradi va bron qiladi."
+            },
+            {
+              "title": "Tovarni omborga yuboradi",
+              "text": "Tovar kelgach - sotuvchi ko'rsatgan omborga yuboriladi."
+            }
           ]
         },
         {
           "id": "kuryer",
           "title": "Kuryer",
-          "summary": "Kuryer buyurtmalarni ko'radi — tayinlanadi yoki o'zi ariza yuboradi.",
+          "summary": "Kuryer buyurtmalarni ko'radi - tayinlanadi yoki o'zi ariza yuboradi.",
           "steps": [
-            { "title": "Buyurtmalarni ko'radi", "text": "Mavjud buyurtmalar ro'yxatini ko'radi." },
-            { "title": "Sotuvchi tayinlashi", "text": "Agar sotuvchi kuryerni tayinlasa — vazifa kuryer kabinetida ko'rinadi." },
-            { "title": "O'zi ariza yuborishi", "text": "Yoki yoqqan buyurtmaga ariza yuboradi — «men yetkazaman»." },
-            { "title": "Yetkazish ma'lumotlari", "text": "Qabul qilingach — sotuvchi va xaridor ma'lumotlarini oladi." }
+            {
+              "title": "Buyurtmalarni ko'radi",
+              "text": "Mavjud buyurtmalar ro'yxatini ko'radi."
+            },
+            {
+              "title": "Sotuvchi tayinlashi",
+              "text": "Agar sotuvchi kuryerni tayinlasa - vazifa kuryer kabinetida ko'rinadi."
+            },
+            {
+              "title": "O'zi ariza yuborishi",
+              "text": "Yoki yoqqan buyurtmaga ariza yuboradi - «men yetkazaman»."
+            },
+            {
+              "title": "Yetkazish ma'lumotlari",
+              "text": "Qabul qilingach - sotuvchi va xaridor ma'lumotlarini oladi."
+            }
           ]
         }
       ]
     },
     "why": {
-      "eyebrow": "Nega kerak?",
-      "title": "Muammo va yechim",
-      "subtitle": "Kundalik savdo muammolari va Barakali Savdo qanday yordam beradi.",
-      "problemsTitle": "Hozirgi muammolar",
-      "solutionsTitle": "Barakali yechimi",
-      "painPoints": [
-        "Buyurtmalar Telegramda yo'qoladi",
-        "Qoldiqlar qo'lda sanaladi",
-        "Ombor bandligini sotuvchi kech biladi",
-        "Yetkazib beruvchi olib keladi, talab yig'ilmagan",
-        "Kuryer yetkazdim deydi, mijoz olmagan",
-        "Qaytarishlar kuzatilmaydi",
-        "Foyda taxminan hisoblanadi",
-        "Kim nima qilgani aniq emas"
-      ],
-      "solutions": [
-        { "pain": "Buyurtmalar chalkash", "solution": "Har bir rol o'z ishini qiladi — buyurtma tartib bilan yuradi" },
-        { "pain": "Ombor nazorati yo'q", "solution": "Ombor joylari va m² narxi ko'rinadi, bron oldindan ma'lum" },
-        { "pain": "Yetkazish ishonchsiz", "solution": "Kuryer va mijoz ma'lumotlari aniq — yetkazish reja bo'yicha" },
-        { "pain": "Rollar aralashadi", "solution": "Har bir rol o'z vazifasini bajaradi — vazifalar aralashmaydi" }
+      "eyebrow": "Platforma",
+      "title": "Nega Barakali Savdo?",
+      "subtitle": "Telegram, qo'ng'iroq va Excel tarqoq ma'lumot beradi. Barakali Savdo buyurtma, ombor va yetkazishni bitta tushunarli oqimga yig'adi."
+    },
+    "process": {
+      "title": "Qanday ishlaydi?",
+      "subtitle": "Platforma buyurtmani boshidan oxirigacha bir zanjirda olib boradi.",
+      "steps": [
+        {
+          "title": "Tovar keladi",
+          "text": "Ta'minotchi partiyani e'lon qiladi yoki sotuvchi o'z tovarini qo'shadi."
+        },
+        {
+          "title": "Sotuvchi sozlaydi",
+          "text": "Mahsulot, qoldiq, narx va buyurtma bitta kabinetda yuradi."
+        },
+        {
+          "title": "Ombor band qilinadi",
+          "text": "Bo'sh joy ko'rinadi, kerakli m² oldindan bron qilinadi."
+        },
+        {
+          "title": "Kuryer yetkazadi",
+          "text": "Vazifa, manzil va holat aniq ko'rinadi."
+        },
+        {
+          "title": "Mijoz tasdiqlaydi",
+          "text": "QR yoki havola orqali holat ko'rinadi, qabul tasdiqlanadi."
+        }
       ]
     },
     "connections": {
       "eyebrow": "Bog'lanish",
       "title": "Rollar qanday ulanadi?",
-      "subtitle": "Sotuvchi markazda — yetkazib beruvchi, ombor, kuryer va xaridor bilan bog'lanadi.",
+      "subtitle": "Sotuvchi markazda - yetkazib beruvchi, ombor, kuryer va xaridor bilan bog'lanadi.",
       "summary": "Sotuvchi buyurtma yaratadi, yetkazib beruvchi va ombor tovarni tayyorlaydi, kuryer yetkazadi",
       "roles": ["Yetkazib beruvchi", "Sotuvchi", "Ombor", "Kuryer", "Xaridor"],
       "items": [
-        { "from": "Sotuvchi", "to": "Xaridor", "label": "Buyurtma yaratadi" },
-        { "from": "Yetkazib beruvchi", "to": "Sotuvchi", "label": "Tovar partiyasi va bron" },
-        { "from": "Sotuvchi", "to": "Ombor", "label": "Joy band qiladi" },
-        { "from": "Yetkazib beruvchi", "to": "Ombor", "label": "Tovar yetkazadi" },
-        { "from": "Sotuvchi", "to": "Kuryer", "label": "Yetkazish uchun tayinlaydi" },
-        { "from": "Kuryer", "to": "Xaridor", "label": "Buyurtmani yetkazadi" }
+        {
+          "from": "Sotuvchi",
+          "to": "Xaridor",
+          "label": "Buyurtma yaratadi"
+        },
+        {
+          "from": "Yetkazib beruvchi",
+          "to": "Sotuvchi",
+          "label": "Tovar partiyasi va bron"
+        },
+        {
+          "from": "Sotuvchi",
+          "to": "Ombor",
+          "label": "Joy band qiladi"
+        },
+        {
+          "from": "Yetkazib beruvchi",
+          "to": "Ombor",
+          "label": "Tovar yetkazadi"
+        },
+        {
+          "from": "Sotuvchi",
+          "to": "Kuryer",
+          "label": "Yetkazish uchun tayinlaydi"
+        },
+        {
+          "from": "Kuryer",
+          "to": "Xaridor",
+          "label": "Buyurtmani yetkazadi"
+        }
       ]
     },
     "example": {
       "eyebrow": "Misol",
       "title": "Misol: telefon sotuvchi",
-      "subtitle": "Kundalik savdo qanday ishlashi mumkin — oddiy hikoya.",
+      "subtitle": "Kundalik savdo qanday ishlashi mumkin - oddiy hikoya.",
       "p1": "Aziz telefon aksessuarlari sotadi. Avval ro'yxatdan o'tadi, Karim yetkazib beruvchidan g'ilof partiyasini bron qiladi va Sergeli omborida joy band qiladi.",
-      "p2": "Mijoz 3 ta g'ilof buyurtma qiladi — Aziz tizimda buyurtma yaratadi. Karim tovarni kelish vaqtida omborga yuboradi. Ombor xodimi qabul qiladi.",
-      "p3": "Kuryer Jasur «men yetkazaman» deb ariza yuboradi yoki Aziz uni tayinlaydi. Qabul qilingach — mijoz manzili va aloqa ma'lumotlarini oladi.",
-      "p4": "Mijoz buyurtmani qabul qilib oladi. Agar muammo bo'lsa — sotuvchi bilan bog'lanadi."
+      "p2": "Mijoz 3 ta g'ilof buyurtma qiladi - Aziz tizimda buyurtma yaratadi. Karim tovarni kelish vaqtida omborga yuboradi. Ombor xodimi qabul qiladi.",
+      "p3": "Kuryer Jasur «men yetkazaman» deb ariza yuboradi yoki Aziz uni tayinlaydi. Qabul qilingach - mijoz manzili va aloqa ma'lumotlarini oladi.",
+      "p4": "Mijoz buyurtmani qabul qilib oladi. Agar muammo bo'lsa - sotuvchi bilan bog'lanadi."
     },
     "faq": {
       "eyebrow": "Savollar",
       "title": "Ko'p so'raladigan savollar",
       "subtitle": "Platforma haqida qisqa javoblar.",
+      "visualText": "Savolni bosing - javob shu joyning o'zida ochiladi. Kerak bo'lsa, forma orqali aloqaga chiqishingiz mumkin.",
       "items": [
         {
           "question": "Barakali Savdo nima?",
@@ -344,11 +478,11 @@
         },
         {
           "question": "Qachon ishga tushadi?",
-          "answer": "Loyiha tayyorlanmoqda. Oldindan ro'yxatdan o'ting — ishga tushganda siz bilan bog'lanamiz."
+          "answer": "Loyiha tayyorlanmoqda. Oldindan ro'yxatdan o'ting - ishga tushganda siz bilan bog'lanamiz."
         },
         {
           "question": "Kimlar foydalanishi mumkin?",
-          "answer": "Sotuvchi, do'kon, yetkazib beruvchi, ombor egasi, kuryer va xaridor — har biri o'z roli bo'yicha tizimga kiradi."
+          "answer": "Sotuvchi, do'kon, yetkazib beruvchi, ombor egasi, kuryer va xaridor - har biri o'z roli bo'yicha tizimga kiradi."
         },
         {
           "question": "Qanday bog'lanish mumkin?",
@@ -358,12 +492,12 @@
     },
     "comingSoon": {
       "eyebrow": "Tez orada",
-      "title": "Keyingi qadam — kengaytirilgan imkoniyatlar",
+      "title": "Keyingi qadam - kengaytirilgan imkoniyatlar",
       "subtitle": "Platforma doimiy rivojlanmoqda. Quyidagilar tez orada qo'shilishi rejalashtirilgan.",
       "badge": "Tez orada",
       "ctaEyebrow": "Biz bilan birga",
       "ctaTitle": "Hoziroq qo'shiling",
-      "ctaText": "Ariza topshiring va oldindan ro'yxatdan o'ting — sizning qiziqishingiz jamoamizni rag'batlantiradi va platformani tezroq ishga tushirishga yordam beradi.",
+      "ctaText": "Ariza topshiring va oldindan ro'yxatdan o'ting - sizning qiziqishingiz jamoamizni rag'batlantiradi va platformani tezroq ishga tushirishga yordam beradi.",
       "registerCta": "Oldindan ro'yxatdan o'tish",
       "applyCta": "Ariza topshirish",
       "items": [
@@ -381,33 +515,72 @@
         },
         {
           "title": "Ko'plab yangiliklar",
-          "text": "Savdo jarayonini yanada qulay qiladigan yangi imkoniyatlar doimo yo'lida — kuzatib boring."
+          "text": "Savdo jarayonini yanada qulay qiladigan yangi imkoniyatlar doimo yo'lida - kuzatib boring."
+        }
+      ]
+    },
+    "comparison": {
+      "beforeTitle": "Hozirgi holat",
+      "afterTitle": "Barakali Savdo bilan",
+      "before": [
+        "Buyurtmalar Telegram, qo'ng'iroq va Excel orasida yo'qoladi",
+        "Ombor bandligi va qoldiq ko'pincha kech bilinadi",
+        "Tovar kimda, qayerda va qachon yetishi aniq ko'rinmaydi",
+        "Nizo bo'lsa, isbot va tarixni yig'ish qiyin"
+      ],
+      "after": [
+        "Buyurtma, tovar, ombor va yetkazish bitta joyda yuradi",
+        "Sotuvchi bo'sh omborni ko'radi va oldindan bron qiladi",
+        "Kuryer, ombor va xaridor bosqichlari tushunarli ko'rinadi",
+        "Foto, imzo va harakatlar tarixi ishonch yaratadi"
+      ]
+    },
+    "proof": {
+      "eyebrow": "Ishonch",
+      "title": "Har bir topshirish aniq tasdiqlanadi",
+      "subtitle": "Tovar omborga kirganda, kuryer olganda va xaridor qabul qilganda muhim holatlar saqlanadi.",
+      "items": [
+        {
+          "title": "Foto",
+          "text": "Tovar holati topshirish vaqtida rasm bilan ko'rsatiladi."
+        },
+        {
+          "title": "Imzo",
+          "text": "Mas'ul odam qabul yoki topshirishni imzo bilan tasdiqlaydi."
+        },
+        {
+          "title": "Harakatlar tarixi",
+          "text": "Kim nima qilgani va qachon qilgani tartib bilan saqlanadi."
+        },
+        {
+          "title": "Kamroq nizo",
+          "text": "Sotuvchi, ombor, kuryer va xaridor bir xil ma'lumotga qaraydi."
         }
       ]
     }
   },
   "cta": {
     "title": "Platforma ishga tushganda birinchilardan bo'lib foydalaning",
-    "subtitle": "Oldindan ro'yxatdan o'ting yoki taklif va arizangizni qoldiring — ishga tushganda siz bilan bog'lanamiz.",
-    "subtitleLight": "Hozir oldindan ro'yxatdan o'ting — loyiha tayyor bo'lganda xabardor qilamiz."
+    "subtitle": "Oldindan ro'yxatdan o'ting yoki taklif va arizangizni qoldiring - ishga tushganda siz bilan bog'lanamiz.",
+    "subtitleLight": "Hozir oldindan ro'yxatdan o'ting - loyiha tayyor bo'lganda xabardor qilamiz."
   },
   "forms": {
     "preRegistration": {
       "eyebrow": "Oldindan ro'yxat",
-      "title": "Platforma ishga tushganda birinchilardan bo'lib foydalaning",
-      "subtitle": "Loyiha hozir tayyorlanmoqda. Ma'lumotlaringizni qoldiring — ishga tushganda siz bilan bog'lanamiz.",
-      "note": "Bepul oldindan ro'yxat — hech qanday to'lov talab qilinmaydi",
+      "title": "Oldindan ro'yxatdan o'ting va birinchi bo'lib foydalaning",
+      "subtitle": "Birinchi ro'yxatdan o'tgan bizneslar Barakali Savdo ishga tushganda 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "note": "Predregistratsiya ochiq - birinchi ishtirokchilarga 1 yil bepul",
       "name": "Ism",
       "namePlaceholder": "Ismingiz",
       "phone": "Telefon",
       "phonePlaceholder": "+998 90 123 45 67",
       "email": "Email",
       "emailPlaceholder": "email@example.com",
-      "businessType": "Biznes turi",
+      "businessType": "Rol",
       "city": "Shahar/viloyat",
       "cityPlaceholder": "Toshkent",
       "noteField": "Izoh",
-      "notePlaceholder": "Qo'shimcha ma'lumot (ixtiyoriy)",
+      "notePlaceholder": "Nima bilan shug'ullanasiz, qancha buyurtma yoki ombor kerak? (ixtiyoriy)",
       "success": "Arizangiz qabul qilindi",
       "required": "Majburiy maydonlarni to'ldiring",
       "businessTypes": [
@@ -418,12 +591,16 @@
         "Kuryer",
         "Xaridor",
         "Boshqa"
-      ]
+      ],
+      "businessName": "Biznes nomi",
+      "businessNamePlaceholder": "Biznesingiz nomi",
+      "contactLanguage": "Aloqa tili",
+      "contactLanguages": ["Uzbek Latin", "Russian", "English"]
     },
     "feedback": {
       "eyebrow": "Aloqa",
       "title": "Taklif yoki ariza qoldiring",
-      "subtitle": "Hamkorlik, ombor qo'shish, taklif yoki muammo haqida yozing — javob beramiz.",
+      "subtitle": "Hamkorlik, ombor qo'shish, taklif yoki muammo haqida yozing - javob beramiz.",
       "name": "Ism",
       "namePlaceholder": "Ismingiz",
       "phone": "Telefon",
@@ -469,8 +646,8 @@
   "pricing": {
     "eyebrow": "Tariflar",
     "title": "Har bir rol uchun mos tarif",
-    "subtitle": "Siz sotuvchi, do'kon, yetkazib beruvchi, ombor yoki kuryer bo'lishingizdan qat'i nazar — o'zingizga mos rejimni tanlang.",
-    "banner": "Ro'yxatdan o'ting — 1 yil bepul foydalanish oling",
+    "subtitle": "Siz sotuvchi, do'kon, yetkazib beruvchi, ombor yoki kuryer bo'lishingizdan qat'i nazar - o'zingizga mos rejimni tanlang.",
+    "banner": "Ro'yxatdan o'ting - 1 yil bepul foydalanish oling",
     "bannerSub": "Oldindan ro'yxatdan o'tganlar platforma ishga tushganda bir yil bepul foydalanadi.",
     "roleTabsTitle": "Rolingiz bo'yicha narxlar",
     "roleTabsSub": "Har bir rol uchun alohida tariflar. Obuna yoki hamkorlik modelini tanlang.",
@@ -495,23 +672,23 @@
         "description": "Biznesingizni platformada bepul joylashtirasiz. Har bir savdo yoki xizmatdan kichik foiz ulush platformaga beriladi.",
         "points": [
           "Ro'yxatdan o'tish va joylash bepul",
-          "Daromadingizdan foiz ulush (masalan, 3–10%)",
+          "Daromadingizdan foiz ulush (masalan, 3-10%)",
           "Ko'proq mijoz va buyurtma olish imkoniyati",
-          "Oylik to'lov yo'q — faqat natija bo'lsa to'laysiz"
+          "Oylik to'lov yo'q - faqat natija bo'lsa to'laysiz"
         ],
-        "goodFor": "Kimlar uchun yaxshi: ombor egasi, yetkazib beruvchi — platformada ko'rinish va buyurtma olishni xohlaydiganlar."
+        "goodFor": "Kimlar uchun yaxshi: ombor egasi, yetkazib beruvchi - platformada ko'rinish va buyurtma olishni xohlaydiganlar."
       },
       "subscription": {
         "badge": "B model",
         "title": "Oddiy obuna",
-        "description": "Tanlangan tarif bo'yicha har oy belgilangan summani to'laysiz. Xarajat oldindan aniq — kutilmagan foiz yo'q.",
+        "description": "Tanlangan tarif bo'yicha har oy belgilangan summani to'laysiz. Xarajat oldindan aniq - kutilmagan foiz yo'q.",
         "points": [
           "Oylik belgilangan narx",
           "Tanlangan tarif imkoniyatlari",
           "Xarajatni oldindan rejalashtirish oson",
           "Faol savdo qiluvchilar uchun qulay"
         ],
-        "goodFor": "Kimlar uchun yaxshi: sotuvchi, do'kon egasi — barqaror va bashorat qilinadigan xarajat xohlaydiganlar."
+        "goodFor": "Kimlar uchun yaxshi: sotuvchi, do'kon egasi - barqaror va bashorat qilinadigan xarajat xohlaydiganlar."
       }
     },
     "tiers": {
@@ -523,18 +700,33 @@
       "standard": {
         "name": "Biznes Standart",
         "description": "O'sib borayotgan biznes uchun.",
-        "features": ["Kengaytirilgan hisobotlar", "3 foydalanuvchi", "Ombor band qilish", "Telegram bildirishnomalar"],
+        "features": [
+          "Kengaytirilgan hisobotlar",
+          "3 foydalanuvchi",
+          "Ombor band qilish",
+          "Telegram bildirishnomalar"
+        ],
         "highlighted": true
       },
       "premium": {
         "name": "Biznes Premium",
         "description": "Faol savdo va bir nechta filial uchun.",
-        "features": ["Cheksiz buyurtmalar", "10 foydalanuvchi", "Ustuvor qo'llab-quvvatlash", "API kirish"]
+        "features": [
+          "Cheksiz buyurtmalar",
+          "10 foydalanuvchi",
+          "Ustuvor qo'llab-quvvatlash",
+          "Hamkor tizimlar bilan ulash"
+        ]
       },
       "organization": {
         "name": "Biznes Organization",
         "description": "Yirik kompaniya va tarmoqlar uchun.",
-        "features": ["Shaxsiy menejer", "Maxsus integratsiya", "SLA kelishuvi", "Ko'p filial boshqaruvi"]
+        "features": [
+          "Shaxsiy menejer",
+          "Maxsus integratsiya",
+          "Kelishilgan xizmat darajasi",
+          "Ko'p filial boshqaruvi"
+        ]
       }
     },
     "roles": {
@@ -543,10 +735,23 @@
         "description": "Biznesingizni platformada boshqaring, buyurtma yarating va jamoani ulang.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 199000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 449000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 799000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "5%" }
+          "start": {
+            "subscriptionPrice": 199000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 449000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 799000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "5%"
+          }
         }
       },
       "seller": {
@@ -554,10 +759,23 @@
         "description": "Kundalik buyurtmalar va mijozlar bilan ishlash uchun.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 129000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 349000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 599000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "5%" }
+          "start": {
+            "subscriptionPrice": 129000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 349000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 599000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "5%"
+          }
         }
       },
       "shopOwner": {
@@ -565,10 +783,23 @@
         "description": "Do'koningiz savdo va ombor jarayonini bitta joyda boshqaring.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 149000, "partnershipPercent": "9%" },
-          "standard": { "subscriptionPrice": 399000, "partnershipPercent": "7%" },
-          "premium": { "subscriptionPrice": 699000, "partnershipPercent": "5%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "4%" }
+          "start": {
+            "subscriptionPrice": 149000,
+            "partnershipPercent": "9%"
+          },
+          "standard": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "7%"
+          },
+          "premium": {
+            "subscriptionPrice": 699000,
+            "partnershipPercent": "5%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "4%"
+          }
         }
       },
       "supplier": {
@@ -576,10 +807,23 @@
         "description": "Tovarlaringizni platformada ko'rsating va buyurtma oling.",
         "recommendedModel": "partnership",
         "plans": {
-          "start": { "subscriptionPrice": 99000, "partnershipPercent": "10%" },
-          "standard": { "subscriptionPrice": 299000, "partnershipPercent": "8%" },
-          "premium": { "subscriptionPrice": 549000, "partnershipPercent": "6%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": "10%"
+          },
+          "standard": {
+            "subscriptionPrice": 299000,
+            "partnershipPercent": "8%"
+          },
+          "premium": {
+            "subscriptionPrice": 549000,
+            "partnershipPercent": "6%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "warehouseOwner": {
@@ -587,10 +831,23 @@
         "description": "Ombor joyingizni band qilish va yetkazib beruvchilarni qabul qiling.",
         "recommendedModel": "partnership",
         "plans": {
-          "start": { "subscriptionPrice": 149000, "partnershipPercent": "8%" },
-          "standard": { "subscriptionPrice": 399000, "partnershipPercent": "6%" },
-          "premium": { "subscriptionPrice": 699000, "partnershipPercent": "5%" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 149000,
+            "partnershipPercent": "8%"
+          },
+          "standard": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "6%"
+          },
+          "premium": {
+            "subscriptionPrice": 699000,
+            "partnershipPercent": "5%"
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "courier": {
@@ -598,26 +855,52 @@
         "description": "Yetkazib berish buyurtmalarini qabul qiling va daromad qiling.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 99000, "partnershipPercent": "7%" },
-          "standard": { "subscriptionPrice": 249000, "partnershipPercent": "5%" },
-          "premium": { "subscriptionPrice": 399000, "partnershipPercent": "4%" },
-          "organization": { "subscriptionPrice": 999000, "partnershipPercent": "3%" }
+          "start": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": "7%"
+          },
+          "standard": {
+            "subscriptionPrice": 249000,
+            "partnershipPercent": "5%"
+          },
+          "premium": {
+            "subscriptionPrice": 399000,
+            "partnershipPercent": "4%"
+          },
+          "organization": {
+            "subscriptionPrice": 999000,
+            "partnershipPercent": "3%"
+          }
         }
       },
       "buyer": {
         "name": "Xaridor",
-        "description": "Buyurtma berish va yetkazib olish — minimal yoki bepul.",
+        "description": "Buyurtma berish va yetkazib olish - minimal yoki bepul.",
         "recommendedModel": "subscription",
         "plans": {
-          "start": { "subscriptionPrice": 0, "free": true, "partnershipPercent": "—" },
-          "standard": { "subscriptionPrice": 29000, "partnershipPercent": "—" },
-          "premium": { "subscriptionPrice": 99000, "partnershipPercent": "—" },
-          "organization": { "subscriptionPrice": null, "subscriptionCustom": true, "partnershipPercent": "—" }
+          "start": {
+            "subscriptionPrice": 0,
+            "free": true,
+            "partnershipPercent": " - "
+          },
+          "standard": {
+            "subscriptionPrice": 29000,
+            "partnershipPercent": " - "
+          },
+          "premium": {
+            "subscriptionPrice": 99000,
+            "partnershipPercent": " - "
+          },
+          "organization": {
+            "subscriptionPrice": null,
+            "subscriptionCustom": true,
+            "partnershipPercent": " - "
+          }
         }
       }
     },
     "bottomCta": {
-      "title": "Hozir ro'yxatdan o'ting — 1 yil bepul",
+      "title": "Hozir ro'yxatdan o'ting - 1 yil bepul",
       "subtitle": "Platforma ishga tushganda birinchilardan bo'ling va bir yil davomida bepul foydalaning."
     }
   },
@@ -626,7 +909,7 @@
       "description": "O'zbekistondagi savdo, ombor va yetkazib berish platformasi."
     },
     "website": {
-      "description": "Barakali Savdo — sotuvchi, ombor va yetkazib berishni bitta tizimda boshqarish."
+      "description": "Barakali Savdo - sotuvchi, ombor va yetkazib berishni bitta tizimda boshqarish."
     },
     "software": {
       "description": "Savdo, ombor band qilish va yetkazib berishni boshqarish uchun veb-platforma.",
@@ -634,40 +917,431 @@
     },
     "pages": {
       "home": {
-        "title": "Barakali Savdo — savdo, ombor va yetkazib berish platformasi",
+        "title": "Barakali Savdo - savdo, ombor va yetkazib berish platformasi",
         "description": "Sotuvchi, do'kon, yetkazib beruvchi, ombor, kuryer va xaridor uchun bitta ish jarayoni. Oldindan ro'yxatdan o'ting.",
-        "keywords": "Barakali Savdo, savdo platformasi, ombor, yetkazib berish, O'zbekiston, oldindan ro'yxat",
-        "ogTitle": "Barakali Savdo — savdo va yetkazib berish platformasi",
+        "keywords": "Barakali Savdo, savdo tizimi, logistika platformasi, ombor bron qilish, yetkazib beruvchi, kuryer xizmati, buyurtma boshqaruvi, B2B savdo, O'zbekistonda logistika",
+        "ogTitle": "Barakali Savdo - savdo va yetkazib berish platformasi",
         "ogDescription": "Savdo, ombor va yetkazib berishni bitta tizimda boshqaring."
       },
       "preRegistration": {
-        "title": "Oldindan ro'yxat — Barakali Savdo",
+        "title": "Oldindan ro'yxat - Barakali Savdo",
         "description": "Barakali Savdo platformasi ishga tushganda birinchilardan bo'lib foydalaning. Oldindan ro'yxatdan o'ting.",
         "keywords": "oldindan ro'yxat, Barakali Savdo, savdo platformasi, O'zbekiston",
-        "ogTitle": "Oldindan ro'yxat — Barakali Savdo",
+        "ogTitle": "Oldindan ro'yxat - Barakali Savdo",
         "ogDescription": "Platforma ishga tushganda birinchilardan bo'lib foydalaning."
       },
       "feedback": {
-        "title": "Taklif yoki ariza — Barakali Savdo",
-        "description": "Hamkorlik, ombor qo'shish, taklif yoki muammo haqida yozing — Barakali Savdo jamoasi javob beradi.",
+        "title": "Taklif yoki ariza - Barakali Savdo",
+        "description": "Hamkorlik, ombor qo'shish, taklif yoki muammo haqida yozing - Barakali Savdo jamoasi javob beradi.",
         "keywords": "taklif, ariza, hamkorlik, Barakali Savdo, aloqa",
-        "ogTitle": "Taklif yoki ariza — Barakali Savdo",
-        "ogDescription": "Taklif yoki arizangizni qoldiring — javob beramiz."
+        "ogTitle": "Taklif yoki ariza - Barakali Savdo",
+        "ogDescription": "Taklif yoki arizangizni qoldiring - javob beramiz."
       },
       "contact": {
-        "title": "Biz bilan aloqa — Barakali Savdo",
+        "title": "Biz bilan aloqa - Barakali Savdo",
         "description": "Barakali Savdo jamoasi bilan email, telefon yoki Telegram orqali bog'laning.",
         "keywords": "aloqa, Barakali Savdo, email, telefon, Telegram, O'zbekiston",
-        "ogTitle": "Biz bilan aloqa — Barakali Savdo",
-        "ogDescription": "Savdo va yetkazib berish platformasi haqida savollaringiz bo'lsa — biz bilan bog'laning."
+        "ogTitle": "Biz bilan aloqa - Barakali Savdo",
+        "ogDescription": "Savdo va yetkazib berish platformasi haqida savollaringiz bo'lsa - biz bilan bog'laning."
       },
       "pricing": {
-        "title": "Tariflar — Barakali Savdo",
+        "title": "Tariflar - Barakali Savdo",
         "description": "Sotuvchi, do'kon, yetkazib beruvchi, ombor, kuryer va xaridor uchun tariflar. Obuna yoki hamkorlik modeli. 1 yil bepul.",
         "keywords": "tariflar, narxlar, obuna, hamkorlik, Barakali Savdo, O'zbekiston",
-        "ogTitle": "Tariflar — Barakali Savdo",
-        "ogDescription": "Har bir rol uchun mos tarif. Oldindan ro'yxatdan o'ting — 1 yil bepul."
+        "ogTitle": "Tariflar - Barakali Savdo",
+        "ogDescription": "Har bir rol uchun mos tarif. Oldindan ro'yxatdan o'ting - 1 yil bepul."
+      },
+      "about": {
+        "title": "Loyiha haqida - Barakali Savdo",
+        "description": "O'zbekiston biznesiga buyurtma, ombor va yetkazishni bitta tushunarli tizimda boshqarishga yordam beramiz.",
+        "keywords": "Barakali Savdo, savdo tizimi, logistika platformasi, O'zbekistonda logistika",
+        "ogTitle": "Loyiha haqida",
+        "ogDescription": "O'zbekiston biznesiga buyurtma, ombor va yetkazishni bitta tushunarli tizimda boshqarishga yordam beramiz."
+      },
+      "forSellers": {
+        "title": "Sotuvchilar uchun - Barakali Savdo",
+        "description": "Sotuvchilar uchun buyurtma boshqaruvi, ombor bron qilish, kuryer xizmati va xaridor QR-statusi.",
+        "keywords": "sotuvchi, buyurtma boshqaruvi, ombor bron qilish, kuryer xizmati",
+        "ogTitle": "Sotuvchilar uchun",
+        "ogDescription": "Sotuvchilar uchun buyurtma boshqaruvi, ombor bron qilish, kuryer xizmati va xaridor QR-statusi."
+      },
+      "forShops": {
+        "title": "Do'konlar uchun - Barakali Savdo",
+        "description": "Do'konlar uchun POS savdo, qoldiq nazorati, hisobdan chiqarish va oddiy hisobotlar.",
+        "keywords": "do'kon, savdo tizimi, qoldiq boshqaruvi",
+        "ogTitle": "Do'konlar uchun",
+        "ogDescription": "Do'konlar uchun POS savdo, qoldiq nazorati, hisobdan chiqarish va oddiy hisobotlar."
+      },
+      "forSuppliers": {
+        "title": "Yetkazib beruvchilar uchun - Barakali Savdo",
+        "description": "Yetkazib beruvchilar partiya e'lon qiladi, sotuvchilardan ariza oladi va omborga yetkazishni rejalaydi.",
+        "keywords": "yetkazib beruvchi, B2B savdo, logistika platformasi",
+        "ogTitle": "Yetkazib beruvchilar uchun",
+        "ogDescription": "Yetkazib beruvchilar partiya e'lon qiladi, sotuvchilardan ariza oladi va omborga yetkazishni rejalaydi."
+      },
+      "forWarehouses": {
+        "title": "Omborlar uchun - Barakali Savdo",
+        "description": "Ombor egasi manzil, sharoit, yacheyka sxemasi va bronlarni boshqaradi.",
+        "keywords": "ombor bron qilish, ombor egasi, logistika platformasi",
+        "ogTitle": "Omborlar uchun",
+        "ogDescription": "Ombor egasi manzil, sharoit, yacheyka sxemasi va bronlarni boshqaradi."
+      },
+      "forCouriers": {
+        "title": "Kuryerlar uchun - Barakali Savdo",
+        "description": "Kuryerlar yetkazish vazifalarini ko'radi, narx taklif qiladi va topshirishni tasdiqlaydi.",
+        "keywords": "kuryer xizmati, yetkazish, logistika platformasi",
+        "ogTitle": "Kuryerlar uchun",
+        "ogDescription": "Kuryerlar yetkazish vazifalarini ko'radi, narx taklif qiladi va topshirishni tasdiqlaydi."
+      },
+      "forBuyers": {
+        "title": "Xaridorlar uchun - Barakali Savdo",
+        "description": "Xaridor QR yoki havola orqali buyurtma statusini ko'radi va qabulni tasdiqlaydi.",
+        "keywords": "xaridor, buyurtma statusi, QR, buyurtma boshqaruvi",
+        "ogTitle": "Xaridorlar uchun",
+        "ogDescription": "Xaridor QR yoki havola orqali buyurtma statusini ko'radi va qabulni tasdiqlaydi."
       }
     }
+  },
+  "rolePages": {
+    "common": {
+      "sectionLabel": "Rol sahifasi"
+    },
+    "sellers": {
+      "title": "Sotuvchilar uchun",
+      "subtitle": "Tovar, qoldiq, buyurtma, ombor bron qilish, kuryer va mijoz QR-statusi bitta tartibli jarayonda.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Online sotuvchilar",
+        "Ulgurji savdo qiluvchilar",
+        "Instagram va Telegram do'konlari",
+        "Kichik va o'rta biznes"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "Tovarlarni yaratish va qoldiqni aniq ko'rish",
+        "Mijoz buyurtmasini tez rasmiylashtirish",
+        "Ombordan joy tanlash va bron qilish",
+        "Xaridorga QR yoki havola orqali status berish"
+      ],
+      "workflowTitle": "Sotuvchilar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Tovar qo'shadi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Buyurtma yaratadi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Ombor va kuryerni tanlaydi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Statusni kuzatadi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Aziz telefon aksessuarlari sotadi: partiyani bron qiladi, ombordan joy oladi, kuryerga topshiradi va xaridor statusni havola orqali ko'radi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Sotuvchi paneli",
+      "visualItems": [
+        "Tovar va qoldiq bir joyda",
+        "Ombor bron qilish",
+        "Kuryer vazifasi",
+        "Xaridor uchun QR-status"
+      ]
+    },
+    "shops": {
+      "title": "Do'konlar uchun",
+      "subtitle": "POS savdo, qoldiq, hisobdan chiqarish, chegirma va oddiy hisobotlarni bitta joyda boshqaring.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Offline do'konlar",
+        "POS nuqtalar",
+        "Kichik savdo tarmoqlari",
+        "Mahsulot qoldig'ini nazorat qiladigan bizneslar"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "Savdoni tez qayd qilish",
+        "Qoldiq va hisobdan chiqarishni kuzatish",
+        "Chegirmalar bilan ishlash",
+        "Kunlik oddiy hisobotlar"
+      ],
+      "workflowTitle": "Do'konlar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Mahsulot kiradi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Savdo amalga oshadi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Qoldiq yangilanadi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Hisobot chiqadi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Do'kon egasi qaysi mahsulot tez sotilayotganini ko'radi, kam qolganini vaqtida to'ldiradi va ortiqcha yo'qotishni kamaytiradi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Do'kon paneli",
+      "visualItems": ["POS savdo", "Qoldiq nazorati", "Chegirma va qaytarish", "Oddiy hisobot"]
+    },
+    "suppliers": {
+      "title": "Yetkazib beruvchilar uchun",
+      "subtitle": "Tovar partiyalarini e'lon qiling, narx va kelish sanasini ko'rsating, sotuvchilardan ariza oling.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Fermerlar",
+        "Importerlar",
+        "Ulgurji yetkazib beruvchilar",
+        "Ishlab chiqaruvchilar"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "Tovar partiyasini e'lon qilish",
+        "Narx, miqdor va kelish sanasini ko'rsatish",
+        "Sotuvchilardan ariza olish",
+        "Tovarni sotuvchi omboriga yuborish"
+      ],
+      "workflowTitle": "Yetkazib beruvchilar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Partiya yaratadi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Sotuvchi ariza beradi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Tasdiqlaydi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Omborga yuboradi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Fermer yangi partiyani e'lon qiladi, sotuvchilar oldindan bron qiladi, tovar kelganda qaysi omborga borishi aniq bo'ladi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Partiyalar paneli",
+      "visualItems": [
+        "Partiya kartasi",
+        "Sotuvchi arizalari",
+        "Kelish sanasi",
+        "Omborga yo'naltirish"
+      ]
+    },
+    "warehouses": {
+      "title": "Omborlar uchun",
+      "subtitle": "Omboringizni xaritada ko'rsating, sharoitlarni yozing, yacheyka sxemasida bronlarni qabul qiling.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Xususiy omborlar",
+        "Bo'sh sklad joylari",
+        "Logistika nuqtalari",
+        "Ombor operatorlari"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "Ombor manzili va fotosini ko'rsatish",
+        "Saqlash sharoitlarini yozish",
+        "Yacheyka sxemasida joylarni boshqarish",
+        "Bo'sh joydan daromad olish"
+      ],
+      "workflowTitle": "Omborlar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Ombor qo'shiladi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Joylar belgilanadi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Tovar qabul qilinadi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Chiqim tasdiqlanadi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Ombor egasi bo'sh joylarini ko'rsatadi, sotuvchi kerakli maydonni bron qiladi, xodim esa kirim-chiqimni tasdiqlaydi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Ombor xaritasi",
+      "visualItems": [
+        "Manzil va xarita",
+        "Saqlash sharoitlari",
+        "Yacheykalar sxemasi",
+        "Bron va daromad"
+      ]
+    },
+    "couriers": {
+      "title": "Kuryerlar uchun",
+      "subtitle": "Mavjud yetkazishlarni ko'ring, narx taklif qiling, marshrut va kontaktlarni oling, topshirishni tasdiqlang.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Xususiy kuryerlar",
+        "Logistlar",
+        "Yetkazish xizmatlari",
+        "Hududiy tashuvchilar"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "Mavjud yetkazishlarni ko'rish",
+        "Narx taklif qilish",
+        "Marshrut va kontaktlarni olish",
+        "Foto va imzo bilan ishlash"
+      ],
+      "workflowTitle": "Kuryerlar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Vazifani ko'radi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Narx taklif qiladi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Tovarni oladi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Yetkazadi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Kuryer yaqin buyurtmani tanlaydi, narx taklif qiladi, tovarni olganini rasm bilan tasdiqlaydi va xaridorga yetkazadi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Yetkazish paneli",
+      "visualItems": [
+        "Vazifalar ro'yxati",
+        "Narx taklifi",
+        "Marshrut va kontaktlar",
+        "Tasdiqlangan yetkazish"
+      ]
+    },
+    "buyers": {
+      "title": "Xaridorlar uchun",
+      "subtitle": "QR yoki havola orqali buyurtma statusini ko'ring, qabulni tasdiqlang, fikr yoki qaytarish so'rovini qoldiring.",
+      "audienceTitle": "Kimlar uchun",
+      "audience": [
+        "Sotuvchilar mijozlari",
+        "Online xaridorlar",
+        "Do'kon xaridorlari",
+        "Buyurtma statusini bilmoqchi bo'lganlar"
+      ],
+      "featureTitle": "Imkoniyat",
+      "features": [
+        "QR yoki havola orqali status",
+        "Tovar haqida qisqa ma'lumot",
+        "Qabulni tasdiqlash",
+        "Fikr yoki qaytarish so'rovi"
+      ],
+      "workflowTitle": "Xaridorlar uchun jarayoni",
+      "workflow": [
+        {
+          "title": "Havolani oladi",
+          "text": "Ma'lumotlar tartibga keltiriladi."
+        },
+        {
+          "title": "Statusni ko'radi",
+          "text": "Ariza yoki buyurtma yaratiladi."
+        },
+        {
+          "title": "Qabulni tasdiqlaydi",
+          "text": "Kerakli hamkor tanlanadi."
+        },
+        {
+          "title": "Fikr bildiradi",
+          "text": "Natija va status ko'rinadi."
+        }
+      ],
+      "scenarioTitle": "Oddiy ssenariy",
+      "scenarioText": "Xaridor havola orqali buyurtmasini tekshiradi, yetkazilganda qabulni tasdiqlaydi va kerak bo'lsa sotuvchiga xabar beradi.",
+      "proofTitle": "Ishonchli tasdiq",
+      "proofText": "Foto, imzo va harakatlar tarixi muhim bosqichlarni saqlaydi.",
+      "ctaTitle": "Oldindan ro'yxatdan o'ting",
+      "ctaText": "Birinchi ishtirokchilar 1 yil bepul foydalanish imkoniyatiga ega bo'ladi.",
+      "visualTitle": "Xaridor sahifasi",
+      "visualItems": ["QR/link status", "Tovar ma'lumoti", "Qabul tasdig'i", "Fikr va qaytarish"]
+    }
+  },
+  "aboutPage": {
+    "heroTitle": "O'zbekiston biznesi uchun tartibli logistika",
+    "heroSubtitle": "Barakali Savdo kichik va o'rta biznesga qo'ng'iroq, Telegram va Excel orasidagi chalkashlikdan chiqib, buyurtma, ombor va yetkazishni bitta aniq jarayonga o'tkazishga yordam beradi.",
+    "missionLabel": "Missiya",
+    "missionText": "Savdo zanjiridagi har bir odam - sotuvchi, yetkazib beruvchi, ombor, kuryer va xaridor - o'z vazifasini ko'radigan sodda tizim yaratish.",
+    "visual": {
+      "business": "Mahalliy biznes",
+      "regions": "Viloyat va tumanlar",
+      "trust": "Ishonchli topshirish"
+    },
+    "principlesTitle": "Biz nimaga e'tibor beramiz",
+    "principlesSub": "Platforma biznes tilida tushunarli bo'lishi kerak: kamroq chalkashlik, ko'proq nazorat.",
+    "principles": [
+      {
+        "title": "Oddiy jarayon",
+        "text": "Har bir rol o'z ishini qiladi va keyingi bosqich aniq ko'rinadi."
+      },
+      {
+        "title": "Mahalliy moslashuv",
+        "text": "Viloyatlar, tumanlar, ombor joylari va Uzbek Latin bosh tilda."
+      },
+      {
+        "title": "Ishonch",
+        "text": "Foto, imzo va harakatlar tarixi hamkorlar o'rtasida ishonch yaratadi."
+      }
+    ],
+    "stepsTitle": "Qanday o'zgarish beradi",
+    "stepsSub": "Qo'lda yuradigan kelishuvlar tartibli raqamli oqimga aylanadi.",
+    "steps": [
+      {
+        "title": "Buyurtma aniq",
+        "text": "Kim, nima va qayerga yetkazilishi bitta joyda."
+      },
+      {
+        "title": "Ombor ko'rinadi",
+        "text": "Bo'sh joy, bron va yacheyka holati oldindan ma'lum."
+      },
+      {
+        "title": "Yetkazish kuzatiladi",
+        "text": "Kuryer bosqichlari xaridor qabuligacha ko'rinadi."
+      },
+      {
+        "title": "Nizo kamayadi",
+        "text": "Topshirish foto, imzo va tarix bilan tasdiqlanadi."
+      }
+    ]
   }
 }
