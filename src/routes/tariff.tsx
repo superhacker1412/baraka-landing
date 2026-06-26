@@ -7,6 +7,7 @@ import {
   Gift,
   Handshake,
   Package,
+  Percent,
   ShoppingBag,
   ShoppingCart,
   Store,
@@ -86,6 +87,10 @@ function formatUzs(amount: number, locale: string): string {
     style: "decimal",
     maximumFractionDigits: 0,
   }).format(amount);
+}
+
+function getDiscountedPrice(amount: number): number {
+  return Math.round(amount * 0.5);
 }
 
 export function TariffPage() {
@@ -270,24 +275,45 @@ export function TariffPage() {
                   </p>
 
                   <div className="mt-5 border-t border-border/60 pt-5">
-                    <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                      {t("pricing.subscriptionLabel")}
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                        {t("pricing.subscriptionLabel")}
+                      </div>
+                      {!plan.free && !plan.subscriptionCustom && plan.subscriptionPrice != null && (
+                        <div className="inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-success">
+                          <Percent className="h-3 w-3" aria-hidden />
+                          {t("pricing.discountBadge")}
+                        </div>
+                      )}
                     </div>
-                    <div className="mt-1 font-display text-[28px] font-semibold tracking-tight">
+                    <div className="mt-2 font-display text-[28px] font-semibold tracking-tight">
                       {plan.free ? (
                         t("pricing.free")
                       ) : plan.subscriptionCustom ? (
                         t("pricing.customPrice")
                       ) : plan.subscriptionPrice != null ? (
-                        <>
-                          {formatUzs(plan.subscriptionPrice, localeTag)}
-                          <span className="ml-1 text-[13px] font-normal text-muted-foreground">
-                            {t("pricing.perMonth")}
-                          </span>
-                        </>
+                        <div>
+                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                            <span>
+                              {formatUzs(getDiscountedPrice(plan.subscriptionPrice), localeTag)}
+                            </span>
+                            <span className="text-[13px] font-normal text-muted-foreground">
+                              {t("pricing.perMonth")}
+                            </span>
+                          </div>
+                          <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] font-normal text-muted-foreground">
+                            <span>{t("pricing.oldPriceLabel")}</span>
+                            <span className="line-through decoration-destructive/70 decoration-2">
+                              {formatUzs(plan.subscriptionPrice, localeTag)} {t("pricing.perMonth")}
+                            </span>
+                          </div>
+                        </div>
                       ) : (
                         " - "
                       )}
+                    </div>
+                    <div className="mt-3 rounded-xl border border-success/25 bg-success/8 px-3 py-2 text-[12px] font-semibold text-success">
+                      {t("pricing.preRegistrationFree")}
                     </div>
 
                     <div className="mt-4 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">

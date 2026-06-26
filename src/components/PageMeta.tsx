@@ -7,6 +7,7 @@ import {
   faqJsonLd,
   organizationJsonLd,
   pagePath,
+  pricingOfferCatalogJsonLd,
   softwareApplicationJsonLd,
   websiteJsonLd,
   type SeoPageKey,
@@ -85,6 +86,12 @@ export function PageMeta({ page, faqItems }: PageMetaProps) {
     upsertJsonLd("jsonld-organization", organizationJsonLd(lang));
     upsertJsonLd("jsonld-website", websiteJsonLd(lang));
     upsertJsonLd("jsonld-software", softwareApplicationJsonLd(lang));
+
+    if (page === "pricing") {
+      upsertJsonLd("jsonld-pricing-offers", pricingOfferCatalogJsonLd(lang));
+    } else {
+      document.getElementById("jsonld-pricing-offers")?.remove();
+    }
 
     if (faqItems?.length) {
       upsertJsonLd("jsonld-faq", faqJsonLd(faqItems));

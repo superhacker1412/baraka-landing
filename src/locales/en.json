@@ -678,17 +678,20 @@
   },
   "pricing": {
     "eyebrow": "Pricing",
-    "title": "Plans for every role",
-    "subtitle": "Whether you're a seller, shop, supplier, warehouse, courier, or buyer - pick the model that fits.",
-    "banner": "Register now - get 1 year free",
-    "bannerSub": "Pre-register and use the platform free for one year after launch.",
+    "title": "Pricing for Tashkent businesses: now 50% off",
+    "subtitle": "Trade and logistics plans for shops, sellers, warehouses, suppliers, couriers, offices, and organizations. Old prices are 50% off, and pre-registered businesses get 1 year free.",
+    "banner": "Pre-registration: 1 year free + 50% off plans",
+    "bannerSub": "Early registered businesses use the platform free for 12 months after launch, then continue from the new discounted prices.",
     "roleTabsTitle": "Prices by role",
     "roleTabsSub": "Separate plans per role. Choose subscription or partnership.",
     "selectRole": "Select role",
     "perMonth": "UZS/mo",
     "free": "Free",
     "customPrice": "Custom pricing",
-    "subscriptionLabel": "Subscription (monthly)",
+    "subscriptionLabel": "Discounted subscription",
+    "oldPriceLabel": "Old price:",
+    "discountBadge": "50% off",
+    "preRegistrationFree": "Pre-register - 1 year free",
     "partnershipLabel": "Partnership (% of revenue)",
     "partnershipPercent": "{{percent}} of revenue",
     "popular": "Popular",
@@ -928,8 +931,8 @@
       }
     },
     "bottomCta": {
-      "title": "Register now - 1 year free",
-      "subtitle": "Be among the first after launch and use the platform free for a full year."
+      "title": "Register now - 1 year free and 50% off",
+      "subtitle": "Use the platform free for 12 months after launch. After the free period, plans stay 50% below the old price."
     }
   },
   "seo": {
@@ -973,11 +976,11 @@
         "ogDescription": "Questions about our trade and delivery platform? Get in touch."
       },
       "pricing": {
-        "title": "Pricing - Barakali Savdo trade and logistics system",
-        "description": "Plans for sellers, shops, offices, organizations, suppliers, warehouses, and couriers. Early registered businesses get 1 year free.",
-        "keywords": "pricing, plans, shop management system price, logistics platform price, Barakali Savdo, Tashkent, Uzbekistan",
-        "ogTitle": "Pricing - Barakali Savdo",
-        "ogDescription": "Plans for every role. Pre-register - 1 year free."
+        "title": "Barakali Savdo pricing - 50% off and 1 year free",
+        "description": "Trade and logistics pricing for shops, sellers, warehouses, couriers, offices, and organizations in Tashkent and Uzbekistan. Old prices are crossed out, new prices are 50% off, and pre-registration gives 1 year free.",
+        "keywords": "pricing, plans, 50% off, 1 year free, shop management system price, retail software price, logistics platform price, warehouse management price, courier delivery platform, business automation Tashkent, Barakali Savdo, Uzbekistan",
+        "ogTitle": "Barakali Savdo pricing - 50% off",
+        "ogDescription": "Old prices crossed out, new prices 50% lower. Pre-register and get 1 year free."
       },
       "about": {
         "title": "About - Barakali Savdo",

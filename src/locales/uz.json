@@ -678,17 +678,20 @@
   },
   "pricing": {
     "eyebrow": "Tariflar",
-    "title": "Har bir rol uchun mos tarif",
-    "subtitle": "Siz sotuvchi, do'kon, yetkazib beruvchi, ombor yoki kuryer bo'lishingizdan qat'i nazar - o'zingizga mos rejimni tanlang.",
-    "banner": "Ro'yxatdan o'ting - 1 yil bepul foydalanish oling",
-    "bannerSub": "Oldindan ro'yxatdan o'tganlar platforma ishga tushganda bir yil bepul foydalanadi.",
+    "title": "Toshkent biznesi uchun tariflar: hozir 50% arzon",
+    "subtitle": "Do'kon, sotuvchi, ombor, ta'minotchi, kuryer, ofis va tashkilotlar uchun savdo-logistika tariflari. Eski narxdan 50% chegirma va oldindan ro'yxatdan o'tganlarga 1 yil bepul.",
+    "banner": "Predregistratsiya: 1 yil bepul + tariflarga 50% chegirma",
+    "bannerSub": "Platforma ishga tushganda birinchi ro'yxatdan o'tgan bizneslar 12 oy bepul foydalanadi, keyin esa yangi chegirmali narxlardan boshlaydi.",
     "roleTabsTitle": "Rolingiz bo'yicha narxlar",
     "roleTabsSub": "Har bir rol uchun alohida tariflar. Obuna yoki hamkorlik modelini tanlang.",
     "selectRole": "Rolni tanlang",
     "perMonth": "so'm/oy",
     "free": "Bepul",
     "customPrice": "Kelishuv asosida",
-    "subscriptionLabel": "Obuna (oylik)",
+    "subscriptionLabel": "Chegirmali obuna",
+    "oldPriceLabel": "Eski narx:",
+    "discountBadge": "50% chegirma",
+    "preRegistrationFree": "Oldindan ro'yxatdan o'ting - 1 yil bepul",
     "partnershipLabel": "Hamkorlik (% daromad)",
     "partnershipPercent": "daromadning {{percent}}",
     "popular": "Mashhur",
@@ -933,8 +936,8 @@
       }
     },
     "bottomCta": {
-      "title": "Hozir ro'yxatdan o'ting - 1 yil bepul",
-      "subtitle": "Platforma ishga tushganda birinchilardan bo'ling va bir yil davomida bepul foydalaning."
+      "title": "Hozir ro'yxatdan o'ting - 1 yil bepul va 50% chegirma",
+      "subtitle": "Platforma ishga tushganda 12 oy bepul foydalaning. Bepul davrdan keyin tariflar eski narxdan 50% arzon bo'ladi."
     }
   },
   "seo": {
@@ -978,11 +981,11 @@
         "ogDescription": "Savdo va yetkazib berish platformasi haqida savollaringiz bo'lsa - biz bilan bog'laning."
       },
       "pricing": {
-        "title": "Tariflar - savdo va logistika tizimi Barakali Savdo",
-        "description": "Sotuvchi, do'kon, ofis, tashkilot, yetkazib beruvchi, ombor va kuryerlar uchun tariflar. Oldindan ro'yxatdan o'tganlar uchun 1 yil bepul.",
-        "keywords": "tariflar, narxlar, savdo tizimi narxi, logistika platformasi narxi, Barakali Savdo, Toshkent, O'zbekiston",
-        "ogTitle": "Tariflar - Barakali Savdo",
-        "ogDescription": "Har bir rol uchun mos tarif. Oldindan ro'yxatdan o'ting - 1 yil bepul."
+        "title": "Tariflar - 50% chegirma va 1 yil bepul | Barakali Savdo",
+        "description": "Toshkent va O'zbekistondagi do'kon, sotuvchi, ombor, kuryer, ofis va tashkilotlar uchun savdo-logistika tariflari. Eski narxdan 50% chegirma, predregistratsiya qilganlarga 1 yil bepul.",
+        "keywords": "tariflar, narxlar, 50% chegirma, 1 yil bepul, savdo tizimi narxi, do'kon uchun dastur narxi, logistika platformasi narxi, ombor boshqaruvi narxi, kuryer xizmati platformasi, Barakali Savdo, Toshkent, O'zbekiston",
+        "ogTitle": "Barakali Savdo tariflari - 50% chegirma",
+        "ogDescription": "Eski narx chizib ko'rsatilgan: yangi narx 50% arzon. Predregistratsiya qiling - 1 yil bepul foydalaning."
       },
       "about": {
         "title": "Loyiha haqida - Barakali Savdo",

@@ -1,5 +1,5 @@
 import { LOGO_PATH } from "@/lib/brand";
-import { DEFAULT_LOCALE, htmlLang, translate, type Locale } from "@/lib/i18n";
+import { DEFAULT_LOCALE, htmlLang, translate, translateRaw, type Locale } from "@/lib/i18n";
 import seoRoutes from "@/lib/seo-routes.json";
 
 export const SITE_URL =
@@ -168,6 +168,74 @@ export function softwareApplicationJsonLd(locale: Locale = "uz") {
       description: translate(locale, "seo.software.offer"),
     },
     description: translate(locale, "seo.software.description"),
+  };
+}
+
+type PricingPlan = {
+  subscriptionPrice: number | null;
+  subscriptionCustom?: boolean;
+  free?: boolean;
+};
+
+type PricingRole = {
+  name: string;
+  plans: Record<string, PricingPlan>;
+};
+
+type PricingTier = {
+  name: string;
+};
+
+function discountedPrice(price: number): number {
+  return Math.round(price * 0.5);
+}
+
+export function pricingOfferCatalogJsonLd(locale: Locale = "uz") {
+  const roles = translateRaw<Record<string, PricingRole>>(locale, "pricing.roles");
+  const tiers = translateRaw<Record<string, PricingTier>>(locale, "pricing.tiers");
+
+  const offers = Object.entries(roles).flatMap(([roleId, role]) =>
+    Object.entries(role.plans).flatMap(([tierId, plan]) => {
+      if (plan.subscriptionCustom) return [];
+
+      const price =
+        plan.free || plan.subscriptionPrice === 0
+          ? 0
+          : plan.subscriptionPrice != null
+            ? discountedPrice(plan.subscriptionPrice)
+            : null;
+
+      if (price == null) return [];
+
+      return [
+        {
+          "@type": "Offer",
+          name: `${role.name} - ${tiers[tierId]?.name ?? tierId}`,
+          url: canonicalUrl(pagePath("pricing"), locale),
+          price,
+          priceCurrency: "UZS",
+          availability: "https://schema.org/PreOrder",
+          category: roleId,
+          itemOffered: {
+            "@type": "Service",
+            name: `${role.name} ${tiers[tierId]?.name ?? tierId}`,
+            serviceType: "B2B trade and logistics software subscription",
+            areaServed: {
+              "@type": "Country",
+              name: "Uzbekistan",
+            },
+          },
+        },
+      ];
+    }),
+  );
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: translate(locale, "seo.pages.pricing.title"),
+    url: canonicalUrl(pagePath("pricing"), locale),
+    itemListElement: offers,
   };
 }
 
