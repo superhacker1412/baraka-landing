@@ -62,6 +62,7 @@ const ROLE_CARD_LINKS = [
 
 const PROCESS_ICONS: LucideIcon[] = [PackageCheck, Store, Warehouse, Truck, UserCheck];
 const PROOF_ICONS: LucideIcon[] = [Camera, ClipboardCheck, RouteIcon, ShieldCheck];
+const AUDIENCE_ICONS: LucideIcon[] = [Store, Building2, PackageCheck, Warehouse];
 
 export const Route = createFileRoute("/")({
   head: () => buildSeoMeta({ locale: "uz", page: "home" }),
@@ -70,7 +71,10 @@ export const Route = createFileRoute("/")({
 
 function HeroRouteMap() {
   return (
-    <div className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full overflow-hidden lg:w-[54%]" aria-hidden>
+    <div
+      className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-full overflow-hidden lg:w-[54%]"
+      aria-hidden
+    >
       <svg
         className="absolute -left-28 top-8 h-[340px] w-[760px] text-primary/35 sm:top-4 lg:top-10"
         viewBox="0 0 980 360"
@@ -255,7 +259,10 @@ function ComparisonSection({
               <ul className="mt-5 grid gap-3">
                 {comparison.before.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[13px] leading-relaxed">
-                    <CircleX className="mt-0.5 h-4 w-4 shrink-0 text-red-600 dark:text-red-400" aria-hidden />
+                    <CircleX
+                      className="mt-0.5 h-4 w-4 shrink-0 text-red-600 dark:text-red-400"
+                      aria-hidden
+                    />
                     <span className="text-muted-foreground">{item}</span>
                   </li>
                 ))}
@@ -288,7 +295,11 @@ function ComparisonSection({
   );
 }
 
-function RolesSection({ roles }: { roles: { title: string; description: string; benefit: string }[] }) {
+function RolesSection({
+  roles,
+}: {
+  roles: { title: string; description: string; benefit: string }[];
+}) {
   const { t } = useTranslation();
   const orderedRoles = ROLE_CARD_ORDER.map((sourceIndex, cardIndex) => ({
     ...roles[sourceIndex],
@@ -298,11 +309,7 @@ function RolesSection({ roles }: { roles: { title: string; description: string; 
 
   return (
     <Section id="roles" className="py-16">
-      <SectionTitle
-        title={t("landing.roles.title")}
-        sub={t("landing.roles.subtitle")}
-        center
-      />
+      <SectionTitle title={t("landing.roles.title")} sub={t("landing.roles.subtitle")} center />
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {orderedRoles.map(({ title, description, benefit, Icon, route }) => (
           <article
@@ -334,6 +341,57 @@ function RolesSection({ roles }: { roles: { title: string; description: string; 
             )}
           </article>
         ))}
+      </div>
+    </Section>
+  );
+}
+
+function SearchAudienceSection({
+  items,
+}: {
+  items: { title: string; text: string; tags: string[] }[];
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <Section className="py-16">
+      <div className="grid gap-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-start">
+        <SectionTitle
+          eyebrow={t("landing.searchAudience.eyebrow")}
+          title={t("landing.searchAudience.title")}
+          sub={t("landing.searchAudience.subtitle")}
+        />
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {items.map((item, index) => {
+            const Icon = AUDIENCE_ICONS[index] ?? Store;
+
+            return (
+              <article
+                key={item.title}
+                className="rounded-[18px] border border-border bg-card p-5 shadow-[0_18px_60px_-48px_rgba(0,0,0,0.45)]"
+              >
+                <div className="grid h-10 w-10 place-items-center rounded-[14px] bg-primary/8 text-primary">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </div>
+                <h3 className="mt-4 text-[15px] font-semibold">{item.title}</h3>
+                <p className="mt-2 text-[12.5px] leading-relaxed text-muted-foreground">
+                  {item.text}
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-primary/20 bg-primary/7 px-2.5 py-1 text-[11px] font-medium text-primary"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
     </Section>
   );
@@ -404,7 +462,10 @@ function WarehouseAndMapSections() {
       <Section id="ombor" className="py-16">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <div>
-            <SectionTitle title={t("landing.warehouse.title")} sub={t("landing.warehouse.subtitle")} />
+            <SectionTitle
+              title={t("landing.warehouse.title")}
+              sub={t("landing.warehouse.subtitle")}
+            />
             <div className="mt-6">
               <CTAButton href={ROUTES.forWarehouses}>
                 {t("landing.roles.detailCta")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
@@ -444,6 +505,9 @@ function Landing() {
   const stats = tRaw<{ value: string; label: string }[]>("landing.stats");
   const roles =
     tRaw<{ title: string; description: string; benefit: string }[]>("landing.roles.items");
+  const searchAudience = tRaw<{ title: string; text: string; tags: string[] }[]>(
+    "landing.searchAudience.items",
+  );
   const comparison = tRaw<{
     beforeTitle: string;
     afterTitle: string;
@@ -538,6 +602,7 @@ function Landing() {
 
       <MetricStrip stats={stats} />
       <ComparisonSection comparison={comparison} />
+      <SearchAudienceSection items={searchAudience} />
       <RolesSection roles={roles} />
       <ProcessSection steps={processSteps} />
       <WarehouseAndMapSections />

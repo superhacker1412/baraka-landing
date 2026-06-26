@@ -75,7 +75,7 @@ export function PageMeta({ page, faqItems }: PageMetaProps) {
       if ("property" in item && item.property) upsertMeta("property", item.property, item.content);
     }
 
-    upsertCanonical(canonicalUrl(path));
+    upsertCanonical(canonicalUrl(path, lang));
 
     for (const link of buildHreflangLinks(path)) {
       upsertAlternate(link.hrefLang, link.href);

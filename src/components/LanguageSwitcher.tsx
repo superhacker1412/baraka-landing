@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { LOCALES, useTranslation, type Locale } from "@/lib/i18n";
+import { DEFAULT_LOCALE, LOCALES, useTranslation, type Locale } from "@/lib/i18n";
 
 const LABELS: Record<Locale, string> = {
   uz: "UZ",
@@ -11,6 +11,19 @@ type LanguageSwitcherProps = {
   className?: string;
   compact?: boolean;
 };
+
+function syncUrlLocale(locale: Locale) {
+  if (typeof window === "undefined") return;
+
+  const url = new URL(window.location.href);
+  if (locale === DEFAULT_LOCALE) {
+    url.searchParams.delete("lang");
+  } else {
+    url.searchParams.set("lang", locale);
+  }
+
+  window.history.replaceState(window.history.state, "", url.toString());
+}
 
 export function LanguageSwitcher({ className, compact }: LanguageSwitcherProps) {
   const { lang, setLang, t } = useTranslation();
@@ -25,7 +38,10 @@ export function LanguageSwitcher({ className, compact }: LanguageSwitcherProps) 
         <button
           key={locale}
           type="button"
-          onClick={() => setLang(locale)}
+          onClick={() => {
+            setLang(locale);
+            syncUrlLocale(locale);
+          }}
           aria-pressed={lang === locale}
           className={cn(
             "rounded-full px-2 py-1 text-[10.5px] font-semibold transition-colors",

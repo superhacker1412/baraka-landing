@@ -1,10 +1,27 @@
 server {
     listen 80;
-    server_name barakalisavdo.uz www.barakalisavdo.uz;
+    server_name www.barakalisavdo.uz;
+
+    return 301 https://barakalisavdo.uz$request_uri;
+}
+
+server {
+    listen 80;
+    server_name barakalisavdo.uz;
 
     # Static frontend (Vite build output)
     root /var/www/barakalisavdo/dist;
     index index.html;
+
+    location = /robots.txt {
+        try_files /robots.txt =404;
+        add_header Content-Type text/plain;
+    }
+
+    location = /sitemap.xml {
+        try_files /sitemap.xml =404;
+        add_header Content-Type application/xml;
+    }
 
     # Forms + admin API -> Node backend (memory.js / barakali-backend.service)
     location /api/ {

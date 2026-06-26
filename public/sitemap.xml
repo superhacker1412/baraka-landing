@@ -1,126 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
- xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
- xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
- <url>
- <loc>https://barakalisavdo.uz</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>1.0</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/about</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/about?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/about?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/about?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/about" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-sellers</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-sellers?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-sellers?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-sellers?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-sellers" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-shops</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-shops?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-shops?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-shops?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-shops" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-suppliers</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-suppliers?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-suppliers?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-suppliers?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-suppliers" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-warehouses</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-warehouses?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-warehouses?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-warehouses?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-warehouses" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-couriers</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-couriers?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-couriers?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-couriers?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-couriers" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/for-buyers</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-buyers?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-buyers?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-buyers?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-buyers" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/pre-registration</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.9</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/pre-registration?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/pre-registration?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/pre-registration?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/pre-registration" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/pricing</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/pricing?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/pricing?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/pricing?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/pricing" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/contact</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/contact?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/contact?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/contact?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/contact" />
- </url>
- <url>
- <loc>https://barakalisavdo.uz/taklif</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>0.8</priority>
- <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/taklif?lang=uz" />
- <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/taklif?lang=ru" />
- <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/taklif?lang=en" />
- <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/taklif" />
- </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://barakalisavdo.uz/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/pre-registration</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/pre-registration" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/pre-registration?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/pre-registration?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/pre-registration" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-sellers</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-sellers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-sellers?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-sellers?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-sellers" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-shops</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-shops" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-shops?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-shops?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-shops" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-suppliers</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-suppliers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-suppliers?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-suppliers?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-suppliers" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-warehouses</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-warehouses" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-warehouses?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-warehouses?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-warehouses" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-couriers</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-couriers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-couriers?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-couriers?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-couriers" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/for-buyers</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/for-buyers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/for-buyers?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/for-buyers?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/for-buyers" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/pricing</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/pricing" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/pricing?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/pricing?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/pricing" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/about</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/about" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/about?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/about?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/about" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/contact</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/contact" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/contact?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/contact?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/contact" />
+  </url>
+  <url>
+    <loc>https://barakalisavdo.uz/taklif</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="uz-Latn-UZ" href="https://barakalisavdo.uz/taklif" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://barakalisavdo.uz/taklif?lang=ru" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://barakalisavdo.uz/taklif?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barakalisavdo.uz/taklif" />
+  </url>
 </urlset>

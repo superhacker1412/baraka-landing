@@ -1,0 +1,28 @@
+{
+  "siteUrl": "https://barakalisavdo.uz",
+  "defaultLocale": "uz",
+  "locales": [
+    { "code": "uz", "hreflang": "uz-Latn-UZ" },
+    { "code": "ru", "hreflang": "ru" },
+    { "code": "en", "hreflang": "en" }
+  ],
+  "pages": [
+    { "key": "home", "path": "/", "changefreq": "weekly", "priority": 1.0 },
+    {
+      "key": "preRegistration",
+      "path": "/pre-registration",
+      "changefreq": "weekly",
+      "priority": 0.95
+    },
+    { "key": "forSellers", "path": "/for-sellers", "changefreq": "weekly", "priority": 0.9 },
+    { "key": "forShops", "path": "/for-shops", "changefreq": "weekly", "priority": 0.9 },
+    { "key": "forSuppliers", "path": "/for-suppliers", "changefreq": "weekly", "priority": 0.9 },
+    { "key": "forWarehouses", "path": "/for-warehouses", "changefreq": "weekly", "priority": 0.9 },
+    { "key": "forCouriers", "path": "/for-couriers", "changefreq": "weekly", "priority": 0.85 },
+    { "key": "forBuyers", "path": "/for-buyers", "changefreq": "weekly", "priority": 0.8 },
+    { "key": "pricing", "path": "/pricing", "changefreq": "weekly", "priority": 0.8 },
+    { "key": "about", "path": "/about", "changefreq": "monthly", "priority": 0.75 },
+    { "key": "contact", "path": "/contact", "changefreq": "monthly", "priority": 0.7 },
+    { "key": "feedback", "path": "/taklif", "changefreq": "monthly", "priority": 0.65 }
+  ]
+}
