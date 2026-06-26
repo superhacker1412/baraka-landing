@@ -304,7 +304,9 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .route-map-line {
+    .route-map-line,
+    .route-flow-dot,
+    .route-step-card {
       animation: none;
     }
   }
@@ -324,5 +326,12 @@
   }
   .animate-pulse-soft {
     animation: pulse-soft 2s ease-in-out infinite;
+  }
+  .route-flow-dot {
+    filter: drop-shadow(0 4px 10px color-mix(in oklab, var(--primary) 40%, transparent));
+    animation: pulse-soft 1.4s ease-in-out infinite;
+  }
+  .route-step-card {
+    animation: pulse-soft 3.2s ease-in-out infinite;
   }
 }

@@ -244,7 +244,21 @@
       "subtitle": "Find a nearby warehouse on the map - space, area, and address in one place.",
       "visualEyebrow": "Tashkent map",
       "visualTitle": "Toshkent City, warehouses, and delivery points",
-      "visualText": "The MapTiler view shows central Tashkent, Sergeli, Chilonzor, and Yunusobod so it is easier to choose a warehouse and plan delivery.",
+      "visualText": "The order path stays visible on the map.",
+      "visualSteps": {
+        "created": {
+          "title": "Order created",
+          "text": "Seller opens request"
+        },
+        "sent": {
+          "title": "Sent out",
+          "text": "Courier starts route"
+        },
+        "received": {
+          "title": "Received",
+          "text": "Buyer confirms"
+        }
+      },
       "visualHub": "Toshkent City",
       "visualHubText": "Orders, offices, warehouses, and couriers stay visible inside one city workflow.",
       "visualRoute": "City delivery",

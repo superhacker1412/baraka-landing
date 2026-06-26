@@ -244,7 +244,21 @@
       "subtitle": "Yaqin omborni xaritada toping - joy, maydon va manzil bir joyda.",
       "visualEyebrow": "Toshkent xaritasi",
       "visualTitle": "Toshkent City, ombor va yetkazish nuqtalari",
-      "visualText": "MapTiler xaritasida Toshkent markazi, Sergeli, Chilonzor va Yunusoboddagi ombor nuqtalarini ko'rish, joy tanlash va yetkazishni rejalash osonlashadi.",
+      "visualText": "Buyurtma yo'li xaritada jonli ko'rinadi.",
+      "visualSteps": {
+        "created": {
+          "title": "Buyurtma yaratildi",
+          "text": "Sotuvchi ariza ochadi"
+        },
+        "sent": {
+          "title": "Yetkazishga chiqdi",
+          "text": "Kuryer yo'lga tushadi"
+        },
+        "received": {
+          "title": "Qabul qilindi",
+          "text": "Xaridor tasdiqlaydi"
+        }
+      },
       "visualHub": "Toshkent City",
       "visualHubText": "Buyurtmalar, ofislar, omborlar va kuryerlar shahar ichida bir oqimda ko'rinadi.",
       "visualRoute": "Shahar bo'ylab yetkazish",

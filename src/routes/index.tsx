@@ -8,7 +8,6 @@ import {
   ClipboardCheck,
   CircleX,
   LayoutDashboard,
-  MapPin,
   MapPinned,
   Navigation,
   PackageCheck,
@@ -64,6 +63,11 @@ const ROLE_CARD_LINKS = [
 const PROCESS_ICONS: LucideIcon[] = [PackageCheck, Store, Warehouse, Truck, UserCheck];
 const PROOF_ICONS: LucideIcon[] = [Camera, ClipboardCheck, RouteIcon, ShieldCheck];
 const AUDIENCE_ICONS: LucideIcon[] = [Store, Building2, PackageCheck, Warehouse];
+const ROUTE_VISUAL_STEPS = [
+  { key: "created", Icon: PackageCheck },
+  { key: "sent", Icon: Truck },
+  { key: "received", Icon: UserCheck },
+] as const;
 
 export const Route = createFileRoute("/")({
   head: () => buildSeoMeta({ locale: "uz", page: "home" }),
@@ -165,30 +169,49 @@ function RouteVisual() {
         <h3 className="mt-4 font-display text-[25px] font-semibold leading-tight">
           {t("landing.map.visualTitle")}
         </h3>
-        <p className="mt-2 text-[12.5px] leading-relaxed text-muted-foreground">
-          {t("landing.map.visualText")}
-        </p>
       </div>
 
-      <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur">
-          <div className="flex items-center gap-2 text-[12px] font-semibold">
-            <MapPin className="h-4 w-4 text-primary" aria-hidden />
-            {t("landing.map.visualHub")}
+      <div className="pointer-events-none absolute inset-x-8 top-[48%] z-10 hidden -translate-y-1/2 sm:block">
+        <svg className="h-24 w-full text-primary" viewBox="0 0 520 100" fill="none" aria-hidden>
+          <path
+            id="route-visual-path"
+            d="M34 64 C136 10 212 96 312 42 C390 0 438 22 486 58"
+            opacity="0"
+          />
+          <path
+            d="M34 64 C136 10 212 96 312 42 C390 0 438 22 486 58"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeDasharray="14 16"
+            className="route-map-line"
+            opacity="0.78"
+          />
+          <circle className="route-flow-dot" r="7" fill="currentColor">
+            <animateMotion dur="5.8s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#route-visual-path" />
+            </animateMotion>
+          </circle>
+        </svg>
+      </div>
+
+      <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-3">
+        {ROUTE_VISUAL_STEPS.map(({ key, Icon }, index) => (
+          <div
+            key={key}
+            className="route-step-card rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur"
+            style={{ animationDelay: `${index * 0.45}s` }}
+          >
+            <div className="flex items-center gap-2 text-[12px] font-semibold">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-primary text-primary-foreground">
+                <Icon className="h-3.5 w-3.5" aria-hidden />
+              </span>
+              {t(`landing.map.visualSteps.${key}.title`)}
+            </div>
+            <p className="mt-1 text-[11.5px] text-muted-foreground">
+              {t(`landing.map.visualSteps.${key}.text`)}
+            </p>
           </div>
-          <p className="mt-1 text-[11.5px] text-muted-foreground">
-            {t("landing.map.visualHubText")}
-          </p>
-        </div>
-        <div className="rounded-[16px] border border-primary/20 bg-primary/8 p-3 shadow-lg shadow-primary/8 backdrop-blur">
-          <div className="flex items-center gap-2 text-[12px] font-semibold text-primary">
-            <Truck className="h-4 w-4" aria-hidden />
-            {t("landing.map.visualRoute")}
-          </div>
-          <p className="mt-1 text-[11.5px] text-muted-foreground">
-            {t("landing.map.visualRouteText")}
-          </p>
-        </div>
+        ))}
       </div>
     </div>
   );
