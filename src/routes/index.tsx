@@ -26,6 +26,7 @@ import { CTABlockLight, PromoBadge } from "@/components/CTABlock";
 import { PageMeta, useFaqItems } from "@/components/PageMeta";
 import { PublicShell, Section, SectionTitle, CTAButton } from "@/components/PublicShell";
 import { SellerDashboardHero } from "@/components/SellerDashboardHero";
+import { TashkentMapPreview } from "@/components/TashkentMapPreview";
 import { WarehouseBookingDemo } from "@/components/WarehouseBookingDemo";
 import { WarehouseMapSection } from "@/components/WarehouseMapSection";
 import { useTranslation } from "@/lib/i18n";
@@ -149,18 +150,14 @@ function RouteVisual() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative min-h-[430px] overflow-hidden rounded-[24px] border border-border bg-[linear-gradient(180deg,#f8fffb_0%,#ffffff_74%)] p-6 shadow-[0_24px_80px_-56px_rgba(0,0,0,0.45)]">
+    <div className="relative min-h-[430px] overflow-hidden rounded-[24px] border border-border bg-card shadow-[0_24px_80px_-56px_rgba(0,0,0,0.45)]">
+      <TashkentMapPreview className="absolute inset-0 min-h-[430px]" />
       <div
         aria-hidden
-        className="absolute inset-0 opacity-45"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 18% 18%, color-mix(in oklab, var(--primary) 16%, transparent) 0 2px, transparent 3px), radial-gradient(circle at 72% 30%, color-mix(in oklab, var(--primary) 12%, transparent) 0 2px, transparent 3px)",
-          backgroundSize: "54px 54px, 70px 70px",
-        }}
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/96 via-background/34 to-background/92"
       />
 
-      <div className="relative z-10 max-w-[250px]">
+      <div className="relative z-10 max-w-[290px] p-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1 text-[11px] font-semibold text-primary">
           <Navigation className="h-3.5 w-3.5" aria-hidden />
           {t("landing.map.visualEyebrow")}
@@ -172,44 +169,6 @@ function RouteVisual() {
           {t("landing.map.visualText")}
         </p>
       </div>
-
-      <svg
-        aria-hidden
-        className="absolute inset-x-4 bottom-6 top-[118px] text-primary"
-        viewBox="0 0 560 300"
-        fill="none"
-      >
-        <path
-          d="M40 162 C82 116 136 132 176 103 C224 68 282 95 326 82 C386 64 438 92 512 58 C494 94 522 132 488 158 C448 190 386 172 344 216 C302 260 246 226 194 246 C140 268 90 224 42 238 C58 208 10 194 40 162Z"
-          fill="currentColor"
-          opacity="0.075"
-        />
-        <path
-          d="M40 162 C82 116 136 132 176 103 C224 68 282 95 326 82 C386 64 438 92 512 58 C494 94 522 132 488 158 C448 190 386 172 344 216 C302 260 246 226 194 246 C140 268 90 224 42 238 C58 208 10 194 40 162Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          opacity="0.28"
-        />
-        <path
-          d="M132 190 C178 154 220 160 258 138 S344 102 408 132 S470 108 500 78"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeDasharray="9 13"
-          strokeLinecap="round"
-          className="route-map-line"
-        />
-        {[
-          [132, 190, "Toshkent"],
-          [258, 138, "Samarqand"],
-          [408, 132, "Farg'ona"],
-          [500, 78, "Andijon"],
-        ].map(([x, y, label]) => (
-          <g key={label as string}>
-            <circle cx={x as number} cy={y as number} r="15" fill="currentColor" opacity="0.11" />
-            <circle cx={x as number} cy={y as number} r="6" fill="currentColor" />
-          </g>
-        ))}
-      </svg>
 
       <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-2">
         <div className="rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur">

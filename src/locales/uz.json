@@ -242,13 +242,27 @@
       "eyebrow": "Xarita",
       "title": "Toshkent omborlari",
       "subtitle": "Yaqin omborni xaritada toping - joy, maydon va manzil bir joyda.",
-      "visualEyebrow": "O'zbekiston bo'ylab",
-      "visualTitle": "Ombor va yetkazish yo'li bir xaritada",
-      "visualText": "Toshkentdan viloyatlarga ketayotgan tovar qayerda ekanini ko'rish, ombor tanlash va yetkazishni rejalash osonlashadi.",
-      "visualHub": "Toshkent markazi",
-      "visualHubText": "Buyurtmalar, omborlar va kuryerlar asosiy oqimda ko'rinadi.",
-      "visualRoute": "Viloyatlar yo'nalishi",
-      "visualRouteText": "Samarqand, Farg'ona va Andijon yo'nalishlari bitta jarayonga ulanadi.",
+      "visualEyebrow": "Toshkent xaritasi",
+      "visualTitle": "Toshkent City, ombor va yetkazish nuqtalari",
+      "visualText": "MapTiler xaritasida Toshkent markazi, Sergeli, Chilonzor va Yunusoboddagi ombor nuqtalarini ko'rish, joy tanlash va yetkazishni rejalash osonlashadi.",
+      "visualHub": "Toshkent City",
+      "visualHubText": "Buyurtmalar, ofislar, omborlar va kuryerlar shahar ichida bir oqimda ko'rinadi.",
+      "visualRoute": "Shahar bo'ylab yetkazish",
+      "visualRouteText": "Sergeli, Chilonzor va Yunusobod yo'nalishlari bitta xaritada ko'rinadi.",
+      "previewPins": {
+        "tashkentCity": {
+          "name": "Toshkent City"
+        },
+        "sergeli": {
+          "name": "Sergeli ombor"
+        },
+        "chilonzor": {
+          "name": "Chilonzor hub"
+        },
+        "yunusobod": {
+          "name": "Yunusobod depo"
+        }
+      },
       "demoTitle": "Toshkent ombor tarmog'i",
       "demoHint": "Omborlar, bo'sh joylar va yo'nalishlar bir xaritada ko'rinadi.",
       "loadError": "Xarita hozir soddalashtirilgan ko'rinishda ochildi.",

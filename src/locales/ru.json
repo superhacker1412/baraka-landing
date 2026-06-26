@@ -242,13 +242,27 @@
       "eyebrow": "Карта",
       "title": "Склады Ташкента",
       "subtitle": "Найдите ближайший склад на карте - место, площадь и адрес в одном месте.",
-      "visualEyebrow": "По Узбекистану",
-      "visualTitle": "Склад и маршрут доставки на одной карте",
-      "visualText": "Проще видеть, где находится товар, выбрать склад и заранее спланировать доставку из Ташкента в регионы.",
-      "visualHub": "Центр в Ташкенте",
-      "visualHubText": "Заказы, склады и курьеры видны в общем рабочем потоке.",
-      "visualRoute": "Маршруты в регионы",
-      "visualRouteText": "Самарканд, Фергана и Андижан соединяются в один понятный процесс.",
+      "visualEyebrow": "Карта Ташкента",
+      "visualTitle": "Toshkent City, склады и точки доставки",
+      "visualText": "На карте MapTiler видно центр Ташкента, Sergeli, Chilonzor и Yunusobod: проще выбрать склад, понять маршрут и спланировать доставку.",
+      "visualHub": "Toshkent City",
+      "visualHubText": "Заказы, офисы, склады и курьеры видны внутри одного городского процесса.",
+      "visualRoute": "Доставка по городу",
+      "visualRouteText": "Sergeli, Chilonzor и Yunusobod отображаются на одной карте.",
+      "previewPins": {
+        "tashkentCity": {
+          "name": "Toshkent City"
+        },
+        "sergeli": {
+          "name": "Склад Sergeli"
+        },
+        "chilonzor": {
+          "name": "Chilonzor hub"
+        },
+        "yunusobod": {
+          "name": "Yunusobod depo"
+        }
+      },
       "demoTitle": "Складская сеть Ташкента",
       "demoHint": "Склады, свободные места и маршруты видны на одной карте.",
       "loadError": "Карта открылась в упрощённом виде.",

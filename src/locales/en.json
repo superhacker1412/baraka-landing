@@ -242,13 +242,27 @@
       "eyebrow": "Map",
       "title": "Tashkent warehouses",
       "subtitle": "Find a nearby warehouse on the map - space, area, and address in one place.",
-      "visualEyebrow": "Across Uzbekistan",
-      "visualTitle": "Warehouse and delivery route on one map",
-      "visualText": "See where goods are, choose warehouse space, and plan delivery from Tashkent to the regions ahead of time.",
-      "visualHub": "Tashkent hub",
-      "visualHubText": "Orders, warehouses, and couriers stay visible in one workflow.",
-      "visualRoute": "Regional routes",
-      "visualRouteText": "Samarkand, Fergana, and Andijan connect into one clear process.",
+      "visualEyebrow": "Tashkent map",
+      "visualTitle": "Toshkent City, warehouses, and delivery points",
+      "visualText": "The MapTiler view shows central Tashkent, Sergeli, Chilonzor, and Yunusobod so it is easier to choose a warehouse and plan delivery.",
+      "visualHub": "Toshkent City",
+      "visualHubText": "Orders, offices, warehouses, and couriers stay visible inside one city workflow.",
+      "visualRoute": "City delivery",
+      "visualRouteText": "Sergeli, Chilonzor, and Yunusobod appear on one live map.",
+      "previewPins": {
+        "tashkentCity": {
+          "name": "Toshkent City"
+        },
+        "sergeli": {
+          "name": "Sergeli warehouse"
+        },
+        "chilonzor": {
+          "name": "Chilonzor hub"
+        },
+        "yunusobod": {
+          "name": "Yunusobod depot"
+        }
+      },
       "demoTitle": "Tashkent warehouse network",
       "demoHint": "Warehouses, available space, and routes stay visible on one map.",
       "loadError": "The map opened in a simplified view.",
