@@ -1,11 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   Briefcase,
   Building2,
   Check,
   Gift,
-  Handshake,
   Package,
   Percent,
   ShoppingBag,
@@ -39,7 +38,9 @@ const ROLE_IDS = [
   "buyer",
 ] as const;
 
-const TIER_IDS = ["start", "standard", "premium", "organization"] as const;
+const MAIN_TIER_IDS = ["start", "standard", "premium"] as const;
+const ENTERPRISE_TIER_ID = "organization" as const;
+const TIER_IDS = [...MAIN_TIER_IDS, ENTERPRISE_TIER_ID] as const;
 
 type RoleId = (typeof ROLE_IDS)[number];
 type TierId = (typeof TIER_IDS)[number];
@@ -100,6 +101,8 @@ export function TariffPage() {
   const roles = tRaw<Record<RoleId, RolePricing>>("pricing.roles");
   const tiers = tRaw<Record<TierId, TierInfo>>("pricing.tiers");
   const activeRoleData = roles[activeRole];
+  const enterpriseTier = tiers[ENTERPRISE_TIER_ID];
+  const enterprisePlan = activeRoleData.plans[ENTERPRISE_TIER_ID];
 
   const localeTag = useMemo(() => {
     if (lang === "en") return "en-US";
@@ -107,21 +110,46 @@ export function TariffPage() {
     return "uz-UZ";
   }, [lang]);
 
+  const renderSubscriptionPrice = (plan: PlanPricing, large = false) => {
+    if (plan.free) return t("pricing.free");
+    if (plan.subscriptionCustom) return t("pricing.customPrice");
+
+    if (plan.subscriptionPrice == null) return " - ";
+
+    return (
+      <div>
+        <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
+          <span>{formatUzs(getDiscountedPrice(plan.subscriptionPrice), localeTag)}</span>
+          <span
+            className={cn(
+              "pb-1 font-sans font-medium text-muted-foreground",
+              large ? "text-[13px]" : "text-[12px]",
+            )}
+          >
+            {t("pricing.perMonth")}
+          </span>
+        </div>
+        <div className="mt-1 flex flex-wrap items-center gap-2 font-sans text-[12px] font-normal text-muted-foreground">
+          <span>{t("pricing.oldPriceLabel")}</span>
+          <span className="line-through decoration-destructive/70 decoration-2">
+            {formatUzs(plan.subscriptionPrice, localeTag)} {t("pricing.perMonth")}
+          </span>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <PublicShell>
       <PageMeta page="pricing" />
 
-      {/* Promo banner */}
       <div className="border-b border-success/20 bg-success/5">
-        <Section className="py-5 md:py-6">
-          <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-3">
-            <div className="inline-flex items-center gap-2 rounded-full border border-success/35 bg-success/10 px-4 py-2 text-[14px] font-semibold text-success md:text-[15px]">
-              <Gift className="h-4 w-4 shrink-0 md:h-5 md:w-5" aria-hidden />
+        <Section className="py-4">
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-success/35 bg-success/10 px-4 py-2 text-[13px] font-semibold text-success md:text-[14px]">
+              <Gift className="h-4 w-4 shrink-0" aria-hidden />
               {t("pricing.banner")}
             </div>
-            <p className="max-w-xl text-[13px] text-muted-foreground md:text-[14px]">
-              {t("pricing.bannerSub")}
-            </p>
           </div>
         </Section>
       </div>
@@ -135,74 +163,28 @@ export function TariffPage() {
           level="h1"
         />
 
-        {/* Business models */}
-        <div className="mt-14 grid gap-5 md:grid-cols-2">
-          <div className="surface rounded-3xl p-6 md:p-8">
-            <div className="mb-4 grid h-11 w-11 place-items-center rounded-2xl bg-foreground/5">
-              <Handshake className="h-5 w-5 text-foreground" aria-hidden />
-            </div>
-            <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              {t("pricing.models.partnership.badge")}
-            </div>
-            <h3 className="mt-2 font-display text-[22px] font-semibold tracking-tight md:text-[26px]">
-              {t("pricing.models.partnership.title")}
-            </h3>
-            <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
-              {t("pricing.models.partnership.description")}
-            </p>
-            <ul className="mt-4 space-y-2">
-              {tRaw<string[]>("pricing.models.partnership.points").map((point) => (
-                <li key={point} className="flex items-start gap-2 text-[13.5px]">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 rounded-xl bg-muted/60 px-3 py-2 text-[12.5px] text-muted-foreground">
-              {t("pricing.models.partnership.goodFor")}
-            </p>
+        <div className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+          <div className="inline-flex items-center gap-2 rounded-full border border-success/25 bg-success/8 px-3.5 py-2 text-[12.5px] font-semibold text-success">
+            <Gift className="h-3.5 w-3.5" aria-hidden />
+            {t("pricing.preRegistrationFree")}
           </div>
-
-          <div className="surface rounded-3xl p-6 md:p-8">
-            <div className="mb-4 grid h-11 w-11 place-items-center rounded-2xl bg-foreground/5">
-              <Zap className="h-5 w-5 text-foreground" aria-hidden />
-            </div>
-            <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              {t("pricing.models.subscription.badge")}
-            </div>
-            <h3 className="mt-2 font-display text-[22px] font-semibold tracking-tight md:text-[26px]">
-              {t("pricing.models.subscription.title")}
-            </h3>
-            <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
-              {t("pricing.models.subscription.description")}
-            </p>
-            <ul className="mt-4 space-y-2">
-              {tRaw<string[]>("pricing.models.subscription.points").map((point) => (
-                <li key={point} className="flex items-start gap-2 text-[13.5px]">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" aria-hidden />
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 rounded-xl bg-muted/60 px-3 py-2 text-[12.5px] text-muted-foreground">
-              {t("pricing.models.subscription.goodFor")}
-            </p>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 text-[12.5px] font-semibold">
+            <Percent className="h-3.5 w-3.5 text-success" aria-hidden />
+            {t("pricing.discountBadge")}
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-2 text-[12.5px] font-semibold text-primary">
+            <Zap className="h-3.5 w-3.5" aria-hidden />
+            {t("pricing.popular")}: {tiers.standard.name}
           </div>
         </div>
 
-        {/* Role tabs + pricing cards */}
-        <div className="mt-16">
-          <div className="text-center">
-            <h3 className="font-display text-[24px] font-semibold tracking-tight md:text-[32px]">
-              {t("pricing.roleTabsTitle")}
-            </h3>
-            <p className="mx-auto mt-2 max-w-2xl text-[14px] text-muted-foreground">
-              {t("pricing.roleTabsSub")}
-            </p>
+        <div className="mt-12">
+          <div className="text-center text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+            {t("pricing.roleTabsTitle")}
           </div>
 
           <div
-            className="mt-8 flex flex-wrap justify-center gap-2"
+            className="mt-5 flex flex-wrap justify-center gap-2"
             role="tablist"
             aria-label={t("pricing.selectRole")}
           >
@@ -230,123 +212,166 @@ export function TariffPage() {
             })}
           </div>
 
-          <div className="mt-6 text-center">
-            <p className="text-[14px] text-muted-foreground">{activeRoleData.description}</p>
-            <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/50 px-3 py-1 text-[12px] text-muted-foreground">
-              {activeRoleData.recommendedModel === "partnership" ? (
-                <Handshake className="h-3 w-3" aria-hidden />
-              ) : (
-                <Zap className="h-3 w-3" aria-hidden />
-              )}
-              {t(`pricing.recommended.${activeRoleData.recommendedModel}`)}
+          <div className="mt-5 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/45 px-3 py-1.5 text-[12px] font-medium text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden />
+              {activeRoleData.name}
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {TIER_IDS.map((tierId) => {
+          <div className="mx-auto mt-12 grid max-w-6xl gap-4 lg:grid-cols-3 lg:items-stretch">
+            {MAIN_TIER_IDS.map((tierId) => {
               const tier = tiers[tierId];
               const plan = activeRoleData.plans[tierId];
               const TierIcon = TIER_ICONS[tierId];
               const highlighted = tier.highlighted === true;
+              const visibleFeatures = tier.features.slice(0, highlighted ? 4 : 3);
 
               return (
-                <div
+                <article
                   key={tierId}
                   className={cn(
-                    "surface relative flex flex-col rounded-3xl p-6 ease-spring transition-[box-shadow,transform] hover:-translate-y-0.5",
-                    highlighted && "ring-2 ring-foreground/15 shadow-lg",
+                    "surface relative flex flex-col overflow-hidden rounded-3xl ease-spring transition-[box-shadow,transform] hover:-translate-y-0.5",
+                    highlighted
+                      ? "border-primary/40 bg-primary/5 p-6 shadow-2xl shadow-primary/10 ring-1 ring-primary/25 lg:-mt-5 lg:min-h-[560px]"
+                      : "p-5 lg:mt-6 lg:min-h-[500px]",
                   )}
                 >
                   {highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-foreground px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-background">
-                      {t("pricing.popular")}
-                    </div>
+                    <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
                   )}
 
-                  <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-foreground/5">
-                    <TierIcon className="h-4 w-4" aria-hidden />
-                  </div>
-
-                  <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                    {tier.name}
-                  </div>
-                  <p className="mt-1 min-h-[2.5rem] text-[12.5px] leading-snug text-muted-foreground">
-                    {tier.description}
-                  </p>
-
-                  <div className="mt-5 border-t border-border/60 pt-5">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                        {t("pricing.subscriptionLabel")}
-                      </div>
-                      {!plan.free && !plan.subscriptionCustom && plan.subscriptionPrice != null && (
-                        <div className="inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-success">
+                  <div className="flex items-start justify-between gap-3">
+                    <div
+                      className={cn(
+                        "grid h-10 w-10 place-items-center rounded-2xl bg-foreground/5",
+                        highlighted && "h-11 w-11 bg-primary text-primary-foreground",
+                      )}
+                    >
+                      <TierIcon className="h-4 w-4" aria-hidden />
+                    </div>
+                    <div
+                      className={cn(
+                        "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold tracking-[0.14em] uppercase",
+                        highlighted
+                          ? "bg-foreground text-background"
+                          : "border border-success/20 bg-success/8 text-success",
+                      )}
+                    >
+                      {highlighted ? (
+                        t("pricing.popular")
+                      ) : (
+                        <>
                           <Percent className="h-3 w-3" aria-hidden />
                           {t("pricing.discountBadge")}
-                        </div>
+                        </>
                       )}
-                    </div>
-                    <div className="mt-2 font-display text-[28px] font-semibold tracking-tight">
-                      {plan.free ? (
-                        t("pricing.free")
-                      ) : plan.subscriptionCustom ? (
-                        t("pricing.customPrice")
-                      ) : plan.subscriptionPrice != null ? (
-                        <div>
-                          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                            <span>
-                              {formatUzs(getDiscountedPrice(plan.subscriptionPrice), localeTag)}
-                            </span>
-                            <span className="text-[13px] font-normal text-muted-foreground">
-                              {t("pricing.perMonth")}
-                            </span>
-                          </div>
-                          <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] font-normal text-muted-foreground">
-                            <span>{t("pricing.oldPriceLabel")}</span>
-                            <span className="line-through decoration-destructive/70 decoration-2">
-                              {formatUzs(plan.subscriptionPrice, localeTag)} {t("pricing.perMonth")}
-                            </span>
-                          </div>
-                        </div>
-                      ) : (
-                        " - "
-                      )}
-                    </div>
-                    <div className="mt-3 rounded-xl border border-success/25 bg-success/8 px-3 py-2 text-[12px] font-semibold text-success">
-                      {t("pricing.preRegistrationFree")}
-                    </div>
-
-                    <div className="mt-4 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-                      {t("pricing.partnershipLabel")}
-                    </div>
-                    <div className="mt-1 text-[15px] font-semibold">
-                      {t("pricing.partnershipPercent", { percent: plan.partnershipPercent })}
                     </div>
                   </div>
 
-                  <ul className="mt-5 flex-1 space-y-2 border-t border-border/60 pt-5">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2 text-[12.5px]">
+                  <div className="mt-6">
+                    <h3
+                      className={cn(
+                        "font-display font-semibold tracking-tight",
+                        highlighted ? "text-[28px] md:text-[32px]" : "text-[23px] md:text-[26px]",
+                      )}
+                    >
+                      {tier.name}
+                    </h3>
+                    <p className="mt-2 min-h-[2.2rem] text-[13px] leading-snug text-muted-foreground">
+                      {tier.description}
+                    </p>
+                  </div>
+
+                  <div
+                    className={cn(
+                      "mt-5 rounded-2xl border p-4",
+                      highlighted
+                        ? "border-primary/20 bg-background/70"
+                        : "border-border bg-muted/35",
+                    )}
+                  >
+                    <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
+                      <Percent className="h-3.5 w-3.5 text-success" aria-hidden />
+                      {t("pricing.subscriptionLabel")}
+                    </div>
+                    <div
+                      className={cn(
+                        "mt-2 font-display font-semibold tracking-tight",
+                        highlighted ? "text-[36px] leading-[1.05] md:text-[42px]" : "text-[30px]",
+                      )}
+                    >
+                      {renderSubscriptionPrice(plan, highlighted)}
+                    </div>
+                  </div>
+
+                  <div className="mt-3 inline-flex items-center gap-2 rounded-2xl border border-success/25 bg-success/8 px-3 py-2 text-[12px] font-semibold text-success">
+                    <Gift className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                    {t("pricing.preRegistrationFree")}
+                  </div>
+
+                  <ul className="mt-5 flex-1 space-y-2.5">
+                    {visibleFeatures.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-[13px]">
                         <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-success" aria-hidden />
-                        {feature}
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-6 grid gap-2">
-                    <CTAButton href={ROUTES.preRegistration} primary={highlighted}>
-                      {t("pricing.ctaRegister")} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                    </CTAButton>
-                    <CTAButton href={ROUTES.feedback}>{t("pricing.ctaApply")}</CTAButton>
-                  </div>
-                </div>
+                  <Link
+                    to={ROUTES.preRegistration}
+                    className={cn(
+                      "mt-6 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full px-4 text-[13px] font-semibold ease-spring transition-colors",
+                      highlighted
+                        ? "bg-foreground text-background shadow-lg shadow-foreground/10 hover:opacity-90"
+                        : "border border-border bg-card hover:bg-accent",
+                    )}
+                  >
+                    {highlighted ? t("pricing.popular") : t("pricing.ctaRegister")}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                  </Link>
+                </article>
               );
             })}
           </div>
+
+          <div className="surface mx-auto mt-5 flex max-w-6xl flex-col gap-5 rounded-3xl p-5 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-foreground/5">
+                <Building2 className="h-5 w-5" aria-hidden />
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="font-display text-[22px] font-semibold tracking-tight">
+                    {enterpriseTier.name}
+                  </h3>
+                  <span className="rounded-full border border-border bg-muted/55 px-2.5 py-1 text-[10px] font-bold tracking-[0.14em] text-muted-foreground uppercase">
+                    {t("pricing.ctaApply")}
+                  </span>
+                </div>
+                <p className="mt-1 max-w-xl text-[13px] text-muted-foreground">
+                  {enterpriseTier.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="font-display text-[24px] font-semibold tracking-tight">
+                {renderSubscriptionPrice(enterprisePlan)}
+              </div>
+              <Link
+                to={ROUTES.feedback}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-border bg-card px-4 text-[12.5px] font-semibold hover:bg-accent"
+              >
+                {t("pricing.ctaApply")}
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 surface rounded-3xl p-8 text-center md:p-10">
+        <div className="surface mt-16 rounded-3xl p-8 text-center md:p-10">
           <Gift className="mx-auto h-8 w-8 text-success" aria-hidden />
           <h3 className="mt-4 font-display text-[24px] font-semibold tracking-tight md:text-[32px]">
             {t("pricing.bottomCta.title")}
