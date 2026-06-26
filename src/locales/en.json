@@ -245,36 +245,14 @@
       "visualEyebrow": "Tashkent map",
       "visualTitle": "Toshkent City, warehouses, and delivery points",
       "visualText": "The order path stays visible on the map.",
-      "visualSteps": {
+      "visualOverlay": {
         "created": {
           "title": "Order created",
           "text": "Seller opens request"
         },
-        "sent": {
-          "title": "Sent out",
-          "text": "Courier starts route"
-        },
         "received": {
           "title": "Received",
           "text": "Buyer confirms"
-        }
-      },
-      "visualHub": "Toshkent City",
-      "visualHubText": "Orders, offices, warehouses, and couriers stay visible inside one city workflow.",
-      "visualRoute": "City delivery",
-      "visualRouteText": "Sergeli, Chilonzor, and Yunusobod appear on one live map.",
-      "previewPins": {
-        "tashkentCity": {
-          "name": "Toshkent City"
-        },
-        "sergeli": {
-          "name": "Sergeli warehouse"
-        },
-        "chilonzor": {
-          "name": "Chilonzor hub"
-        },
-        "yunusobod": {
-          "name": "Yunusobod depot"
         }
       },
       "demoTitle": "Tashkent warehouse network",

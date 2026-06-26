@@ -245,36 +245,14 @@
       "visualEyebrow": "Toshkent xaritasi",
       "visualTitle": "Toshkent City, ombor va yetkazish nuqtalari",
       "visualText": "Buyurtma yo'li xaritada jonli ko'rinadi.",
-      "visualSteps": {
+      "visualOverlay": {
         "created": {
           "title": "Buyurtma yaratildi",
           "text": "Sotuvchi ariza ochadi"
         },
-        "sent": {
-          "title": "Yetkazishga chiqdi",
-          "text": "Kuryer yo'lga tushadi"
-        },
         "received": {
           "title": "Qabul qilindi",
           "text": "Xaridor tasdiqlaydi"
-        }
-      },
-      "visualHub": "Toshkent City",
-      "visualHubText": "Buyurtmalar, ofislar, omborlar va kuryerlar shahar ichida bir oqimda ko'rinadi.",
-      "visualRoute": "Shahar bo'ylab yetkazish",
-      "visualRouteText": "Sergeli, Chilonzor va Yunusobod yo'nalishlari bitta xaritada ko'rinadi.",
-      "previewPins": {
-        "tashkentCity": {
-          "name": "Toshkent City"
-        },
-        "sergeli": {
-          "name": "Sergeli ombor"
-        },
-        "chilonzor": {
-          "name": "Chilonzor hub"
-        },
-        "yunusobod": {
-          "name": "Yunusobod depo"
         }
       },
       "demoTitle": "Toshkent ombor tarmog'i",

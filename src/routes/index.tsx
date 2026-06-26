@@ -63,10 +63,9 @@ const ROLE_CARD_LINKS = [
 const PROCESS_ICONS: LucideIcon[] = [PackageCheck, Store, Warehouse, Truck, UserCheck];
 const PROOF_ICONS: LucideIcon[] = [Camera, ClipboardCheck, RouteIcon, ShieldCheck];
 const AUDIENCE_ICONS: LucideIcon[] = [Store, Building2, PackageCheck, Warehouse];
-const ROUTE_VISUAL_STEPS = [
-  { key: "created", Icon: PackageCheck },
-  { key: "sent", Icon: Truck },
-  { key: "received", Icon: UserCheck },
+const ROUTE_OVERLAY_POINTS = [
+  { key: "created", Icon: PackageCheck, className: "left-[29%] top-[63%] sm:left-[16%]" },
+  { key: "received", Icon: UserCheck, className: "left-[72%] top-[26%] sm:left-[84%]" },
 ] as const;
 
 export const Route = createFileRoute("/")({
@@ -171,44 +170,49 @@ function RouteVisual() {
         </h3>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-8 top-[48%] z-10 hidden -translate-y-1/2 sm:block">
-        <svg className="h-24 w-full text-primary" viewBox="0 0 520 100" fill="none" aria-hidden>
+      <div className="pointer-events-none absolute inset-x-4 top-[52%] z-10 h-[180px] -translate-y-1/2 sm:inset-x-8">
+        <svg
+          className="absolute inset-0 h-full w-full text-primary"
+          viewBox="0 0 520 180"
+          fill="none"
+          aria-hidden
+        >
+          <path id="route-overlay-path" d="M82 116 C178 48 304 122 438 62" opacity="0" />
           <path
-            id="route-visual-path"
-            d="M34 64 C136 10 212 96 312 42 C390 0 438 22 486 58"
-            opacity="0"
-          />
-          <path
-            d="M34 64 C136 10 212 96 312 42 C390 0 438 22 486 58"
+            d="M82 116 C178 48 304 122 438 62"
             stroke="currentColor"
-            strokeWidth="5"
-            strokeDasharray="14 16"
+            strokeWidth="4.5"
+            strokeDasharray="12 14"
             className="route-map-line"
-            opacity="0.78"
+            opacity="0.84"
           />
-          <circle className="route-flow-dot" r="7" fill="currentColor">
-            <animateMotion dur="5.8s" repeatCount="indefinite" rotate="auto">
-              <mpath href="#route-visual-path" />
+          <circle className="route-flow-dot" r="6.5" fill="currentColor">
+            <animateMotion dur="5.4s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#route-overlay-path" />
             </animateMotion>
           </circle>
         </svg>
-      </div>
 
-      <div className="absolute bottom-6 left-6 right-6 z-10 grid gap-3 sm:grid-cols-3">
-        {ROUTE_VISUAL_STEPS.map(({ key, Icon }, index) => (
+        <div className="absolute left-1/2 top-[47%] z-10 grid h-10 w-10 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-primary/25 bg-card/95 text-primary shadow-lg shadow-foreground/10 backdrop-blur">
+          <Truck className="h-5 w-5" aria-hidden />
+        </div>
+
+        {ROUTE_OVERLAY_POINTS.map(({ key, Icon, className }) => (
           <div
             key={key}
-            className="route-step-card rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur"
-            style={{ animationDelay: `${index * 0.45}s` }}
+            className={cn(
+              "route-overlay-point absolute z-20 w-[150px] -translate-x-1/2 -translate-y-1/2 rounded-[16px] border border-border bg-card/95 p-3 shadow-lg shadow-foreground/8 backdrop-blur sm:w-[168px]",
+              className,
+            )}
           >
             <div className="flex items-center gap-2 text-[12px] font-semibold">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-primary text-primary-foreground">
                 <Icon className="h-3.5 w-3.5" aria-hidden />
               </span>
-              {t(`landing.map.visualSteps.${key}.title`)}
+              {t(`landing.map.visualOverlay.${key}.title`)}
             </div>
             <p className="mt-1 text-[11.5px] text-muted-foreground">
-              {t(`landing.map.visualSteps.${key}.text`)}
+              {t(`landing.map.visualOverlay.${key}.text`)}
             </p>
           </div>
         ))}

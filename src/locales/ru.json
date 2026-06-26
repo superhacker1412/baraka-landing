@@ -245,36 +245,14 @@
       "visualEyebrow": "Карта Ташкента",
       "visualTitle": "Toshkent City, склады и точки доставки",
       "visualText": "Путь заказа виден прямо на карте.",
-      "visualSteps": {
+      "visualOverlay": {
         "created": {
           "title": "Заказ создан",
           "text": "Продавец открывает заявку"
         },
-        "sent": {
-          "title": "Отправлен",
-          "text": "Курьер выходит на маршрут"
-        },
         "received": {
           "title": "Получен",
           "text": "Клиент подтверждает"
-        }
-      },
-      "visualHub": "Toshkent City",
-      "visualHubText": "Заказы, офисы, склады и курьеры видны внутри одного городского процесса.",
-      "visualRoute": "Доставка по городу",
-      "visualRouteText": "Sergeli, Chilonzor и Yunusobod отображаются на одной карте.",
-      "previewPins": {
-        "tashkentCity": {
-          "name": "Toshkent City"
-        },
-        "sergeli": {
-          "name": "Склад Sergeli"
-        },
-        "chilonzor": {
-          "name": "Chilonzor hub"
-        },
-        "yunusobod": {
-          "name": "Yunusobod depo"
         }
       },
       "demoTitle": "Складская сеть Ташкента",

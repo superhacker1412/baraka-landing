@@ -306,7 +306,7 @@
   @media (prefers-reduced-motion: reduce) {
     .route-map-line,
     .route-flow-dot,
-    .route-step-card {
+    .route-overlay-point {
       animation: none;
     }
   }
@@ -331,7 +331,7 @@
     filter: drop-shadow(0 4px 10px color-mix(in oklab, var(--primary) 40%, transparent));
     animation: pulse-soft 1.4s ease-in-out infinite;
   }
-  .route-step-card {
+  .route-overlay-point {
     animation: pulse-soft 3.2s ease-in-out infinite;
   }
 }
