@@ -44,6 +44,61 @@
     "submitting": "Yuborilmoqda...",
     "sendMessage": "Xabar yuborish"
   },
+  "seoQueries": {
+    "eyebrow": "Qidiruv so'rovlari",
+    "title": "Odamlar shunday qidiradi",
+    "subtitle": "Barakali Savdo savdo, kirim-chiqim, ombor, buyurtma va yetkazish jarayonlari bo'yicha shu so'rovlarga mos keladi.",
+    "groups": [
+      {
+        "title": "Kirim-chiqim va savdo",
+        "queries": [
+          "kirim chiqim tizimi",
+          "kirim chiqim dasturi",
+          "savdo dasturi",
+          "do'kon uchun dastur",
+          "do'kon uchun savdo dasturi",
+          "tovar hisob dasturi",
+          "tovar kirim chiqim dasturi",
+          "kassa dasturi"
+        ]
+      },
+      {
+        "title": "Ombor va qoldiq",
+        "queries": [
+          "ombor hisob dasturi",
+          "ombor boshqaruv tizimi",
+          "savdo va ombor dasturi",
+          "tovar qoldig'ini nazorat qilish dasturi",
+          "ombor va savdo hisobini yuritish",
+          "ombor bron qilish",
+          "sklad Toshkent"
+        ]
+      },
+      {
+        "title": "Buyurtma va yetkazish",
+        "queries": [
+          "buyurtma boshqarish tizimi",
+          "internet do'kon buyurtmalarini boshqarish",
+          "telegram do'kon uchun dastur",
+          "yetkazib berish tizimi",
+          "kuryerlar uchun dastur",
+          "kuryer xizmati Toshkent"
+        ]
+      },
+      {
+        "title": "B2B biznes",
+        "queries": [
+          "B2B savdo platformasi",
+          "ulgurji savdo dasturi",
+          "ta'minotchi platformasi",
+          "yetkazib beruvchi tizimi",
+          "biznes uchun CRM tizimi",
+          "magazin uchun dastur",
+          "savdo avtomatlashtirish"
+        ]
+      }
+    ]
+  },
   "errors": {
     "notFoundTitle": "404",
     "notFoundText": "Bu landingda bunday sahifa yo'q.",
@@ -955,7 +1010,7 @@
       "home": {
         "title": "Barakali Savdo - Toshkentda B2B savdo va logistika",
         "description": "Toshkent va O'zbekistondagi sotuvchilar, do'konlar, ofislar, tashkilotlar, omborlar va kuryerlar uchun buyurtma, qoldiq, ombor broni va yetkazishni boshqarish platformasi.",
-        "keywords": "Barakali Savdo, Toshkent savdo tizimi, O'zbekistonda B2B savdo, biznes uchun logistika, ombor bron qilish, ombor ijarasi Toshkent, yetkazib beruvchi, kuryer xizmati Toshkent, do'kon boshqaruvi, ofis uchun buyurtma tizimi, tashkilotlar uchun savdo platformasi, buyurtma boshqaruvi, qoldiq nazorati, ta'minot zanjiri",
+        "keywords": "Barakali Savdo, kirim chiqim tizimi, kirim chiqim dasturi, savdo dasturi, do'kon uchun dastur, do'kon uchun savdo dasturi, tovar hisob dasturi, ombor hisob dasturi, ombor boshqaruv tizimi, savdo va ombor dasturi, buyurtma boshqarish tizimi, telegram do'kon uchun dastur, Toshkent savdo tizimi, O'zbekistonda B2B savdo, biznes uchun logistika, ombor bron qilish, kuryer xizmati Toshkent",
         "ogTitle": "Barakali Savdo - Toshkentda savdo, ombor va yetkazish",
         "ogDescription": "Do'kon, ofis, ombor, ta'minotchi va kuryer jarayonlarini bitta zamonaviy tizimda boshqaring."
       },
@@ -997,42 +1052,42 @@
       "forSellers": {
         "title": "Sotuvchilar uchun savdo tizimi - Barakali Savdo",
         "description": "Online sotuvchi, ulgurji savdo va Telegram/Instagram do'konlari uchun buyurtma boshqaruvi, qoldiq nazorati, ombor bron qilish, kuryer xizmati va xaridor QR-statusi.",
-        "keywords": "sotuvchi, online savdo, Telegram do'kon, Instagram do'kon, buyurtma boshqaruvi, qoldiq nazorati, ombor bron qilish, kuryer xizmati Toshkent",
+        "keywords": "sotuvchi, online savdo, Telegram do'kon, Instagram do'kon, kirim chiqim tizimi, kirim chiqim dasturi, tovar hisob dasturi, tovar kirim chiqim dasturi, buyurtma boshqarish tizimi, telegram do'kon uchun dastur, internet do'kon buyurtmalarini boshqarish, buyurtma boshqaruvi, qoldiq nazorati, ombor bron qilish, kuryer xizmati Toshkent",
         "ogTitle": "Sotuvchilar uchun",
         "ogDescription": "Sotuvchilar uchun buyurtma boshqaruvi, ombor bron qilish, kuryer xizmati va xaridor QR-statusi."
       },
       "forShops": {
         "title": "Do'konlar uchun tizim - savdo va qoldiq nazorati",
         "description": "Toshkent va O'zbekistondagi do'konlar, savdo nuqtalari va POS bizneslar uchun sotuv, qoldiq, hisobdan chiqarish, buyurtma va hisobotlarni boshqarish.",
-        "keywords": "do'kon boshqaruvi, savdo tizimi, POS tizim, qoldiq nazorati, tovar hisobi, magazin uchun dastur, Toshkent",
+        "keywords": "do'kon boshqaruvi, do'kon uchun dastur, do'kon uchun savdo dasturi, savdo dasturi, savdo tizimi, POS tizim, kassa dasturi, qoldiq nazorati, tovar hisobi, tovar hisob dasturi, tovar qoldig'ini nazorat qilish dasturi, magazin uchun dastur, Toshkent",
         "ogTitle": "Do'konlar uchun",
         "ogDescription": "Do'konlar uchun POS savdo, qoldiq nazorati, hisobdan chiqarish va oddiy hisobotlar."
       },
       "forSuppliers": {
         "title": "Yetkazib beruvchilar uchun B2B savdo - Barakali Savdo",
         "description": "Ta'minotchi, importyor, ishlab chiqaruvchi va ulgurji yetkazib beruvchilar uchun partiya e'lon qilish, sotuvchilardan ariza olish va omborga yetkazishni rejalash.",
-        "keywords": "yetkazib beruvchi, ta'minotchi, importyor, ishlab chiqaruvchi, B2B savdo, ulgurji savdo, yetkazib beruvchi platformasi, O'zbekiston",
+        "keywords": "yetkazib beruvchi, ta'minotchi, importyor, ishlab chiqaruvchi, B2B savdo, B2B savdo platformasi, ulgurji savdo, ulgurji savdo dasturi, ta'minotchi platformasi, yetkazib beruvchi tizimi, yetkazib beruvchi platformasi, O'zbekiston",
         "ogTitle": "Yetkazib beruvchilar uchun",
         "ogDescription": "Yetkazib beruvchilar partiya e'lon qiladi, sotuvchilardan ariza oladi va omborga yetkazishni rejalaydi."
       },
       "forWarehouses": {
         "title": "Omborlar uchun bron va boshqaruv - Barakali Savdo",
         "description": "Toshkent va viloyatlardagi ombor egalari uchun bo'sh joy, m2 narxi, xarita, yacheyka sxemasi, bron arizalari va tovar qabul qilishni boshqarish.",
-        "keywords": "ombor bron qilish, ombor ijarasi Toshkent, ombor egasi, sklad Toshkent, yacheyka sxemasi, ombor boshqaruvi, logistika platformasi",
+        "keywords": "ombor bron qilish, ombor hisob dasturi, ombor boshqaruv tizimi, savdo va ombor dasturi, ombor va savdo hisobini yuritish, ombor ijarasi Toshkent, ombor egasi, sklad Toshkent, yacheyka sxemasi, ombor boshqaruvi, logistika platformasi",
         "ogTitle": "Omborlar uchun",
         "ogDescription": "Ombor egasi manzil, sharoit, yacheyka sxemasi va bronlarni boshqaradi."
       },
       "forCouriers": {
         "title": "Kuryerlar uchun yetkazish vazifalari - Barakali Savdo",
         "description": "Toshkent va O'zbekistondagi kuryerlar uchun yetkazish vazifalari, narx taklifi, marshrut, kontaktlar, foto va imzo bilan topshirishni tasdiqlash.",
-        "keywords": "kuryer xizmati Toshkent, yetkazib berish, dostavka, kuryer vazifalari, marshrut, buyurtma yetkazish, logistika platformasi",
+        "keywords": "kuryer xizmati Toshkent, kuryerlar uchun dastur, yetkazib berish tizimi, yetkazib berish, dostavka, kuryer vazifalari, marshrut, buyurtma yetkazish, buyurtma boshqarish tizimi, logistika platformasi",
         "ogTitle": "Kuryerlar uchun",
         "ogDescription": "Kuryerlar yetkazish vazifalarini ko'radi, narx taklif qiladi va topshirishni tasdiqlaydi."
       },
       "forBuyers": {
         "title": "Xaridorlar uchun - Barakali Savdo",
         "description": "Xaridor QR yoki havola orqali buyurtma qayerda ekanini ko'radi, yetkazilganini tasdiqlaydi, fikr bildiradi yoki qaytarish bo'yicha ariza qoldiradi.",
-        "keywords": "xaridor, buyurtma statusi, QR status, yetkazish holati, buyurtmani kuzatish, qabulni tasdiqlash",
+        "keywords": "xaridor, buyurtma statusi, QR status, yetkazish holati, buyurtmani kuzatish, buyurtma qayerda, internet do'kon buyurtma statusi, qabulni tasdiqlash, yetkazib berish tizimi",
         "ogTitle": "Xaridorlar uchun",
         "ogDescription": "Xaridor QR yoki havola orqali buyurtma statusini ko'radi va qabulni tasdiqlaydi."
       }

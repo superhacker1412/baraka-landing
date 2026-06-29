@@ -21,6 +21,7 @@ import {
 import { CTABlockLight, PromoBadge } from "@/components/CTABlock";
 import { PageMeta } from "@/components/PageMeta";
 import { PublicShell, Section, SectionTitle } from "@/components/PublicShell";
+import { SeoQueryTagsSection } from "@/components/SeoQueryTags";
 import { useTranslation } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
 import type { SeoPageKey } from "@/lib/seo";
@@ -221,6 +222,8 @@ export function RolePage({ role }: { role: RolePageId }) {
           ))}
         </div>
       </Section>
+
+      <SeoQueryTagsSection compact />
 
       <Section className="py-10">
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">

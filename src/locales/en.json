@@ -44,6 +44,58 @@
     "submitting": "Sending...",
     "sendMessage": "Send message"
   },
+  "seoQueries": {
+    "eyebrow": "Search queries",
+    "title": "How people search for this system",
+    "subtitle": "Barakali Savdo matches practical searches around trade, stock, warehouses, orders, and delivery for Uzbekistan businesses.",
+    "groups": [
+      {
+        "title": "Shop and stock",
+        "queries": [
+          "shop management system",
+          "inventory software",
+          "stock control software",
+          "retail software Uzbekistan",
+          "sales accounting software",
+          "POS system Tashkent",
+          "trade automation"
+        ]
+      },
+      {
+        "title": "Warehouse",
+        "queries": [
+          "warehouse management system",
+          "warehouse booking",
+          "warehouse software Tashkent",
+          "stock accounting",
+          "warehouse logistics",
+          "storage management"
+        ]
+      },
+      {
+        "title": "Orders and delivery",
+        "queries": [
+          "order management system",
+          "courier delivery workflow",
+          "delivery management software",
+          "track order status",
+          "logistics platform",
+          "route delivery"
+        ]
+      },
+      {
+        "title": "B2B business",
+        "queries": [
+          "B2B trade platform",
+          "wholesale trade software",
+          "supplier marketplace",
+          "supplier platform Uzbekistan",
+          "CRM for shops",
+          "business automation Uzbekistan"
+        ]
+      }
+    ]
+  },
   "errors": {
     "notFoundTitle": "404",
     "notFoundText": "This page doesn't exist on this site.",
@@ -950,7 +1002,7 @@
       "home": {
         "title": "Barakali Savdo - B2B trade and logistics in Tashkent",
         "description": "A platform for sellers, shops, offices, organizations, warehouses, and couriers in Tashkent and Uzbekistan: orders, stock, suppliers, warehouse booking, and delivery in one workflow.",
-        "keywords": "Barakali Savdo, B2B logistics Tashkent, shop management system, trade automation Uzbekistan, warehouse booking Tashkent, stock control, supplier marketplace Uzbekistan, courier delivery workflow, office order system, organization trade platform, wholesale trade",
+        "keywords": "Barakali Savdo, shop management system, inventory software, stock control software, retail software Uzbekistan, sales accounting software, warehouse management system, warehouse booking, order management system, delivery management software, B2B logistics Tashkent, trade automation Uzbekistan, supplier marketplace Uzbekistan, courier delivery workflow, wholesale trade",
         "ogTitle": "Barakali Savdo - trade, warehouse, and delivery in Tashkent",
         "ogDescription": "Shops, offices, warehouses, suppliers, and couriers work in one modern system."
       },
@@ -992,42 +1044,42 @@
       "forSellers": {
         "title": "Seller management system - Barakali Savdo",
         "description": "For online sellers, wholesalers, Telegram and Instagram shops: order management, stock control, warehouse booking, courier delivery, and buyer QR status.",
-        "keywords": "seller, online sales, Telegram shop, Instagram shop, order management, stock control, warehouse booking, courier delivery Tashkent",
+        "keywords": "seller, online sales, Telegram shop, Instagram shop, order management system, sales accounting software, inventory software, stock control software, warehouse booking, courier delivery Tashkent, shop management system",
         "ogTitle": "For sellers",
         "ogDescription": "Order management, warehouse booking, courier workflow, and buyer QR status for sellers."
       },
       "forShops": {
         "title": "Shop management system - sales and stock control",
         "description": "For shops, retail points, and POS businesses in Tashkent and Uzbekistan: sales, stock, write-offs, orders, and clear reports.",
-        "keywords": "shop management system, POS system, stock control, product accounting, retail software, Tashkent",
+        "keywords": "shop management system, inventory software, stock control software, retail software Uzbekistan, sales accounting software, POS system Tashkent, product accounting, trade automation, Tashkent",
         "ogTitle": "For shops",
         "ogDescription": "POS sales, stock control, write-offs, product tracking, and reports for shops."
       },
       "forSuppliers": {
         "title": "For suppliers - B2B sales with Barakali Savdo",
         "description": "For suppliers, importers, manufacturers, and wholesalers: publish product batches, receive seller requests, and plan delivery to warehouses.",
-        "keywords": "supplier Uzbekistan, supplier Tashkent, importer, manufacturer, B2B sales, wholesale trade, supplier platform",
+        "keywords": "supplier Uzbekistan, supplier Tashkent, importer, manufacturer, B2B sales, B2B trade platform, wholesale trade software, supplier marketplace, supplier platform Uzbekistan",
         "ogTitle": "For suppliers",
         "ogDescription": "Publish batches, receive seller requests, and plan delivery to warehouses."
       },
       "forWarehouses": {
         "title": "For warehouses - booking and warehouse management",
         "description": "For warehouse owners in Tashkent and regions: available space, m2 price, map, cell layout, booking requests, and goods receiving.",
-        "keywords": "warehouse in Tashkent, warehouse rent, warehouse booking, warehouse owner, warehouse logistics, cell layout, warehouse management",
+        "keywords": "warehouse in Tashkent, warehouse management system, warehouse booking, warehouse software Tashkent, stock accounting, warehouse rent, warehouse owner, warehouse logistics, cell layout, storage management",
         "ogTitle": "For warehouses",
         "ogDescription": "Warehouse booking, map, storage conditions, cell layout, and booking control."
       },
       "forCouriers": {
         "title": "For couriers - delivery tasks in Barakali Savdo",
         "description": "For couriers in Tashkent and Uzbekistan: available deliveries, price offers, routes, contacts, photo proof, and signature handover.",
-        "keywords": "courier delivery Tashkent, order delivery, courier tasks, route, goods delivery, logistics platform",
+        "keywords": "courier delivery Tashkent, order delivery, courier delivery workflow, delivery management software, order management system, track order status, route delivery, courier tasks, goods delivery, logistics platform",
         "ogTitle": "For couriers",
         "ogDescription": "Available deliveries, price offers, routes, contacts, and handover confirmation."
       },
       "forBuyers": {
         "title": "For buyers - Barakali Savdo",
         "description": "Buyers see order status by QR or link, confirm receipt, leave feedback, or send a return request.",
-        "keywords": "buyer, order status, QR status, track order, receipt confirmation, delivery status",
+        "keywords": "buyer, order status, QR status, track order, track order status, receipt confirmation, delivery status, order management system, delivery management software",
         "ogTitle": "For buyers",
         "ogDescription": "Order status by QR or link, receipt confirmation, feedback, and return request."
       }

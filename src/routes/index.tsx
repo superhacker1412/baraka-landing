@@ -24,6 +24,7 @@ import { gsap } from "gsap";
 import { CTABlockLight, PromoBadge } from "@/components/CTABlock";
 import { PageMeta, useFaqItems } from "@/components/PageMeta";
 import { PublicShell, Section, SectionTitle, CTAButton } from "@/components/PublicShell";
+import { SeoQueryTagsSection } from "@/components/SeoQueryTags";
 import { SellerDashboardHero } from "@/components/SellerDashboardHero";
 import { TashkentMapPreview } from "@/components/TashkentMapPreview";
 import { WarehouseBookingDemo } from "@/components/WarehouseBookingDemo";
@@ -424,7 +425,7 @@ function ProofStrip({ items }: { items: { title: string; text: string }[] }) {
           return (
             <div key={item.title} className="flex gap-3 px-2 py-2">
               <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary/8 text-primary">
-                <Icon className="h-4.5 w-4.5" aria-hidden />
+                <Icon className="h-4 w-4" aria-hidden />
               </div>
               <div>
                 <h3 className="text-[13px] font-semibold">{item.title}</h3>
@@ -593,6 +594,7 @@ function Landing() {
       <ProcessSection steps={processSteps} />
       <WarehouseAndMapSections />
       <ProofStrip items={proofItems} />
+      <SeoQueryTagsSection />
 
       <Section className="py-16">
         <CTABlockLight />
