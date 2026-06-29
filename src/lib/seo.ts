@@ -186,6 +186,14 @@ type PricingTier = {
   name: string;
 };
 
+const PRICING_OFFER_ROLE_IDS = new Set([
+  "supplier",
+  "sellerOwner",
+  "shopOwner",
+  "warehouseOwner",
+  "courier",
+]);
+
 function discountedPrice(price: number): number {
   return Math.round(price * 0.5);
 }
@@ -194,8 +202,10 @@ export function pricingOfferCatalogJsonLd(locale: Locale = "uz") {
   const roles = translateRaw<Record<string, PricingRole>>(locale, "pricing.roles");
   const tiers = translateRaw<Record<string, PricingTier>>(locale, "pricing.tiers");
 
-  const offers = Object.entries(roles).flatMap(([roleId, role]) =>
-    Object.entries(role.plans).flatMap(([tierId, plan]) => {
+  const offers = Object.entries(roles).flatMap(([roleId, role]) => {
+    if (!PRICING_OFFER_ROLE_IDS.has(roleId)) return [];
+
+    return Object.entries(role.plans).flatMap(([tierId, plan]) => {
       if (plan.subscriptionCustom) return [];
 
       const price =
@@ -227,8 +237,8 @@ export function pricingOfferCatalogJsonLd(locale: Locale = "uz") {
           },
         },
       ];
-    }),
-  );
+    });
+  });
 
   return {
     "@context": "https://schema.org",

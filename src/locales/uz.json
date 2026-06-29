@@ -734,16 +734,20 @@
   "pricing": {
     "eyebrow": "Tariflar",
     "title": "Tariflar: hozir 50% arzon",
-    "subtitle": "Oldindan ro'yxatdan o'ting - 1 yil bepul. Eski narx chizilgan, yangi narx 50% arzon.",
+    "subtitle": "Narxlar 50% chegirma bilan ko'rsatilgan. Oldindan ro'yxatdan o'tgan bizneslarga 1 yil bepul.",
     "banner": "1 yil bepul + 50% chegirma",
     "bannerSub": "Platforma ishga tushganda birinchi ro'yxatdan o'tgan bizneslar 12 oy bepul foydalanadi, keyin esa yangi chegirmali narxlardan boshlaydi.",
     "roleTabsTitle": "Rolni tanlang",
     "roleTabsSub": "Rolingizga mos tarifni ko'ring.",
+    "planTabs": {
+      "individual": "Shaxsiy",
+      "organization": "Tashkilot"
+    },
     "selectRole": "Rolni tanlang",
     "perMonth": "so'm/oy",
     "free": "Bepul",
     "customPrice": "Kelishuv asosida",
-    "subscriptionLabel": "Chegirmali obuna",
+    "subscriptionLabel": "Oylik obuna",
     "oldPriceLabel": "Eski narx:",
     "discountBadge": "50% chegirma",
     "preRegistrationFree": "Oldindan ro'yxatdan o'ting - 1 yil bepul",
@@ -822,8 +826,8 @@
     },
     "roles": {
       "sellerOwner": {
-        "name": "Sotuvchi egasi",
-        "description": "Biznesingizni platformada boshqaring, buyurtma yarating va jamoani ulang.",
+        "name": "Sotuvchi",
+        "description": "Yetkazib beruvchidan tovar olib, buyurtma va ombor jarayonini boshqaradi.",
         "recommendedModel": "subscription",
         "plans": {
           "start": {
@@ -895,7 +899,7 @@
       },
       "supplier": {
         "name": "Yetkazib beruvchi",
-        "description": "Tovarlaringizni platformada ko'rsating va buyurtma oling.",
+        "description": "Tovar partiyalarini sotuvchilarga taklif qiladi va buyurtma oladi.",
         "recommendedModel": "partnership",
         "plans": {
           "start": {
@@ -919,7 +923,7 @@
       },
       "warehouseOwner": {
         "name": "Ombor egasi",
-        "description": "Ombor joyingizni band qilish va yetkazib beruvchilarni qabul qiling.",
+        "description": "Bo'sh ombor joyini ko'rsatadi, bron va tovar qabulini boshqaradi.",
         "recommendedModel": "partnership",
         "plans": {
           "start": {
@@ -943,7 +947,7 @@
       },
       "courier": {
         "name": "Kuryer",
-        "description": "Yetkazib berish buyurtmalarini qabul qiling va daromad qiling.",
+        "description": "Tayyor buyurtmalarni olib, mijozga yetkazish vazifalarini bajaradi.",
         "recommendedModel": "subscription",
         "plans": {
           "start": {
@@ -991,8 +995,8 @@
       }
     },
     "bottomCta": {
-      "title": "Hozir ro'yxatdan o'ting - 1 yil bepul va 50% chegirma",
-      "subtitle": "Platforma ishga tushganda 12 oy bepul foydalaning. Bepul davrdan keyin tariflar eski narxdan 50% arzon bo'ladi."
+      "title": "Hozir predregistratsiya qiling",
+      "subtitle": "Rolingizni tanlang, ariza qoldiring va ishga tushganda jamoamiz siz bilan bog'lanadi."
     }
   },
   "seo": {
@@ -1037,10 +1041,10 @@
       },
       "pricing": {
         "title": "Tariflar - 50% chegirma va 1 yil bepul | Barakali Savdo",
-        "description": "Toshkent va O'zbekistondagi do'kon, sotuvchi, ombor, kuryer, ofis va tashkilotlar uchun savdo-logistika tariflari. Eski narxdan 50% chegirma, predregistratsiya qilganlarga 1 yil bepul.",
+        "description": "Toshkent va O'zbekistondagi do'kon, sotuvchi, ombor, kuryer, ofis va tashkilotlar uchun savdo-logistika tariflari. Narxlar 50% chegirma bilan ko'rsatilgan, predregistratsiya qilganlarga 1 yil bepul.",
         "keywords": "tariflar, narxlar, 50% chegirma, 1 yil bepul, savdo tizimi narxi, do'kon uchun dastur narxi, logistika platformasi narxi, ombor boshqaruvi narxi, kuryer xizmati platformasi, Barakali Savdo, Toshkent, O'zbekiston",
         "ogTitle": "Barakali Savdo tariflari - 50% chegirma",
-        "ogDescription": "Eski narx chizib ko'rsatilgan: yangi narx 50% arzon. Predregistratsiya qiling - 1 yil bepul foydalaning."
+        "ogDescription": "Narxlar 50% chegirma bilan ko'rsatilgan. Predregistratsiya qiling - 1 yil bepul foydalaning."
       },
       "about": {
         "title": "Loyiha haqida - Barakali Savdo",

@@ -731,16 +731,20 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Pricing: now 50% off",
-    "subtitle": "Pre-register and get 1 year free. Old prices are crossed out; new prices are 50% lower.",
+    "subtitle": "Prices are already shown with 50% off. Pre-registered businesses get 1 year free.",
     "banner": "1 year free + 50% off",
     "bannerSub": "Early registered businesses use the platform free for 12 months after launch, then continue from the new discounted prices.",
     "roleTabsTitle": "Choose role",
     "roleTabsSub": "See the right plans for your role.",
+    "planTabs": {
+      "individual": "Personal",
+      "organization": "Organization"
+    },
     "selectRole": "Select role",
     "perMonth": "UZS/mo",
     "free": "Free",
     "customPrice": "Custom pricing",
-    "subscriptionLabel": "Discounted subscription",
+    "subscriptionLabel": "Monthly plan",
     "oldPriceLabel": "Old price:",
     "discountBadge": "50% off",
     "preRegistrationFree": "Pre-register - 1 year free",
@@ -814,8 +818,8 @@
     },
     "roles": {
       "sellerOwner": {
-        "name": "Seller owner",
-        "description": "Run your business on the platform, create orders, and onboard your team.",
+        "name": "Seller",
+        "description": "Buys goods from suppliers and manages orders, warehouse flow, and delivery.",
         "recommendedModel": "subscription",
         "plans": {
           "start": {
@@ -887,7 +891,7 @@
       },
       "supplier": {
         "name": "Supplier",
-        "description": "Show your products on the platform and receive orders.",
+        "description": "Sells product batches to sellers and receives supply orders.",
         "recommendedModel": "partnership",
         "plans": {
           "start": {
@@ -911,7 +915,7 @@
       },
       "warehouseOwner": {
         "name": "Warehouse owner",
-        "description": "Rent warehouse space and accept suppliers.",
+        "description": "Shows available space, accepts bookings, and receives goods for storage.",
         "recommendedModel": "partnership",
         "plans": {
           "start": {
@@ -935,7 +939,7 @@
       },
       "courier": {
         "name": "Courier",
-        "description": "Accept delivery orders and earn.",
+        "description": "Picks up ready orders and delivers them to customers.",
         "recommendedModel": "subscription",
         "plans": {
           "start": {
@@ -983,8 +987,8 @@
       }
     },
     "bottomCta": {
-      "title": "Register now - 1 year free and 50% off",
-      "subtitle": "Use the platform free for 12 months after launch. After the free period, plans stay 50% below the old price."
+      "title": "Pre-register now",
+      "subtitle": "Choose your role, send a request, and our team will contact you when the platform launches."
     }
   },
   "seo": {
@@ -1029,10 +1033,10 @@
       },
       "pricing": {
         "title": "Barakali Savdo pricing - 50% off and 1 year free",
-        "description": "Trade and logistics pricing for shops, sellers, warehouses, couriers, offices, and organizations in Tashkent and Uzbekistan. Old prices are crossed out, new prices are 50% off, and pre-registration gives 1 year free.",
+        "description": "Trade and logistics pricing for shops, sellers, warehouses, couriers, offices, and organizations in Tashkent and Uzbekistan. Prices are shown with 50% off, and pre-registration gives 1 year free.",
         "keywords": "pricing, plans, 50% off, 1 year free, shop management system price, retail software price, logistics platform price, warehouse management price, courier delivery platform, business automation Tashkent, Barakali Savdo, Uzbekistan",
         "ogTitle": "Barakali Savdo pricing - 50% off",
-        "ogDescription": "Old prices crossed out, new prices 50% lower. Pre-register and get 1 year free."
+        "ogDescription": "Prices are shown with 50% off. Pre-register and get 1 year free."
       },
       "about": {
         "title": "About - Barakali Savdo",
